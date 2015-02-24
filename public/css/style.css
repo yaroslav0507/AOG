@@ -1,4 +1,154 @@
+@font-face {
+  font-family: 'Capsula';
+  src: url('../fonts/Capsuula.ttf');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'HelveticaNeueUltra';
+  src: url('../fonts/HelveticaNeueCyr-UltraLight.otf');
+  font-style: normal;
+  font-weight: normal;
+}
+
 body,
 html {
   height: 100%;
+}
+
+body {
+  font-family: 'Capsula', Helvetica, Sans-serif;
+  font-weight: normal;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 970px !important;
+  }
+}
+
+input {
+  font-family: 'HelveticaNeueUltra';
+  font-size: 14px;
+}
+
+section {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+section .container {
+  height: 100%;
+  display: table;
+}
+
+section .container .row {
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+}
+
+.header-menu {
+  position: absolute;
+  top: 0;
+  width: 1170px;
+  margin: 23px -100px;
+  height: 34px;
+}
+
+.header-menu .logo {
+  width: ;
+}
+
+.header-menu .logo {
+  background: url(../img/logo.png) no-repeat;
+  width: 144px;
+  height: 33px;
+}
+
+.header-menu .search {
+  margin: 0 99px 0 168px;
+  border: 1px solid #FFF;
+  border-radius: 5px;
+  height: inherit;
+}
+
+.header-menu .search input {
+  color: #FFF;
+  width: 100%;
+  border: none;
+  outline: none;
+  height: inherit;
+  text-align: right;
+  padding-right: 65px;
+  background: transparent url(../img/icon-search.png) no-repeat 96.5% 6px;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+}
+
+.header-menu .actions {
+  width: 89px;
+  height: inherit;
+}
+
+.sec1 {
+  background: url(../img/header-bg.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.sec1 .promo {
+  font-size: 80px;
+  color: #FFF;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+.sec1 .promo span {
+  text-transform: none;
+  color: #ff8e8e;
+}
+
+.sec1 .descript {
+  font-family: 'HelveticaNeueUltra';
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #FFF;
+  letter-spacing: 2px;
+}
+
+.sec1 .learn-more {
+  background: #FFF;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+  bottom: -1px;
+  height: 82px;
+}
+
+.sec1 .learn-more:before {
+  content: "";
+  width: 200%;
+  height: inherit;
+  position: absolute;
+  left: -200%;
+  top: 0;
+  background: inherit;
+}
+
+.sec1 .learn-more:after {
+  content: "";
+  width: 200%;
+  height: inherit;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background: inherit;
+}
+
+.sec1 .learn-more a {
+  display: inline-block;
+  padding: 20px;
 }

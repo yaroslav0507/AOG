@@ -1,1 +1,1 @@
-# AOG 
+# AOG - Artel Outsoursing Group
