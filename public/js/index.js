@@ -1935,6 +1935,17 @@
 })(jQuery);
 
 $(function(){
+    $('#fullpage').fullpage({
+    	//Navigation
+
+        navigation: true,
+        
+
+    });
+
+    $('.learn-more').on('click', function(){
+    	$.fn.fullpage.moveTo(2);
+    })
 
 	function secHeight(){
 		var sec = $('.sec1');
@@ -1943,8 +1954,9 @@ $(function(){
 	secHeight()
 
 
+	/*Vertical alignment ov div.b-profit section 2 compartible with fullpage.js*/
 	function bProfit(){
-		$('.b-profit').height($('.sec2').height() - $('.dev-rate').height());
+		$('.b-profit').height($('.sec2').outerHeight(true) - $('.dev-rate').outerHeight(true));
 	}
 	init()
 
@@ -1953,5 +1965,7 @@ $(function(){
 		secHeight();
 		bProfit();
 	}
-	$(window).resize(init)
+	$(window).resize(init).on( "orientationchange", function(){
+		init();
+	});
 })

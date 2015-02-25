@@ -1,0 +1,186 @@
+@import 'variables';
+
+/*Very small devices - mobile*/
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px){
+	section{
+		height: auto;
+	}
+	.header-menu{
+		width: 320px;
+		margin: 23px -23px;
+		.skills-md, .profile, .search{
+			display: none;
+		}
+	}
+	.profit{
+		.item{
+			margin: auto;
+		}
+	}
+
+}
+
+/*Smartphones - iPhone etc.. rotated ipad (portrait)*/
+@media (min-width: 752px){
+	section{
+		height: auto;
+	}
+	.header-menu{
+		width: 730px;
+		margin: 23px 0;
+		.skills-md, .profile, .search{
+			display: block;
+		}
+	}
+	.btn-large{
+		width: auto;
+	}
+	.sec2{
+		.profit{
+			.item{
+				width: 220px;
+				padding: 10px 5px;
+				.btn{
+					width: 226px;
+				}
+				.desc{
+					height: 70px;
+				}
+			}
+		}
+		.dev-rate{
+			width: 100%;
+			.proposal-text{
+				font-size: 25px;
+			}
+		}
+	}
+	.sec3{
+		.steps{
+			.step{
+				.descript{
+					width: 210px;
+				}
+			}
+		}
+	}
+}
+/*Tablets like iPad etc..*/
+@media (min-width: 992px){
+	section{
+		height: 100vh;
+	}
+	.header-menu{
+		width: 970px;
+		margin: 23px -23px;
+	}
+	.btn-large{
+		width: @btnWidth * 1.5;
+	}
+	.sec2{
+		.profit{
+			div{
+				&:first-child{
+					.item{
+						float: left;
+					}
+				}
+				&:last-child{
+					.item{
+						float: right;
+					}
+				}
+				.item{
+					margin: auto;
+					width: 260px;
+					padding: 10px 0;
+					.desc{
+						height: auto;
+					}
+				}
+			}
+		}
+		.dev-rate{
+			width: inherit;
+			.proposal-text{
+				font-size: 35px;
+			}
+		}
+	}
+	.sec3{
+		.steps{
+			.step{
+				.descript{
+					width: 270px;
+				}
+			}
+		}
+	}
+	.how-it-works{
+		> div{
+			&:nth-child(1){
+			.item{ padding-right: 45px; }
+			}
+			&:nth-child(2){
+				.item{ margin-left: -15px; }
+			}
+			&:nth-child(3){
+				.item{ margin-right: -15px; }
+			}
+			&:nth-child(4){
+				.item{ padding-left: 45px; }
+			} 
+			&:not(:last-child){
+				.icon{
+					&:after{
+						content: "";
+						width: 111px;
+						height: 14px;
+						position: absolute;
+						top: 58px;
+						left: 140px;
+						background: url(../img/steps-arrow-straight.png) no-repeat;
+					}
+				}
+			}
+		}
+	}
+}
+/*Large screens 19' + */
+@media (min-width: 1200px){
+	 .container {
+	    width: 980px !important;
+	 }
+	.header-menu{
+		width: 1182px;
+		margin-left: -142px;
+	}
+	.sec1{
+		.btn-large{
+			width: @btnWidth
+		}
+	}
+	.btn-large{
+		width: 290px;
+	}
+	.sec2{
+		.dev-rate{
+			.proposal-text{
+				font-size: 37px;
+			}
+		}		
+	}
+
+}
+/*Laptops with 15' screen and lower*/
+@media (max-height: 768px){
+	/*
+	Vertical alignment ov div.promo-body section 1 
+	compartible with fullpage.js
+	*/
+	.promo-body{
+		margin-top: -65px;
+	}
+}

@@ -61,7 +61,7 @@ li{
 
 section{
 	height: 100vh;
-	min-height: 732px;
+	min-height: 672px;
 	width: 100%;
 	position: relative;
 	overflow: hidden;
@@ -282,11 +282,25 @@ section{
 	background: @tSeaBlue;
 	color: #FFF;
 	.proposal{
+		&:before{
+			content: '';
+			position: absolute;
+			width: 0;
+			height: 0;
+			left: 5px;
+			top:0;
+			border-style: solid;
+			border-width: 34px 43.5px 0 43.5px;
+			border-color: #ffffff transparent transparent transparent;
+		}		
+	}
+	.proposal-text{
 		font-size: 37px;
 		color: #FFF;
 		margin-top: 64px;
 		float: left;
 		position: absolute;
+
 	}
 	.offer{
 		width: 240px;
@@ -325,7 +339,7 @@ section{
 		position: absolute;
 		left:0;
 		right: 0;
-		bottom: 20px;
+		bottom: 26px;
 		margin: auto;
 		width: 239px;
 		box-shadow: 3px 5px 0px rgba(0, 0, 0, 0.1);
@@ -334,18 +348,19 @@ section{
 }
 .how-it-works{
 	> div{
+
 		&:nth-child(1){
-			.item{ padding-right: 45px; }
+			.item{ padding-right: 0; }
 		}
 		&:nth-child(2){
-			.item{ margin-left: -15px; }
+			.item{ margin-left: 0; }
 		}
 		&:nth-child(3){
-			.item{ margin-right: -15px; }
+			.item{ margin-right: 0; }
 		}
 		&:nth-child(4){
-			.item{ padding-left: 45px; }
-		}
+			.item{ padding-left: 0; }
+		} 
 		&:not(:last-child){
 			.icon{
 				&:after{
@@ -354,14 +369,15 @@ section{
 					height: 14px;
 					position: absolute;
 					top: 58px;
-					left: 140px;
-					background: url(../img/steps-arrow-straight.png) no-repeat;
+					left: 150px;
+					background: none;
 				}
 			}
 		}
 	}
 	.item{
 		text-align: center;
+		margin-bottom: 45px;
 		.icon{
 			width: 124px;
 			height: 128px;
@@ -392,7 +408,7 @@ section{
 .sec3{
 	.steps{
 		padding: 0 55px;
-		margin: 48px 0;
+		margin-bottom: 18px;
 		.step{
 			margin-bottom: 30px;
 			height: 60px;
@@ -410,9 +426,8 @@ section{
 				border: 1px solid;
 				border-radius: 50%;
 			}
-			.decsript{
+			.descript{
 				margin-left: 18px;
-				width: 270px;
 				letter-spacing: 0.6px;
 				h4{
 					margin-bottom: 5px;
@@ -429,6 +444,15 @@ section{
 		}
 	}
 }
+.sec4{
+	display: table;
+	.bg-wrap{
+		display: table-cell;
+		height: 556px;
+		vertical-align: middle;
+		background: url(../img/about-us-bg.jpg) no-repeat 40%;
+	}
+}
 .heading{
 	margin-bottom: 30px;
 }
@@ -441,4 +465,4 @@ section{
 .violet{
 	color: @tViolet;
 }
-@import 'tablets';
+@import 'screen';

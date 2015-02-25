@@ -247,7 +247,7 @@ li {
 
 section {
   height: 100vh;
-  min-height: 732px;
+  min-height: 672px;
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -535,7 +535,19 @@ section .container .vert {
   background: inherit;
 }
 
-.dev-rate .proposal {
+.dev-rate .proposal:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 5px;
+  top: 0;
+  border-style: solid;
+  border-width: 34px 43.5px 0 43.5px;
+  border-color: #ffffff transparent transparent transparent;
+}
+
+.dev-rate .proposal-text {
   font-size: 37px;
   color: #FFF;
   margin-top: 64px;
@@ -583,26 +595,26 @@ section .container .vert {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 20px;
+  bottom: 26px;
   margin: auto;
   width: 239px;
   box-shadow: 3px 5px 0px rgba(0, 0, 0, 0.1);
 }
 
 .how-it-works > div:nth-child(1) .item {
-  padding-right: 45px;
+  padding-right: 0;
 }
 
 .how-it-works > div:nth-child(2) .item {
-  margin-left: -15px;
+  margin-left: 0;
 }
 
 .how-it-works > div:nth-child(3) .item {
-  margin-right: -15px;
+  margin-right: 0;
 }
 
 .how-it-works > div:nth-child(4) .item {
-  padding-left: 45px;
+  padding-left: 0;
 }
 
 .how-it-works > div:not(:last-child) .icon:after {
@@ -611,12 +623,13 @@ section .container .vert {
   height: 14px;
   position: absolute;
   top: 58px;
-  left: 140px;
-  background: url(../img/steps-arrow-straight.png) no-repeat;
+  left: 150px;
+  background: none;
 }
 
 .how-it-works .item {
   text-align: center;
+  margin-bottom: 45px;
 }
 
 .how-it-works .item .icon {
@@ -652,7 +665,7 @@ section .container .vert {
 
 .sec3 .steps {
   padding: 0 55px;
-  margin: 48px 0;
+  margin-bottom: 18px;
 }
 
 .sec3 .steps .step {
@@ -676,23 +689,33 @@ section .container .vert {
   border-radius: 50%;
 }
 
-.sec3 .steps .step .decsript {
+.sec3 .steps .step .descript {
   margin-left: 18px;
-  width: 270px;
   letter-spacing: 0.6px;
 }
 
-.sec3 .steps .step .decsript h4 {
+.sec3 .steps .step .descript h4 {
   margin-bottom: 5px;
   margin-top: 4px;
   color: #82b4bb;
 }
 
-.sec3 .steps .step .decsript p {
+.sec3 .steps .step .descript p {
   font-family: 'HelveticaNeueUltra';
   font-size: 13px;
   line-height: 1.3em;
   font-weight: 700;
+}
+
+.sec4 {
+  display: table;
+}
+
+.sec4 .bg-wrap {
+  display: table-cell;
+  height: 556px;
+  vertical-align: middle;
+  background: url(../img/about-us-bg.jpg) no-repeat 40%;
 }
 
 .heading {
@@ -711,7 +734,9 @@ section .container .vert {
   color: #86819e;
 }
 
-@media (min-width: 0) {
+/*Very small devices - mobile*/
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   section {
     height: auto;
   }
@@ -732,14 +757,16 @@ section .container .vert {
   }
 }
 
-@media (min-width: 768px) {
+/*Smartphones - iPhone etc.. rotated ipad (portrait)*/
+
+@media (min-width: 752px) {
   section {
     height: auto;
   }
 
   .header-menu {
     width: 730px;
-    margin: 23px -23px;
+    margin: 23px 0;
   }
 
   .header-menu .skills-md,
@@ -751,7 +778,34 @@ section .container .vert {
   .btn-large {
     width: auto;
   }
+
+  .sec2 .profit .item {
+    width: 220px;
+    padding: 10px 5px;
+  }
+
+  .sec2 .profit .item .btn {
+    width: 226px;
+  }
+
+  .sec2 .profit .item .desc {
+    height: 70px;
+  }
+
+  .sec2 .dev-rate {
+    width: 100%;
+  }
+
+  .sec2 .dev-rate .proposal-text {
+    font-size: 25px;
+  }
+
+  .sec3 .steps .step .descript {
+    width: 210px;
+  }
 }
+
+/*Tablets like iPad etc..*/
 
 @media (min-width: 992px) {
   section {
@@ -767,22 +821,64 @@ section .container .vert {
     width: 358.5px;
   }
 
-  .profit div:first-child .item {
+  .sec2 .profit div:first-child .item {
     float: left;
   }
 
-  .profit div:last-child .item {
+  .sec2 .profit div:last-child .item {
     float: right;
   }
 
-  .profit div .item {
+  .sec2 .profit div .item {
     margin: auto;
+    width: 260px;
+    padding: 10px 0;
   }
 
-  .dev-rate .proposal {
+  .sec2 .profit div .item .desc {
+    height: auto;
+  }
+
+  .sec2 .dev-rate {
+    width: inherit;
+  }
+
+  .sec2 .dev-rate .proposal-text {
     font-size: 35px;
   }
+
+  .sec3 .steps .step .descript {
+    width: 270px;
+  }
+
+  .how-it-works > div:nth-child(1) .item {
+    padding-right: 45px;
+  }
+
+  .how-it-works > div:nth-child(2) .item {
+    margin-left: -15px;
+  }
+
+  .how-it-works > div:nth-child(3) .item {
+    margin-right: -15px;
+  }
+
+  .how-it-works > div:nth-child(4) .item {
+    padding-left: 45px;
+  }
+
+  .how-it-works > div:not(:last-child) .icon:after {
+    content: "";
+    width: 111px;
+    height: 14px;
+    position: absolute;
+    top: 58px;
+    left: 140px;
+    background: url(../img/steps-arrow-straight.png) no-repeat;
+  }
 }
+
+/*Large screens 19' + */
 
 @media (min-width: 1200px) {
   .container {
@@ -794,11 +890,28 @@ section .container .vert {
     margin-left: -142px;
   }
 
-  .btn-large {
+  .sec1 .btn-large {
     width: 239px;
   }
 
-  .dev-rate .proposal {
+  .btn-large {
+    width: 290px;
+  }
+
+  .sec2 .dev-rate .proposal-text {
     font-size: 37px;
+  }
+}
+
+/*Laptops with 15' screen and lower*/
+
+@media (max-height: 768px) {
+  /*
+	Vertical alignment ov div.promo-body section 1 
+	compartible with fullpage.js
+	*/
+
+  .promo-body {
+    margin-top: -65px;
   }
 }
