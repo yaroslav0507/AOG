@@ -152,6 +152,7 @@ table {
   padding: 10px 20px;
   color: #FFF;
   font-weight: bold;
+  width: 239px;
 }
 
 .btn:hover {
@@ -231,6 +232,7 @@ h4 {
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 1.1px;
+  text-shadow: 1px 0 0px;
 }
 
 input {
@@ -762,7 +764,7 @@ section .container .vert {
   }
 
   .btn-large {
-    width: 660px;
+    width: 358.5px;
   }
 
   .profit div:first-child .item {
@@ -793,7 +795,7 @@ section .container .vert {
   }
 
   .btn-large {
-    width: auto;
+    width: 239px;
   }
 
   .dev-rate .proposal {

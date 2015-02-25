@@ -1,3 +1,5 @@
+@import 'variables';
+
 @media (min-width: 0) {
 	section{
 		height: auto;
@@ -42,7 +44,7 @@
 		margin: 23px -23px;
 	}
 	.btn-large{
-		width: 660px;
+		width: @btnWidth * 1.5;
 	}
 	.profit{
 		div{
@@ -76,7 +78,7 @@
 		margin-left: -142px;
 	}
 	.btn-large{
-		width: auto;
+		width: @btnWidth;
 	}
 	.dev-rate{
 		.proposal{
