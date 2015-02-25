@@ -24,6 +24,7 @@ gulp.task('less', function(){
     .pipe(less())
     .on('error', console.log)
     .pipe(myth())
+    .pipe(cssmin())
     .pipe(gulp.dest('./public/css/'))
     .pipe(livereload(server));
 })

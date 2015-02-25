@@ -188,7 +188,6 @@ section{
 	}
 	.descript{
 		font-family: 'HelveticaNeueUltra';
-		font-size: 20px;
 		text-transform: uppercase;
 		color: #FFF;
 		letter-spacing: 2px;
@@ -232,6 +231,7 @@ section{
 .profit{
 	.item{
 		width: 260px;
+		margin: auto;
 		text-align: center;
 		.icon{
 			height: 168px;
@@ -278,10 +278,11 @@ section{
 	position: absolute;
 	bottom: -1px;
 	height: @devRate;
-	width: inherit;
+	width: 100%;
 	background: @tSeaBlue;
 	color: #FFF;
 	.proposal{
+		display: inline-block;
 		&:before{
 			content: '';
 			position: absolute;
@@ -303,9 +304,7 @@ section{
 
 	}
 	.offer{
-		width: 240px;
 		padding: 47px 24px;
-		margin-right: 10px;
 		height: inherit;
 		float: right;
 		background: @tLightBlue;
