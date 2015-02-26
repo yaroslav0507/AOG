@@ -20,7 +20,7 @@ gulp.task('bootstrap', function(){
 })
 
 gulp.task('less', function(){
-    gulp.src('./assets/less/*.less')
+    gulp.src('./assets/less/style.less')
     .pipe(less())
     .on('error', console.log)
     .pipe(myth())

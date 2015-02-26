@@ -1,0 +1,487 @@
+@import 'variables';
+@import 'mixins';
+
+
+/*Very small devices - mobile*/
+@media (max-width: 768px){
+	section{
+		min-height: 1137px;
+	}
+	h1{
+		font-size: 38px;
+	}
+	h3{
+		font-size: 29px;
+		font-weight: bold;
+		margin-top: 15px;
+	}
+	.vert{
+		display: block;
+	}
+	.header-menu{
+		width: auto;
+		right: -21px;
+		top: 4px;
+		.skills-md, .profile, .search{
+			display: none;
+		}
+		.actions{
+			width: auto;
+			float: right;
+			ul {
+				li {
+					ul {
+						top: -20px;
+						padding-right: 75px;
+						width: 320px;
+						font-size: 26px;
+							li{
+								a{
+									text-decoration: none;
+									display: inline-block;
+									position: relative;
+									&:hover{
+										&:before{
+											content: "";
+											position: absolute;
+											left: -24px;
+											top: 50%;
+											margin-top: -7px;
+											width: 11px;
+											height: 14px;
+											background: url(../img/icon-menu-arrow.png) no-repeat;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			.menu{
+				position: absolute;
+				background: url(../img/icon-menu-mobile.png) no-repeat;
+				width: 90px;
+				height: 90px;
+			}
+		}
+	}
+	.sec1{
+		.redMarks();
+		background-position: -800px 0;
+		.promo-body{
+			margin-top: 10px;
+			.btn{
+				margin-top: 30px;
+				margin-bottom: 50px;
+			}
+			.promo{
+				font-size: 44px;
+				.descript{
+					font-size: 14px;			
+				}
+			}
+		}
+		.skills-mobile{
+			.fullwidth();
+			width: 100%;
+			height: 470px;
+			position: absolute;
+			top: 325px;
+			background: url(../img/skills-mobile.png) center 173px no-repeat #fff;
+			background-size: 500px;
+			border-top: 15px solid @tLightBlue; 
+			&:before, &:after{
+				box-sizing: border-box;
+							border-top: 15px solid @tLightBlue;
+							top: -15px;
+			}
+			 
+		} 
+		.logo-mobile{ 
+			width: 485px;
+			height: 112px;
+			background: url(../img/logo-retina.png) center no-repeat;
+			margin: 40px auto; 
+			margin-bottom: 30px;
+		}
+		.vert{ 
+			.row{
+				height: 800px;
+			}
+		}
+	}
+	.sec2{
+		.redMarks();
+		.dev-rate{
+			width: 100%;
+			height: 394px;
+			.proposal:before{
+				display: none;
+			}
+			.offer{
+				background: transparent;
+				padding: 25px 0;
+				width: 575px;
+				float: none !important;
+				.head{
+					font-size: 23px;
+					margin-bottom: 14px;
+				}
+				.proposal-text-mobile{
+					text-align: center;
+					font-size: 50px;
+					text-transform: none;
+				}
+				.counter{
+					border: 2px solid #FFF;
+					border-radius: 5px;
+					width: 230px;
+					padding: 10px 0;
+					margin: 22px auto;
+				}
+				&:before{
+					content: '';
+					position: absolute;
+					width: 0;
+					height: 0;
+					left: 47px;
+					top: 0;
+					border-style: solid;
+					border-width: 34px 43.5px 0 43.5px;
+					border-color: #ffffff transparent transparent transparent;
+				}
+			}
+			.btn{
+				width: 375px;
+				padding: 10px;
+			}
+		}
+		.profit{
+			div:first-child .item{
+				width: 485px;
+				float: none;
+				.icon{
+					&.request{
+						background: url(../img/icon-clock-mobile.jpg) no-repeat center;
+						height: 267px;
+						width: 308px;
+						margin: auto;
+					}
+				}
+				.name{
+					font-size: 53px;
+				}
+				.desc{
+					font-size: 32px;
+					font-weight: bold;
+					width: auto;
+
+				}
+			}
+			.btn{
+				width: 100%;
+				padding: 20px;
+				margin: 30px 0;
+				font-size: 32px;
+			}
+		}
+	}
+	.sec3{
+		.redMarks();
+		.steps{
+			display: none;
+		}
+		.heading{
+			margin-top: 20px;
+			margin-bottom: 60px;
+		}
+		.how-it-works{
+			.item{
+				margin-bottom: 0;
+				.icon{
+					width: 180px;
+					height: 184px;	
+					background-size: 100%;
+					margin: 10px auto;				
+				}
+			}
+			> div{
+				position: relative;
+				width: 50%;
+				.step{
+					position: absolute;
+					text-transform: uppercase;
+					font-size: 30px;
+					width: 270px;
+					color: @tLightBlue;
+				}
+				&:nth-child(even){
+					margin-left: 312px;
+					.item{
+						.step{
+							left: -230px;
+							top: 65px;
+						}
+						&:after{
+							position: absolute;
+							left: -90px;
+							bottom: -10px;
+							content: "";
+							width: 150px;
+							height: 84px;
+							background: url(../img/curve-arrows.png) no-repeat 0 -86px;
+						}
+					}
+				}
+				&:nth-child(odd){
+					.item{
+						.step{
+							left: 290px;
+							top: 46px;
+						}
+						&:after{
+							position: absolute;
+							right: -94px;
+							bottom: -13px;
+							content: "";
+							width: 150px;
+							height: 77px;
+							background: url(../img/curve-arrows.png) no-repeat 0 0;
+						}
+					}
+				}
+				&:last-child{
+					.item:after{
+						display: none;
+					}
+				}
+			}
+		}
+		.btn{
+			margin: 20px 0;
+		}
+	}
+	.sec4{
+		height: 320px !important;
+		min-height: 320px;
+		max-height: 320px;
+		.bg-wrap{
+			background: #e8f3f4;
+			height: inherit;
+		}
+
+		.btn{
+			background: #9dcbd2;
+			box-shadow: 3px 5px 0px rgba(0, 0, 0, 0.1);
+			padding: 15px;
+			width: 365px;
+			font-size: 27px;
+		}
+		h3{
+			margin-bottom: 35px;
+			width: 320px;
+			margin: 35px auto;
+			letter-spacing: 1.5px;
+		}
+
+	}
+	.btn{
+	}
+	.btn-large{
+		width: 485px;
+		padding: 25px;
+		font-size: 32px;
+		letter-spacing: 2px;
+		position: relative;
+		z-index: 2;
+	}
+	.heading{
+		margin-top: 5px;
+	}
+}
+/*Smartphones - iPhone etc.. rotated ipad (portrait)*/
+@media (min-width: 768px) and (max-width: 991px) {
+	section{
+		min-height: auto;
+	}
+
+	.header-menu{
+		width: 730px;
+		margin: 23px 0;
+		.skills-md, .profile, .search{
+			display: block;
+		}
+	}
+	.sec1{
+		.promo{
+			font-size: 75px !important;
+			color: #FFF;
+			line-height: 1em;
+			text-transform: uppercase;
+			span{
+				text-transform: none;
+				color: @tPink;
+			}
+		}
+		.descript{
+			font-size: 20px;
+		}		
+	}
+
+	.btn-large{
+		width: auto;
+	}
+	.sec2{
+		.profit{
+			.item{
+				width: 260px;
+				margin: auto;
+				padding: 10px 5px;
+				.btn{ 
+					width: 226px;
+				}
+				.desc{
+					height: 70px;
+				}
+			}
+		}
+		.dev-rate{
+			.proposal-text{
+				font-size: 25px;
+			}
+		}
+	}
+	.sec3{
+		.steps{
+			display: block;
+			.step{
+				.descript{
+					width: 210px;
+				}
+			}
+		}
+	}
+	.dev-rate{
+		.offer{
+			background: @tLightBlue;
+		}
+	}
+}
+/*Tablets like iPad etc..*/
+@media (min-width: 992px) and (max-width: 1199px) {
+	.hidden-sm{
+		display: none;
+	}
+	.header-menu{
+		width: 970px;
+		margin: 23px -23px;
+	}
+	.btn-large{
+		width: @btnWidth * 1.5;
+	}
+	.sec2{
+		.dev-rate{
+			width: inherit;
+			.proposal-text{
+				font-size: 35px;
+			}
+		}
+	}
+	.sec3{
+		.steps{
+			.step{
+				.descript{
+					width: 270px;
+				}
+			}
+		}
+	}
+	.how-it-works{
+		> div{
+			&:nth-child(1){
+			.item{ padding-right: 45px; }
+			}
+			&:nth-child(2){
+				.item{ margin-left: -15px; }
+			}
+			&:nth-child(3){
+				.item{ margin-right: -15px; }
+			}
+			&:nth-child(4){
+				.item{ padding-left: 45px; }
+			} 
+			&:not(:last-child){
+				.icon{
+					&:after{
+						content: "";
+						width: 111px;
+						height: 14px;
+						position: absolute;
+						top: 58px;
+						left: 130px;
+						background: url(../img/steps-arrow-straight.png) no-repeat;
+					}
+				}
+			}
+		}
+	}
+}
+/*Large screens 19' + */
+@media (min-width: 1200px){
+	 .container {
+	    width: 980px !important;
+	 }
+	.header-menu{
+		width: 1182px;
+		margin-left: -142px;
+	}
+	.sec1{
+		.btn-large{
+			width: @btnWidth
+		}
+	}
+	.btn-large{
+		width: 290px;
+	}
+	.sec2{
+		.dev-rate{
+			.proposal-text{
+				font-size: 37px;
+			}
+		}		
+	}
+	.sec3{
+		.how-it-works{
+		> div:not(:last-child){
+				.icon{
+					&:after{
+						content: "";
+						width: 111px;
+						height: 14px;
+						position: absolute;
+						top: 58px;
+						left: 130px;
+						background: url(../img/steps-arrow-straight.png) no-repeat;
+					}
+				}
+			}
+		}
+	}
+
+}
+/*Laptops with 15' screen and lower*/
+@media (max-height: 768px){
+	/*
+	Vertical alignment ov div.promo-body section 1 
+	compartible with fullpage.js
+	*/
+	.promo-body{
+		margin-top: -65px;
+	}
+}
+
+@media (min-width: 768px){
+	.hidden-sm{
+		display: none !important;
+	}
+}
