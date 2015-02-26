@@ -216,10 +216,6 @@ h1 {
   text-transform: uppercase;
 }
 
-b {
-  font-weight: 700;
-}
-
 h3 {
   font-size: 22px;
   font-family: 'HelveticaNeueUltra';
@@ -235,6 +231,14 @@ h4 {
   text-shadow: 1px 0 0px;
 }
 
+b {
+  font-weight: 700;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 input {
   font-family: 'HelveticaNeueUltra';
   font-size: 14px;
@@ -248,6 +252,7 @@ li {
 section {
   height: 100vh;
   min-height: 672px;
+  max-height: 1137px;
   min-width: 640px;
   width: 100%;
   position: relative;
@@ -457,6 +462,12 @@ section .container .vert {
   line-height: 56px;
   background: url(../img/icon-phone.png) 70px center no-repeat;
   margin: 57px 0;
+  display: block;
+}
+
+.sec1 .phone:hover {
+  color: #9dcbd2;
+  opacity: 0.9;
 }
 
 .sec1 .btn {
@@ -661,7 +672,7 @@ section .container .vert {
   height: 14px;
   position: absolute;
   top: 58px;
-  left: 150px;
+  left: 140px;
   background: none;
 }
 
@@ -759,8 +770,64 @@ section .container .vert {
   background: url(../img/about-us-bg.jpg) no-repeat 40%;
 }
 
+.sec4 .about-us h3 {
+  margin-bottom: 35px;
+}
+
+.sec4 .about-us p {
+  font-family: 'HelveticaNeueUltra';
+  text-align: justify;
+  -moz-text-align-last: right;
+  text-align-last: right;
+  margin: auto;
+  margin-bottom: 20px;
+  width: 595px;
+  font-size: 16px;
+  line-height: 1.3em;
+}
+
+.sec4 .read-more .icon {
+  width: 100%;
+  height: 107px;
+  background: url(../img/icon-about-us.png) no-repeat top center;
+  margin-bottom: 20px;
+}
+
+.sec5 .map {
+  width: 466px;
+  height: 313px;
+  margin: 25px auto;
+  position: relative;
+  background: url(../img/map-ukraine.png) no-repeat;
+  display: block;
+}
+
+.sec5 .map .specialist {
+  position: absolute;
+  width: 165px;
+  height: 69px;
+  background: url(../img/freelancer-bg.png) no-repeat;
+}
+
+.sec5 .map .specialist .face {
+  width: 48px;
+  height: 48px;
+  margin-left: -8px;
+  margin-top: -3px;
+}
+
+.sec5 .map .specialist .face img {
+  border: 5px solid #66b4be;
+  border-radius: 50%;
+}
+
+.sec5 .map .specialist:nth-child(1) {
+  top: 57px;
+  left: 70px;
+}
+
 .heading {
-  margin-bottom: 30px;
+  margin-top: 35px;
 }
 
 .lightBlue {
@@ -1083,13 +1150,14 @@ section .container .vert {
 
   .sec3 .how-it-works > div {
     position: relative;
+    width: 50%;
   }
 
   .sec3 .how-it-works > div .step {
     position: absolute;
     text-transform: uppercase;
     font-size: 30px;
-    width: 260px;
+    width: 270px;
     color: #9dcbd2;
   }
 
@@ -1098,7 +1166,7 @@ section .container .vert {
   }
 
   .sec3 .how-it-works > div:nth-child(even) .item .step {
-    left: -190px;
+    left: -230px;
     top: 65px;
   }
 
@@ -1135,6 +1203,32 @@ section .container .vert {
     margin: 20px 0;
   }
 
+  .sec4 {
+    height: 320px !important;
+    min-height: 320px;
+    max-height: 320px;
+  }
+
+  .sec4 .bg-wrap {
+    background: #e8f3f4;
+    height: inherit;
+  }
+
+  .sec4 .btn {
+    background: #9dcbd2;
+    box-shadow: 3px 5px 0px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 365px;
+    font-size: 27px;
+  }
+
+  .sec4 h3 {
+    margin-bottom: 35px;
+    width: 320px;
+    margin: 35px auto;
+    letter-spacing: 1.5px;
+  }
+
   .btn-large {
     width: 485px;
     padding: 25px;
@@ -1142,6 +1236,10 @@ section .container .vert {
     letter-spacing: 2px;
     position: relative;
     z-index: 2;
+  }
+
+  .heading {
+    margin-top: 5px;
   }
 }
 
@@ -1217,6 +1315,10 @@ section .container .vert {
 /*Tablets like iPad etc..*/
 
 @media (min-width: 992px) and (max-width: 1199px) {
+  .hidden-sm {
+    display: none;
+  }
+
   .header-menu {
     width: 970px;
     margin: 23px -23px;
@@ -1260,7 +1362,7 @@ section .container .vert {
     height: 14px;
     position: absolute;
     top: 58px;
-    left: 140px;
+    left: 130px;
     background: url(../img/steps-arrow-straight.png) no-repeat;
   }
 }
@@ -1288,6 +1390,16 @@ section .container .vert {
   .sec2 .dev-rate .proposal-text {
     font-size: 37px;
   }
+
+  .sec3 .how-it-works > div:not(:last-child) .icon:after {
+    content: "";
+    width: 111px;
+    height: 14px;
+    position: absolute;
+    top: 58px;
+    left: 130px;
+    background: url(../img/steps-arrow-straight.png) no-repeat;
+  }
 }
 
 /*Laptops with 15' screen and lower*/
@@ -1305,6 +1417,6 @@ section .container .vert {
 
 @media (min-width: 768px) {
   .hidden-sm {
-    display: none;
+    display: none !important;
   }
 }
