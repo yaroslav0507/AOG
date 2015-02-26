@@ -83,7 +83,7 @@
 		width: 200%;
 		height: inherit;
 		position: absolute;
-		left: -200%;
+		left: -199%;
 		top: 0;
 		background: inherit;
 	}
@@ -92,8 +92,30 @@
 		width: 200%;
 		height: inherit;
 		position: absolute;
-		left: 100%;
+		left: 99%;
 		top:0;
 		background: inherit;
+	}
+}
+.redMarks(){
+	&:after{
+		content: " ";
+		position: absolute;
+		bottom: -1px;
+		right: 0;
+		width: 55px;
+		height: 3px;
+		background: @tPink;
+		z-index: 1;
+	}
+	&:before{
+		content: " ";
+		position: absolute;
+		bottom: -1px;
+		left: 0;
+		width: 55px;
+		height: 3px;
+		background: @tPink;
+		z-index: 1;
 	}
 }
