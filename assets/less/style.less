@@ -1,14 +1,27 @@
 @import 'reset';
 @import 'variables';
-@import 'btns';
 @import 'mixins';
+@import 'btns';
 
 @font-face {
-  font-family: 'Capsula';
-  src: url('../fonts/Capsuula.ttf');
+  font-family: 'Exo';
+  src: url('../fonts/exo/Exo-ExtraLight.otf');
   font-style: normal;
-  font-weight: normal;
+  font-weight: 100;
 }
+@font-face {
+  font-family: 'Exo';
+  src: url('../fonts/exo/Exo-Regular.otf');
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Exo';
+  src: url('../fonts/exo/Exo-Bold.otf');
+  font-style: normal;
+  font-weight: 700;
+}
+
 @font-face {
   font-family: 'HelveticaNeueUltra';
   src: url('../fonts/HelveticaNeueCyr-UltraLight.otf');
@@ -16,33 +29,35 @@
   font-style: normal;
   font-weight: normal;
 }
+
 body,
 html {
   height: 100%;
   color: #5a5a5a;
 }
 body{
-	font-family: 'Capsula', Helvetica, Sans-serif;
-	font-weight: normal;
+	font-family: 'Exo', Helvetica, Sans-serif;
 }
+
 h1{
-	font-size: 50px;
-	font-family: 'Capsula';
-	font-weight: 700;
-	letter-spacing: 1px;
-	line-height: 1.1em;
+	font-size: 43px;
+	font-family: 'Exo', Helvetica, Sans-serif;
+	font-weight: 400;
+	letter-spacing: 1.1px;
+	line-height: 1.3em;
 	text-transform: uppercase;
 }
 h3{
 	font-size: 22px;
-	font-family: 'HelveticaNeueUltra';
+	font-family: 'Open Sans', sans-serif;
 	letter-spacing: 0.03em;
+	font-weight: 100;
 }
 h4{
 	text-transform: uppercase;
-	font-family: 'Capsula';
-	font-size: 18px;
-	font-weight: 400;
+	font-family: 'Exo', Helvetica, Sans-serif;
+	font-size: 16px;
+	font-weight: 100;
 	letter-spacing: 1.1px;
 	text-shadow: 1px 0 0px;
 }
@@ -54,8 +69,11 @@ a{
 		text-decoration: none;
 	}
 }
+p{
+	font-family: Helvetica, Sans-serif;
+}
 input{
-	font-family: 'HelveticaNeueUltra';
+	font-family: 'HelveticaNeueUltra', Helvetica, Sans-serif;
 	font-size: 14px;
 	background: transparent;
 }
@@ -65,7 +83,7 @@ li{
 
 section{
 	height: 100vh;
-	min-height: 662px;
+	min-height: 653px;
 	max-height: 1137px;
 	min-width: 640px;
 	width: 100%;
@@ -108,10 +126,11 @@ section{
 			width: 100%;
 			border: none;
 			outline: none;
-			height: inherit;
+			height: 32px;
+			line-height: 31px;
 			text-align: right;
 			font-size: 16px;
-			letter-spacing: 0.2px;
+			letter-spacing: 1px;
 			padding-right: 65px;
 		}
 		.btn-search{
@@ -170,10 +189,13 @@ section{
 						margin: 0;
 						a{
 							color: #FFF;
-							line-height: 1.3em;
+							line-height: 1.5em;
 							height: inherit;
+							font-size: 13px;
+							font-family: 'Open Sans', Sans-serif, Helvetica;
 						}
 					}
+					transition:all 0.3s ease;
 				}
 			}
 		}
@@ -185,6 +207,7 @@ section{
 	.promo-body{
 		.promo{
 			font-size: 80px;
+			font-weight: 100;
 			color: #FFF;
 			line-height: 1em;
 			text-transform: uppercase;
@@ -233,9 +256,8 @@ section{
 		padding-left: 70px;
 		font-size: 42px;
 		letter-spacing: 2px;
-		font-weight: bold;
 		line-height: 56px;
-		background: url(../img/icon-phone.png) 70px center no-repeat;
+		background: url(../img/icon-phone.png) 50px center no-repeat;
 		margin: 57px 0;
 		display: block;
 		&:hover{
@@ -256,7 +278,7 @@ section{
 			.item{
 				float: left;
 				.desc{
-					width: 210px;
+					width: 200px;
 					margin: 8px auto;
 				}
 				
@@ -273,6 +295,8 @@ section{
 			padding: 10px 0;
 			.desc{
 				height: auto;
+				line-height: 1.22em;
+				font-size: 14px;
 			}
 		}
 	}
@@ -294,13 +318,13 @@ section{
 			}
 		}
 		.name{
-			font-size: 25px;
-			font-family: 'Capsula';
-			font-weight: 700;
+			font-size: 20px;
+			font-family: 'Exo', Helvetica, Sans-serif;
+			font-weight: 400;
 		}
 		.desc{
 			font-size: 16px;
-			font-family: 'HelveticaNeueUltra';
+			font-family: 'Open sans', Helvetica, Sans-serif;
 			margin: 8px 0;
 		}
 		.btn{
@@ -315,9 +339,17 @@ section{
 	/* padding-bottom: @devRate;
 	margin-bottom: -@devRate; */
 	.b-profit{
-		display: table;
 		width: inherit;
-		width: inherit;
+		height: 500px;
+		top: 0;
+		bottom: 25%;
+		left: 0;
+		right: 0;
+		margin: auto;
+		position: absolute;
+	}
+	.heading{
+		margin-bottom: 20px;
 	}
 }
 .dev-rate{
@@ -332,12 +364,13 @@ section{
 	color: #FFF;
 	.proposal{
 		display: inline-block;
+		margin-right: -5px;
 		&:before{
 			content: '';
 			position: absolute;
 			width: 0;
 			height: 0;
-			left: 5px;
+			left: 14px;
 			top:0;
 			border-style: solid;
 			border-width: 34px 43.5px 0 43.5px;
@@ -345,7 +378,7 @@ section{
 		}		
 	}
 	.proposal-text{
-		font-size: 37px;
+		font-size: 27px;
 		color: #FFF;
 		margin-top: 64px;
 		float: left;
@@ -353,16 +386,17 @@ section{
 
 	}
 	.offer{
-		padding: 47px 24px;
+		padding: 47px 20px;
 		height: inherit;
-		float: right;
 		background: @tLightBlue;
 		text-transform: uppercase;
 		text-align: center;
+		width: 235px;
+		margin-right: 10px;
 		.head{
 			font-size: 16px;
 			letter-spacing: 1px;
-			font-family: 'HelveticaNeueUltra';
+			font-family: 'HelveticaNeueUltra', Helvetica, Sans-serif;
 			margin-bottom: 17px;
 			font-weight: 700;
 		}
@@ -375,7 +409,7 @@ section{
 				}
 				.num{
 					font-size: 34px;
-					font-family: 'Capsula';
+					font-family: 'Exo', Helvetica, Sans-serif;
 					padding-bottom: 5px;
 					margin-bottom: 5px;
 					border-bottom: 2px solid #FFF;
@@ -445,16 +479,22 @@ section{
 			}
 		}
 		.step{
-			font-size: 24px;
-			font-weight: 700;
+			font-size: 18px;
+			font-weight: 400;
 			line-height: 1.1em;
-			font-family: 'Capsula';
-			width: 150px;
+			font-family: 'Exo', Helvetica, Sans-serif;
+			width: 160px;
 			margin: auto;
 		}
 	}
 }
 .sec3{
+	.heading{
+		margin-top: 0;
+		h1{
+			line-height: 1em;
+		}
+	}
 	.steps{
 		padding: 0 55px;
 		margin-bottom: 18px;
@@ -479,16 +519,16 @@ section{
 				margin-left: 18px;
 				width: 320px;
 				h4{
-					font-family: 'HelveticaNeueUltra';
 					margin-bottom: 5px;
 					margin-top: 4px;
+					width: 430px;
+					letter-spacing: 0.1px;
 					color: @tSeaBlue;
 				}
 				p{
-					font-family: 'HelveticaNeueUltra';
 					font-size: 13px;
 					line-height: 1.3em;
-					font-weight: 700;
+					font-weight: 400;
 				}
 			}
 		}
@@ -507,15 +547,15 @@ section{
 			margin-bottom: 35px;
 		}
 		p{
-			font-family: 'HelveticaNeueUltra';
 			text-align: justify;
-			-moz-text-align-last: right;
-			text-align-last: right;
+			-moz-text-align-last: center;
+			text-align-last: center;
 			margin: auto;
 			margin-bottom: 20px;
 			width: 595px;
 			font-size: 16px;
 			line-height: 1.3em;
+			color: #85898e;
 		}
 	}
 	.read-more{
@@ -526,16 +566,23 @@ section{
 			margin-bottom: 20px;
 		}
 	}
+	.heading{
+		margin: 0;
+	}
 }
 .sec5{
 	.map{
 		width: 466px;
 		height: 313px;
-		margin: 25px auto;
+		margin: 10px auto;
+		margin-bottom: 30px;
 		position: relative;
 		background: url(../img/map-ukraine.png) no-repeat;
 		display: block;
 		.specialist{
+			> div{
+				float: left;
+			}
 			position: absolute;
 			width: 165px;
 			height: 69px;
@@ -550,15 +597,70 @@ section{
 					border-radius: 50%;
 				}
 			}
+			.info{
+				color: #FFF;
+				width: 105px;
+				margin: 8px 10px;
+				float: left;
+				.name{
+					font-size: 10px;
+					text-transform: uppercase;
+				}
+				.profession,.since{
+					font-size: 10px;
+					font-style: italic;
+					font-family: Helvetica, Sans-serif;
+				}
+				.since{
+					border-top: 1px solid #FFF;
+					margin-top: 2px;
+					padding-top: 2px;
+				}
+			}
 			&:nth-child(1){
 				top: 57px;
 				left: 70px;
 			}
+			&:nth-child(2){
+				top: 44px;
+				left: 350px;
+			}
+			&:nth-child(3){
+				top: 131px;
+				left: 234px;
+			}
+			&:nth-child(4){
+				top: 193px;
+				left: 44px;
+				background-position: 0 -68px;
+				> div{
+					float: right;
+					text-align: right;
+				}
+			}
 		}
+	}
+	blockquote{
+		font-size: 16px;
+		font-family: 'Open sans', Helvetica, Sans-serif;
+		color: #ff8e8e;
+		line-height: 1.3em;
+		font-weight: 100;
+		border-top: 2px solid #9dcbd2;
+		padding: 15px 0;
+		width: 190px;
+		margin: auto;
+		height: 160px;
+	}
+	.author{
+		font-family: Helvetica, Sans-serif;
+		font-style: italic;
+		margin: 15px 0;
+		font-size: 13px;
 	}
 }
 .heading{
-	margin: 35px 0;
+	margin-bottom: 35px;
 }
 .lightBlue{
 	color: @tLightBlue;

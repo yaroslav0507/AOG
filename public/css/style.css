@@ -135,6 +135,8 @@ table {
   border-spacing: 0;
 }
 
+/*Less mixins*/
+
 .btn-search {
   width: 19px;
   height: 19px;
@@ -146,13 +148,13 @@ table {
   outline: none;
   border-radius: 5px;
   text-transform: uppercase;
-  font-family: 'HelveticaNeueUltra';
+  font-family: 'EXO', Helvetica, Sans-serif;
   font-size: 17px;
   letter-spacing: 1px;
   padding: 10px 20px;
   color: #FFF;
-  font-weight: bold;
-  width: 239px;
+  font-weight: 400;
+  width: 279px;
 }
 
 .btn:hover {
@@ -163,12 +165,24 @@ table {
   background: #9dcbd2;
 }
 
+.btn-blue:hover {
+  background: #a7d1d7;
+}
+
 .btn-violet {
   background: #86819e;
 }
 
+.btn-violet:hover {
+  background: #8e8aa5;
+}
+
 .btn-pink {
   background: #ff8e8e;
+}
+
+.btn-pink:hover {
+  background: #ff9d9d;
 }
 
 .btn-shadow {
@@ -179,13 +193,25 @@ table {
   margin: 0 0 0 0;
 }
 
-/*Less mixins*/
+@font-face {
+  font-family: 'Exo';
+  src: url('../fonts/exo/Exo-ExtraLight.otf');
+  font-style: normal;
+  font-weight: 100;
+}
 
 @font-face {
-  font-family: 'Capsula';
-  src: url('../fonts/Capsuula.ttf');
+  font-family: 'Exo';
+  src: url('../fonts/exo/Exo-Regular.otf');
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Exo';
+  src: url('../fonts/exo/Exo-Bold.otf');
+  font-style: normal;
+  font-weight: 700;
 }
 
 @font-face {
@@ -203,30 +229,30 @@ html {
 }
 
 body {
-  font-family: 'Capsula', Helvetica, Sans-serif;
-  font-weight: normal;
+  font-family: 'Exo', Helvetica, Sans-serif;
 }
 
 h1 {
-  font-size: 50px;
-  font-family: 'Capsula';
-  font-weight: 700;
-  letter-spacing: 1px;
-  line-height: 1.1em;
+  font-size: 43px;
+  font-family: 'Exo', Helvetica, Sans-serif;
+  font-weight: 400;
+  letter-spacing: 1.1px;
+  line-height: 1.3em;
   text-transform: uppercase;
 }
 
 h3 {
   font-size: 22px;
-  font-family: 'HelveticaNeueUltra';
+  font-family: 'Open Sans', sans-serif;
   letter-spacing: 0.03em;
+  font-weight: 100;
 }
 
 h4 {
   text-transform: uppercase;
-  font-family: 'Capsula';
-  font-size: 18px;
-  font-weight: 400;
+  font-family: 'Exo', Helvetica, Sans-serif;
+  font-size: 16px;
+  font-weight: 100;
   letter-spacing: 1.1px;
   text-shadow: 1px 0 0px;
 }
@@ -239,8 +265,12 @@ a:hover {
   text-decoration: none;
 }
 
+p {
+  font-family: Helvetica, Sans-serif;
+}
+
 input {
-  font-family: 'HelveticaNeueUltra';
+  font-family: 'HelveticaNeueUltra', Helvetica, Sans-serif;
   font-size: 14px;
   background: transparent;
 }
@@ -251,7 +281,7 @@ li {
 
 section {
   height: 100vh;
-  min-height: 662px;
+  min-height: 653px;
   max-height: 1137px;
   min-width: 640px;
   width: 100%;
@@ -303,10 +333,11 @@ section .container .vert {
   width: 100%;
   border: none;
   outline: none;
-  height: inherit;
+  height: 32px;
+  line-height: 31px;
   text-align: right;
   font-size: 16px;
-  letter-spacing: 0.2px;
+  letter-spacing: 1px;
   padding-right: 65px;
 }
 
@@ -370,6 +401,7 @@ section .container .vert {
   position: absolute;
   right: 0;
   width: 100px;
+  transition: all 0.3s ease;
 }
 
 .header-menu .actions > ul > li ul li {
@@ -379,8 +411,10 @@ section .container .vert {
 
 .header-menu .actions > ul > li ul li a {
   color: #FFF;
-  line-height: 1.3em;
+  line-height: 1.5em;
   height: inherit;
+  font-size: 13px;
+  font-family: 'Open Sans', Sans-serif, Helvetica;
 }
 
 .sec1 {
@@ -390,6 +424,7 @@ section .container .vert {
 
 .sec1 .promo-body .promo {
   font-size: 80px;
+  font-weight: 100;
   color: #FFF;
   line-height: 1em;
   text-transform: uppercase;
@@ -458,9 +493,8 @@ section .container .vert {
   padding-left: 70px;
   font-size: 42px;
   letter-spacing: 2px;
-  font-weight: bold;
   line-height: 56px;
-  background: url(../img/icon-phone.png) 70px center no-repeat;
+  background: url(../img/icon-phone.png) 50px center no-repeat;
   margin: 57px 0;
   display: block;
 }
@@ -483,7 +517,7 @@ section .container .vert {
 }
 
 .profit div:first-child .item .desc {
-  width: 210px;
+  width: 200px;
   margin: 8px auto;
 }
 
@@ -499,6 +533,8 @@ section .container .vert {
 
 .profit div .item .desc {
   height: auto;
+  line-height: 1.22em;
+  font-size: 14px;
 }
 
 .profit .item {
@@ -525,14 +561,14 @@ section .container .vert {
 }
 
 .profit .item .name {
-  font-size: 25px;
-  font-family: 'Capsula';
-  font-weight: 700;
+  font-size: 20px;
+  font-family: 'Exo', Helvetica, Sans-serif;
+  font-weight: 400;
 }
 
 .profit .item .desc {
   font-size: 16px;
-  font-family: 'HelveticaNeueUltra';
+  font-family: 'Open sans', Helvetica, Sans-serif;
   margin: 8px 0;
 }
 
@@ -547,8 +583,18 @@ section .container .vert {
 }
 
 .sec2 .b-profit {
-  display: table;
   width: inherit;
+  height: 500px;
+  top: 0;
+  bottom: 25%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+}
+
+.sec2 .heading {
+  margin-bottom: 20px;
 }
 
 .dev-rate {
@@ -584,6 +630,7 @@ section .container .vert {
 
 .dev-rate .proposal {
   display: inline-block;
+  margin-right: -5px;
 }
 
 .dev-rate .proposal:before {
@@ -591,7 +638,7 @@ section .container .vert {
   position: absolute;
   width: 0;
   height: 0;
-  left: 5px;
+  left: 14px;
   top: 0;
   border-style: solid;
   border-width: 34px 43.5px 0 43.5px;
@@ -599,7 +646,7 @@ section .container .vert {
 }
 
 .dev-rate .proposal-text {
-  font-size: 37px;
+  font-size: 27px;
   color: #FFF;
   margin-top: 64px;
   float: left;
@@ -607,18 +654,19 @@ section .container .vert {
 }
 
 .dev-rate .offer {
-  padding: 47px 24px;
+  padding: 47px 20px;
   height: inherit;
-  float: right;
   background: #9dcbd2;
   text-transform: uppercase;
   text-align: center;
+  width: 235px;
+  margin-right: 10px;
 }
 
 .dev-rate .offer .head {
   font-size: 16px;
   letter-spacing: 1px;
-  font-family: 'HelveticaNeueUltra';
+  font-family: 'HelveticaNeueUltra', Helvetica, Sans-serif;
   margin-bottom: 17px;
   font-weight: 700;
 }
@@ -634,7 +682,7 @@ section .container .vert {
 
 .dev-rate .offer ul li .num {
   font-size: 34px;
-  font-family: 'Capsula';
+  font-family: 'Exo', Helvetica, Sans-serif;
   padding-bottom: 5px;
   margin-bottom: 5px;
   border-bottom: 2px solid #FFF;
@@ -706,12 +754,20 @@ section .container .vert {
 }
 
 .how-it-works .item .step {
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 400;
   line-height: 1.1em;
-  font-family: 'Capsula';
-  width: 150px;
+  font-family: 'Exo', Helvetica, Sans-serif;
+  width: 160px;
   margin: auto;
+}
+
+.sec3 .heading {
+  margin-top: 0;
+}
+
+.sec3 .heading h1 {
+  line-height: 1em;
 }
 
 .sec3 .steps {
@@ -746,17 +802,17 @@ section .container .vert {
 }
 
 .sec3 .steps .step .descript h4 {
-  font-family: 'HelveticaNeueUltra';
   margin-bottom: 5px;
   margin-top: 4px;
+  width: 430px;
+  letter-spacing: 0.1px;
   color: #82b4bb;
 }
 
 .sec3 .steps .step .descript p {
-  font-family: 'HelveticaNeueUltra';
   font-size: 13px;
   line-height: 1.3em;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .sec4 {
@@ -775,15 +831,15 @@ section .container .vert {
 }
 
 .sec4 .about-us p {
-  font-family: 'HelveticaNeueUltra';
   text-align: justify;
-  -moz-text-align-last: right;
-  text-align-last: right;
+  -moz-text-align-last: center;
+  text-align-last: center;
   margin: auto;
   margin-bottom: 20px;
   width: 595px;
   font-size: 16px;
   line-height: 1.3em;
+  color: #85898e;
 }
 
 .sec4 .read-more .icon {
@@ -793,10 +849,15 @@ section .container .vert {
   margin-bottom: 20px;
 }
 
+.sec4 .heading {
+  margin: 0;
+}
+
 .sec5 .map {
   width: 466px;
   height: 313px;
-  margin: 25px auto;
+  margin: 10px auto;
+  margin-bottom: 30px;
   position: relative;
   background: url(../img/map-ukraine.png) no-repeat;
   display: block;
@@ -807,6 +868,10 @@ section .container .vert {
   width: 165px;
   height: 69px;
   background: url(../img/freelancer-bg.png) no-repeat;
+}
+
+.sec5 .map .specialist > div {
+  float: left;
 }
 
 .sec5 .map .specialist .face {
@@ -821,13 +886,79 @@ section .container .vert {
   border-radius: 50%;
 }
 
+.sec5 .map .specialist .info {
+  color: #FFF;
+  width: 105px;
+  margin: 8px 10px;
+  float: left;
+}
+
+.sec5 .map .specialist .info .name {
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.sec5 .map .specialist .info .profession,
+.sec5 .map .specialist .info .since {
+  font-size: 10px;
+  font-style: italic;
+  font-family: Helvetica, Sans-serif;
+}
+
+.sec5 .map .specialist .info .since {
+  border-top: 1px solid #FFF;
+  margin-top: 2px;
+  padding-top: 2px;
+}
+
 .sec5 .map .specialist:nth-child(1) {
   top: 57px;
   left: 70px;
 }
 
+.sec5 .map .specialist:nth-child(2) {
+  top: 44px;
+  left: 350px;
+}
+
+.sec5 .map .specialist:nth-child(3) {
+  top: 131px;
+  left: 234px;
+}
+
+.sec5 .map .specialist:nth-child(4) {
+  top: 193px;
+  left: 44px;
+  background-position: 0 -68px;
+}
+
+.sec5 .map .specialist:nth-child(4) > div {
+  float: right;
+  text-align: right;
+}
+
+.sec5 blockquote {
+  font-size: 16px;
+  font-family: 'Open sans', Helvetica, Sans-serif;
+  color: #ff8e8e;
+  line-height: 1.3em;
+  font-weight: 100;
+  border-top: 2px solid #9dcbd2;
+  padding: 15px 0;
+  width: 190px;
+  margin: auto;
+  height: 160px;
+}
+
+.sec5 .author {
+  font-family: Helvetica, Sans-serif;
+  font-style: italic;
+  margin: 15px 0;
+  font-size: 13px;
+}
+
 .heading {
-  margin: 35px 0;
+  margin-bottom: 35px;
 }
 
 .lightBlue {
@@ -850,13 +981,13 @@ section .container .vert {
   }
 
   h1 {
-    font-size: 38px;
+    font-size: 29px;
+    font-weight: 700;
   }
 
   h3 {
-    font-size: 29px;
-    font-weight: bold;
-    margin-top: 15px;
+    font-size: 26px;
+    margin-top: 10px;
   }
 
   .vert {
@@ -1048,7 +1179,8 @@ section .container .vert {
 
   .sec2 .dev-rate .offer .proposal-text-mobile {
     text-align: center;
-    font-size: 50px;
+    font-size: 38px;
+    line-height: 1.3em;
     text-transform: none;
   }
 
@@ -1077,6 +1209,11 @@ section .container .vert {
     padding: 10px;
   }
 
+  .sec2 .b-profit {
+    width: 495px;
+    height: 740px;
+  }
+
   .sec2 .profit div:first-child .item {
     width: 485px;
     float: none;
@@ -1090,19 +1227,19 @@ section .container .vert {
   }
 
   .sec2 .profit div:first-child .item .name {
-    font-size: 53px;
+    font-size: 40px;
   }
 
   .sec2 .profit div:first-child .item .desc {
-    font-size: 32px;
-    font-weight: bold;
+    font-size: 28px;
+    font-weight: 100;
     width: auto;
   }
 
   .sec2 .profit .btn {
     width: 100%;
     padding: 20px;
-    margin: 30px 0;
+    margin: 23px 0;
     font-size: 32px;
   }
 
@@ -1156,7 +1293,7 @@ section .container .vert {
   .sec3 .how-it-works > div .step {
     position: absolute;
     text-transform: uppercase;
-    font-size: 30px;
+    font-size: 24px;
     width: 270px;
     color: #9dcbd2;
   }
@@ -1229,6 +1366,16 @@ section .container .vert {
     letter-spacing: 1.5px;
   }
 
+  .sec5 {
+    height: 458px !important;
+    min-height: 458px;
+    max-height: 458px;
+  }
+
+  .sec5 h3 {
+    width: 350px;
+  }
+
   .btn-large {
     width: 485px;
     padding: 25px;
@@ -1239,7 +1386,7 @@ section .container .vert {
   }
 
   .heading {
-    margin-top: 5px;
+    margin-top: 0;
   }
 }
 
@@ -1262,7 +1409,7 @@ section .container .vert {
   }
 
   .sec1 .promo {
-    font-size: 75px !important;
+    font-size: 75px;
     color: #FFF;
     line-height: 1em;
     text-transform: uppercase;
@@ -1282,7 +1429,7 @@ section .container .vert {
   }
 
   .sec2 .profit .item {
-    width: 260px;
+    width: 230px;
     margin: auto;
     padding: 10px 5px;
   }
@@ -1291,12 +1438,25 @@ section .container .vert {
     width: 226px;
   }
 
+  .sec2 .profit .item .name {
+    font-size: 23px;
+  }
+
   .sec2 .profit .item .desc {
     height: 70px;
   }
 
+  .sec2 .dev-rate {
+    height: 150px;
+  }
+
   .sec2 .dev-rate .proposal-text {
     font-size: 25px;
+    margin-top: 40px;
+  }
+
+  .sec2 .dev-rate .offer {
+    padding-top: 37px;
   }
 
   .sec3 .steps {
@@ -1325,7 +1485,7 @@ section .container .vert {
   }
 
   .btn-large {
-    width: 358.5px;
+    width: 418.5px;
   }
 
   .sec2 .dev-rate {
@@ -1333,7 +1493,9 @@ section .container .vert {
   }
 
   .sec2 .dev-rate .proposal-text {
-    font-size: 35px;
+    font-size: 26px;
+    margin-right: -5px;
+    line-height: 1.3em;
   }
 
   .sec3 .steps .step .descript {
@@ -1380,7 +1542,7 @@ section .container .vert {
   }
 
   .sec1 .btn-large {
-    width: 239px;
+    width: 279px;
   }
 
   .btn-large {
@@ -1388,7 +1550,7 @@ section .container .vert {
   }
 
   .sec2 .dev-rate .proposal-text {
-    font-size: 37px;
+    font-size: 27px;
   }
 
   .sec3 .how-it-works > div:not(:last-child) .icon:after {
@@ -1404,14 +1566,18 @@ section .container .vert {
 
 /*Laptops with 15' screen and lower*/
 
-@media (max-height: 768px) {
+@media (max-height: 768px) and (min-width: 768px) {
   /*
 	Vertical alignment ov div.promo-body section 1 
 	compartible with fullpage.js
 	*/
 
-  .promo-body {
+  .sec1 .promo-body {
     margin-top: -65px;
+  }
+
+  .sec1 .promo-body .promo {
+    font-size: 60px;
   }
 
   .heading {

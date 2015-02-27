@@ -8,12 +8,12 @@
 		min-height: 1137px;
 	}
 	h1{
-		font-size: 38px;
+		font-size: 29px;
+		font-weight: 700;
 	}
 	h3{
-		font-size: 29px;
-		font-weight: bold;
-		margin-top: 15px;
+		font-size: 26px;
+		margin-top: 10px;
 	}
 	.vert{
 		display: block;
@@ -129,7 +129,8 @@
 				}
 				.proposal-text-mobile{
 					text-align: center;
-					font-size: 50px;
+					font-size: 38px;
+					line-height: 1.3em;
 					text-transform: none;
 				}
 				.counter{
@@ -156,6 +157,10 @@
 				padding: 10px;
 			}
 		}
+		.b-profit{
+			width: 495px;
+			height: 740px;
+		}
 		.profit{
 			div:first-child .item{
 				width: 485px;
@@ -169,11 +174,11 @@
 					}
 				}
 				.name{
-					font-size: 53px;
+					font-size: 40px;
 				}
 				.desc{
-					font-size: 32px;
-					font-weight: bold;
+					font-size: 28px;
+					font-weight: 100;
 					width: auto;
 
 				}
@@ -181,7 +186,7 @@
 			.btn{
 				width: 100%;
 				padding: 20px;
-				margin: 30px 0;
+				margin: 23px 0;
 				font-size: 32px;
 			}
 		}
@@ -211,7 +216,7 @@
 				.step{
 					position: absolute;
 					text-transform: uppercase;
-					font-size: 30px;
+					font-size: 24px;
 					width: 270px;
 					color: @tLightBlue;
 				}
@@ -285,6 +290,14 @@
 		}
 
 	}
+	.sec5{
+		height: 458px !important;
+		min-height: 458px;
+		max-height: 458px;
+		h3{
+			width: 350px;
+		}
+	}
 	.btn{
 	}
 	.btn-large{
@@ -296,7 +309,7 @@
 		z-index: 2;
 	}
 	.heading{
-		margin-top: 5px;
+		margin-top: 0;
 	}
 }
 /*Smartphones - iPhone etc.. rotated ipad (portrait)*/
@@ -314,7 +327,7 @@
 	}
 	.sec1{
 		.promo{
-			font-size: 75px !important;
+			font-size: 75px;
 			color: #FFF;
 			line-height: 1em;
 			text-transform: uppercase;
@@ -334,11 +347,14 @@
 	.sec2{
 		.profit{
 			.item{
-				width: 260px;
+				width: 230px;
 				margin: auto;
 				padding: 10px 5px;
 				.btn{ 
 					width: 226px;
+				}
+				.name{
+					font-size: 23px;
 				}
 				.desc{
 					height: 70px;
@@ -348,7 +364,12 @@
 		.dev-rate{
 			.proposal-text{
 				font-size: 25px;
+				margin-top: 40px;
 			}
+			.offer {
+				padding-top: 37px;
+			}
+			height: 150px;
 		}
 	}
 	.sec3{
@@ -383,7 +404,9 @@
 		.dev-rate{
 			width: inherit;
 			.proposal-text{
-				font-size: 35px;
+				font-size: 26px;
+				margin-right: -5px;
+				line-height: 1.3em;
 			}
 		}
 	}
@@ -446,7 +469,7 @@
 	.sec2{
 		.dev-rate{
 			.proposal-text{
-				font-size: 37px;
+				font-size: 27px;
 			}
 		}		
 	}
@@ -470,13 +493,18 @@
 
 }
 /*Laptops with 15' screen and lower*/
-@media (max-height: 768px){
+@media (max-height: 768px) and (min-width: 768px){
 	/*
 	Vertical alignment ov div.promo-body section 1 
 	compartible with fullpage.js
 	*/
-	.promo-body{
-		margin-top: -65px;
+	.sec1{
+		.promo-body{
+			margin-top: -65px;
+			.promo{
+				font-size: 60px;
+			}
+		}
 	}
 	.heading{
 		margin: 0;
