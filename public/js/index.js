@@ -1935,16 +1935,8 @@
 })(jQuery);
 
 $(function(){
-function detectmob() { 
-		 if( navigator.userAgent.match(/Android/i)
-		 || navigator.userAgent.match(/webOS/i)
-		 || navigator.userAgent.match(/iPhone/i)
-		 || navigator.userAgent.match(/iPad/i)
-		 || navigator.userAgent.match(/iPod/i)
-		 || navigator.userAgent.match(/BlackBerry/i)
-		 || navigator.userAgent.match(/Windows Phone/i)
-		 ){	
-		    $('#fullpage').fullpage({
+	function mobile(){
+		$('#fullpage').fullpage({
 		        //Navigation
 		        anchors:['first', 'second', 'third', 'fourth', 'fifth', 'footer'],
 		        menu: '#slideMenu',
@@ -1993,10 +1985,9 @@ function detectmob() {
 		        afterSlideLoad: function(anchorLink, index, slideAnchor){},
 		        onSlideLeave: function(anchorLink, index, slideIndex, direction){}
 		    });
-
-		  }
-		 else {
-		   $('#fullpage').fullpage({
+	}
+	function desktop(){
+		$('#fullpage').fullpage({
 		        //Navigation
 		        anchors:['first', 'second', 'third', 'fourth', 'fifth'],
 		        menu: '#slideMenu',
@@ -2044,7 +2035,29 @@ function detectmob() {
 		        afterResize: function(){},
 		        afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex, menuLinks){},
 		        onSlideLeave: function(anchorLink, index, slideIndex, direction){}
-		    });
+		});
+	}
+	function screenSize(){
+    	if($(window).height() <= 652){
+			mobile();
+		}
+		else{
+			desktop();
+		}
+	}
+function detectmob() { 
+		 if( navigator.userAgent.match(/Android/i)
+		 || navigator.userAgent.match(/webOS/i)
+		 || navigator.userAgent.match(/iPhone/i)
+		 || navigator.userAgent.match(/iPad/i)
+		 || navigator.userAgent.match(/iPod/i)
+		 || navigator.userAgent.match(/BlackBerry/i)
+		 || navigator.userAgent.match(/Windows Phone/i)
+		 ){	
+			mobile();
+		  }
+		 else {
+			screenSize();
 		  }
 		}
 	    detectmob();
@@ -2069,7 +2082,7 @@ function detectmob() {
 
 	function init(){
 		secHeight();
-		bProfit();
+		//bProfit();
 	}
 	$(window).resize(init).on( "orientationchange", function(){
 		init();
