@@ -608,6 +608,10 @@ section .container .vert {
   color: #FFF;
 }
 
+.dev-rate .row {
+  height: inherit;
+}
+
 .dev-rate:before {
   content: "";
   width: 200%;
@@ -654,13 +658,18 @@ section .container .vert {
 }
 
 .dev-rate .offer {
-  padding: 47px 20px;
-  height: inherit;
   background: #9dcbd2;
+  height: 100%;
   text-transform: uppercase;
   text-align: center;
   width: 235px;
   margin-right: 10px;
+  padding: 0 22px;
+}
+
+.dev-rate .offer .offer-body {
+  display: table;
+  height: 100%;
 }
 
 .dev-rate .offer .head {
@@ -763,7 +772,7 @@ section .container .vert {
 }
 
 .sec3 .heading {
-  margin-top: 0;
+  margin-bottom: 25px;
 }
 
 .sec3 .heading h1 {
@@ -957,20 +966,16 @@ section .container .vert {
   font-size: 13px;
 }
 
-.sec6 .heading {
-  margin-bottom: 45px;
-}
-
-.sec6 .technologies {
+.technologies {
   padding-left: 25px;
   margin-right: -65px;
 }
 
-.sec6 .technologies > div {
+.technologies > div {
   padding: 0;
 }
 
-.sec6 .technologies ul:before {
+.technologies ul:before {
   content: '';
   position: absolute;
   height: 40px;
@@ -980,7 +985,7 @@ section .container .vert {
   top: -5px;
 }
 
-.sec6 .technologies ul li {
+.technologies ul li {
   font-size: 16px;
   font-family: 'Open sans', Helvetica, Sans-serif;
   line-height: 1.4em;
@@ -988,11 +993,15 @@ section .container .vert {
   position: relative;
 }
 
+.sec6 .heading {
+  margin-bottom: 45px;
+}
+
 .sec6 .j-tech {
   width: inherit;
   height: 450px;
   top: 0;
-  bottom: 35%;
+  bottom: 25%;
   left: 0;
   right: 0;
   margin: auto;
@@ -1001,7 +1010,6 @@ section .container .vert {
 
 footer {
   height: 182px;
-  width: 1185px;
   margin: auto;
   background: #82b4bb;
   color: #FFF;
@@ -1039,6 +1047,7 @@ footer a {
 
 footer a:hover {
   color: inherit;
+  text-decoration: underline;
 }
 
 footer .contacts {
@@ -1046,8 +1055,13 @@ footer .contacts {
   position: absolute;
   top: 0;
   bottom: 0;
-  margin: auto;
+  margin: auto 280px auto 50px;
   text-transform: uppercase;
+}
+
+footer .contacts .contacts-group {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 footer .contacts .item {
@@ -1071,7 +1085,7 @@ footer .contacts .info,
 footer .contacts .social {
   font-size: 12px;
   line-height: 1.4em;
-  margin-right: 56px;
+  margin-right: 25px;
 }
 
 footer .contacts .tel,
@@ -1111,6 +1125,7 @@ footer .request {
 footer .request h4 {
   font-size: 14px;
   margin-top: 6px;
+  font-family: 'Open sans', Helvetica, Sans-serif;
 }
 
 footer .request .btn {
@@ -1134,8 +1149,13 @@ footer .request .social-links ul li:not(:last-child) {
 footer .request .social-links ul li a {
   display: block;
   width: 31px;
-  height: 32px;
+  height: 31px;
+  border-radius: 50%;
   background: url(../img/sprite-social.png) no-repeat;
+}
+
+footer .request .social-links ul li a:hover {
+  box-shadow: 0 0 3px #FFF;
 }
 
 footer .request .social-links ul li a.fb {
@@ -1184,6 +1204,7 @@ footer .request .social-links ul li a.in {
 
   h3 {
     font-size: 26px;
+    margin: auto;
     margin-top: 10px;
   }
 
@@ -1386,7 +1407,8 @@ footer .request .social-links ul li a.in {
     border-radius: 5px;
     width: 230px;
     padding: 10px 0;
-    margin: 22px auto;
+    margin: 55px auto;
+    margin-top: 10px;
   }
 
   .sec2 .dev-rate .offer:before {
@@ -1564,13 +1586,68 @@ footer .request .social-links ul li a.in {
   }
 
   .sec5 {
-    height: 458px !important;
-    min-height: 458px;
-    max-height: 458px;
+    height: 768px !important;
+    min-height: 768px;
+    max-height: 768px;
   }
 
   .sec5 h3 {
     width: 350px;
+  }
+
+  .sec5 blockquote {
+    width: 485px;
+    height: 125px;
+    border: none;
+    position: relative;
+    font-size: 25px;
+    font-weight: 400;
+  }
+
+  .sec5 blockquote:before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    width: 250px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #9dcbd2;
+  }
+
+  .sec5 blockquote:after {
+    content: "";
+    position: absolute;
+    bottom: -47px;
+    width: 250px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #9dcbd2;
+  }
+
+  .sec5 .author {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 60px;
+  }
+
+  .sec5 .heading-tech {
+    margin-top: 78px;
+  }
+
+  .sec5 .technologies ul li {
+    font-size: 21px;
+  }
+
+  .sec5 .btn {
+    box-shadow: 3px 5px 0px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 365px;
+    font-size: 27px;
+    margin-top: 45px;
   }
 
   .btn-large {
@@ -1650,6 +1727,7 @@ footer .request .social-links ul li a.in {
   .sec2 .dev-rate .proposal-text {
     font-size: 25px;
     margin-top: 40px;
+    line-height: 1.4em;
   }
 
   .sec2 .dev-rate .offer {
@@ -1662,6 +1740,44 @@ footer .request .social-links ul li a.in {
 
   .sec3 .steps .step .descript {
     width: 210px;
+  }
+
+  .sec6 .technologies ul li {
+    font-size: 14px;
+  }
+
+  footer .contacts {
+    height: 115px;
+    margin: auto 160px auto 100px;
+  }
+
+  footer .contacts .contacts-group {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 15px;
+  }
+
+  footer .contacts .contacts-group .item {
+    width: 230px;
+    margin-right: 23px;
+  }
+
+  footer .request {
+    width: 256px;
+    right: 40px;
+  }
+
+  footer .request .btn {
+    margin: 18px 0;
+    background: #ff8e8e;
+  }
+
+  footer .request .btn:hover {
+    background: #ff9d9d;
+  }
+
+  footer .request .social-links ul li a {
+    background: url(../img/sprite-social-tablet.png) no-repeat;
   }
 
   .dev-rate .offer {
@@ -1681,8 +1797,9 @@ footer .request .social-links ul li a.in {
     margin: 23px -23px;
   }
 
-  .btn-large {
-    width: 418.5px;
+  .btn-large,
+  .dev-rate .btn-large {
+    width: 330px;
   }
 
   .sec2 .dev-rate {
@@ -1695,8 +1812,31 @@ footer .request .social-links ul li a.in {
     line-height: 1.3em;
   }
 
+  .sec2 .dev-rate .offer {
+    padding-top: 10px;
+  }
+
+  .sec2 .dev-rate .offer .counter {
+    border: 1px solid #FFF;
+    border-radius: 5px;
+    padding: 10px;
+    margin: -10px;
+  }
+
   .sec3 .steps .step .descript {
     width: 270px;
+  }
+
+  .sec4 .bg-wrap {
+    background-size: cover;
+  }
+
+  .sec6 .technologies {
+    padding-left: 50px;
+  }
+
+  .sec6 .technologies ul li {
+    font-size: 14px;
   }
 
   .how-it-works > div:nth-child(1) .item {
@@ -1723,6 +1863,40 @@ footer .request .social-links ul li a.in {
     top: 58px;
     left: 130px;
     background: url(../img/steps-arrow-straight.png) no-repeat;
+  }
+
+  footer .contacts {
+    height: 115px;
+    margin: auto 280px auto 100px;
+  }
+
+  footer .contacts .contacts-group {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 15px;
+  }
+
+  footer .contacts .contacts-group .item {
+    width: 230px;
+    margin-right: 23px;
+  }
+
+  footer .request {
+    width: 256px;
+    right: 135px;
+  }
+
+  footer .request .btn {
+    margin: 18px 0;
+    background: #ff8e8e;
+  }
+
+  footer .request .btn:hover {
+    background: #ff9d9d;
+  }
+
+  footer .request .social-links ul li a {
+    background: url(../img/sprite-social-tablet.png) no-repeat;
   }
 }
 
@@ -1758,6 +1932,19 @@ footer .request .social-links ul li a.in {
     top: 58px;
     left: 130px;
     background: url(../img/steps-arrow-straight.png) no-repeat;
+  }
+
+  footer {
+    width: 1185px;
+  }
+
+  footer .contacts {
+    margin: auto;
+  }
+
+  footer .contacts .info,
+  footer .contacts .social {
+    margin-right: 56px;
   }
 }
 

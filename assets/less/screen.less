@@ -13,6 +13,7 @@
 	}
 	h3{
 		font-size: 26px;
+		margin: auto;
 		margin-top: 10px;
 	}
 	.vert{
@@ -138,7 +139,8 @@
 					border-radius: 5px;
 					width: 230px;
 					padding: 10px 0;
-					margin: 22px auto;
+					margin: 55px auto;
+					margin-top: 10px;
 				}
 				&:before{
 					content: '';
@@ -291,11 +293,61 @@
 
 	}
 	.sec5{
-		height: 458px !important;
-		min-height: 458px;
-		max-height: 458px;
+		height: 768px !important;
+		min-height: 768px;
+		max-height: 768px;
 		h3{
 			width: 350px;
+		}
+		blockquote{
+			width: 485px;
+			height: 125px;
+			border: none;
+			position: relative;
+			font-size: 25px;
+			font-weight: 400;
+			&:before{
+				content: "";
+				position: absolute;
+				top:-10px;
+				width: 250px;
+				margin: auto;
+				left:0;
+				right: 0;
+				height: 3px;
+				background: @tLightBlue;
+			}
+			&:after{
+				content: "";
+				position: absolute;
+				bottom: -47px;
+				width: 250px;
+				margin: auto;
+				left:0;
+				right: 0;
+				height: 3px;
+				background: @tLightBlue;
+			}
+		}
+		.author{
+			font-size: 16px;
+			display: block;
+			margin-bottom: 60px;
+		}
+		.heading-tech{
+			margin-top: 78px;
+		}
+		.technologies ul{
+			li{
+				font-size: 21px;
+			}
+		}
+		.btn{
+			box-shadow: 3px 5px 0px rgba(0, 0, 0, 0.1);
+			padding: 15px;
+			width: 365px;
+			font-size: 27px;
+			margin-top: 45px;
 		}
 	}
 	.btn{
@@ -365,6 +417,7 @@
 			.proposal-text{
 				font-size: 25px;
 				margin-top: 40px;
+				line-height: 1.4em;
 			}
 			.offer {
 				padding-top: 37px;
@@ -382,6 +435,44 @@
 			}
 		}
 	}
+	.sec6 .technologies ul li {
+		font-size: 14px;
+	}
+	footer{
+		.contacts{
+			height: 115px;
+			margin: auto 160px auto 100px;
+			.contacts-group{
+				display: inline-block;
+				vertical-align: middle;
+				margin-bottom: 15px;
+				.item{
+					width: 230px;
+					margin-right: 23px;
+				}
+			}
+		}
+		.request{
+			width: 256px;
+			right: 40px;
+			.btn{
+				margin: 18px 0;
+				background: @tPink; 
+				&:hover{
+					background: lighten(@tPink, 3%);
+				}
+			}
+			.social-links{
+				ul{
+					li{
+						a{
+							background: url(../img/sprite-social-tablet.png) no-repeat;
+						}
+					}
+				} 
+			}
+		}
+	}	
 	.dev-rate{
 		.offer{
 			background: @tLightBlue;
@@ -397,8 +488,8 @@
 		width: 970px;
 		margin: 23px -23px;
 	}
-	.btn-large{
-		width: @btnWidth * 1.5;
+	.btn-large,.dev-rate .btn-large{
+		width: 330px;
 	}
 	.sec2{
 		.dev-rate{
@@ -407,6 +498,15 @@
 				font-size: 26px;
 				margin-right: -5px;
 				line-height: 1.3em;
+			}
+			.offer{
+				padding-top: 10px;
+				.counter{
+					border: 1px solid #FFF;
+					border-radius: 5px;
+					padding: 10px;
+					margin: -10px;
+				}	
 			}
 		}
 	}
@@ -419,6 +519,17 @@
 			}
 		}
 	}
+	.sec4{
+		.bg-wrap{
+			background-size: cover;
+		}
+	}
+	.sec6 .technologies{
+		padding-left: 50px;
+			ul li {
+				font-size: 14px;
+			}
+		} 
 	.how-it-works{
 		> div{
 			&:nth-child(1){
@@ -445,6 +556,41 @@
 						background: url(../img/steps-arrow-straight.png) no-repeat;
 					}
 				}
+			}
+		}
+	}
+	footer{
+		.contacts{
+			height: 115px;
+			margin: auto 280px auto 100px;
+			.contacts-group{
+				display: inline-block;
+				vertical-align: middle;
+				margin-bottom: 15px;
+				.item{
+					width: 230px;
+					margin-right: 23px;
+				}
+			}
+		}
+		.request{
+			width: 256px;
+			right: 135px;
+			.btn{
+				margin: 18px 0;
+				background: @tPink; 
+				&:hover{
+					background: lighten(@tPink, 3%);
+				}
+			}
+			.social-links{
+				ul{
+					li{
+						a{
+							background: url(../img/sprite-social-tablet.png) no-repeat;
+						}
+					}
+				} 
 			}
 		}
 	}
@@ -490,7 +636,15 @@
 			}
 		}
 	}
-
+footer{
+	width: 1185px;
+	.contacts{
+		margin: auto;
+		.info,.social{
+			margin-right: 56px;
+		}
+	}
+}
 }
 /*Laptops with 15' screen and lower*/
 @media (max-height: 768px) and (min-width: 768px){

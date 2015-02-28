@@ -353,6 +353,9 @@ section{
 	}
 }
 .dev-rate{
+	.row{
+		height: inherit;
+	}
 	.fullwidth();
 	position: absolute;
 	left: 0;
@@ -386,13 +389,17 @@ section{
 
 	}
 	.offer{
-		padding: 47px 20px;
-		height: inherit;
 		background: @tLightBlue;
+		height: 100%;
 		text-transform: uppercase;
 		text-align: center;
 		width: 235px;
 		margin-right: 10px;
+		padding: 0 22px;
+		.offer-body{
+			display: table;
+			height: 100%;
+		}
 		.head{
 			font-size: 16px;
 			letter-spacing: 1px;
@@ -490,7 +497,7 @@ section{
 }
 .sec3{
 	.heading{
-		margin-top: 0;
+		margin-bottom: 25px;
 		h1{
 			line-height: 1em;
 		}
@@ -659,41 +666,41 @@ section{
 		font-size: 13px;
 	}
 }
+.technologies{
+	padding-left: 25px;
+	margin-right: -65px;
+	>div{
+		padding: 0;
+	}
+	ul{
+		&:before{
+			content: '';
+			position: absolute;
+			height: 40px;
+			width: 2px;
+			background: @tLightBlue;
+			left: -12px;
+			top: -5px;
+		}
+		li{
+			font-size: 16px;
+			font-family: 'Open sans', Helvetica, Sans-serif;
+			line-height: 1.4em;
+			color: #999999;
+			position: relative;
+
+		}
+	}
+}
 .sec6{
 	.heading{
 		margin-bottom: 45px;
-	}
-	.technologies{
-		padding-left: 25px;
-		margin-right: -65px;
-		>div{
-			padding: 0;
-		}
-		ul{
-			&:before{
-				content: '';
-				position: absolute;
-				height: 40px;
-				width: 2px;
-				background: @tLightBlue;
-				left: -12px;
-				top: -5px;
-			}
-			li{
-				font-size: 16px;
-				font-family: 'Open sans', Helvetica, Sans-serif;
-				line-height: 1.4em;
-				color: #999999;
-				position: relative;
-
-			}
-		}
 	}
 	.j-tech{
 		width: inherit;
 		height: 450px;
 		top: 0;
-		bottom: 35%;
+		bottom: 25%;
 		left: 0;
 		right: 0;
 		margin: auto;
@@ -702,7 +709,6 @@ section{
 }
 footer{
 	height: 182px;
-	width: 1185px;
 	margin: auto;
 	.fullwidth();
 	background: #82b4bb;
@@ -717,14 +723,19 @@ footer{
 		color: #FFF;
 		&:hover{
 			color: inherit;
+			text-decoration: underline;
 		}
 	}
 	.contacts{
+		.contacts-group{
+			display: inline-block;
+			vertical-align: middle;
+		}
 		height: 65px;
 		position: absolute;
 		top:0;
 		bottom: 0;
-		margin: auto;
+		margin: auto 280px auto 50px;
 		text-transform: uppercase;
 		.item{
 			float: left;
@@ -744,7 +755,7 @@ footer{
 		.info,.social{
 			font-size: 12px;
 			line-height: 1.4em;
-			margin-right: 56px;
+			margin-right: 25px;
 		}
 		.tel,.mail{
 			font-size: 18px;
@@ -784,6 +795,7 @@ footer{
 		h4{
 			font-size: 14px;
 			margin-top: 6px;
+			font-family: 'Open sans', Helvetica, Sans-serif;
 		}
 		.btn{
 			box-shadow: 3px 5px 0px rgba(0, 0, 0, 0.1);
@@ -801,8 +813,12 @@ footer{
 					a{
 						display: block;
 						width: 31px;
-						height: 32px;
+						height: 31px;
+						border-radius: 50%;
 						background: url(../img/sprite-social.png) no-repeat;
+						&:hover{
+							box-shadow: 0 0 3px #FFF;
+						}
 						&.fb{
 							background-position: -31px 0;
 						}
@@ -819,7 +835,6 @@ footer{
 				}
 			}
 		}
-
 	}
 }
 .heading{
