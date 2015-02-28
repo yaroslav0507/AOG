@@ -1938,7 +1938,7 @@ $(function(){
 	function mobile(){
 		$('#fullpage').fullpage({
 		        //Navigation
-		        anchors:['first', 'second', 'third', 'fourth', 'fifth', 'footer'],
+		        anchors:['main', 'profit', 'how-it-works', 'about-us', 'it-talent', 'technologies'],
 		        menu: '#slideMenu',
 		        navigation: false,
 		        navigationPosition: 'right',
@@ -1989,7 +1989,7 @@ $(function(){
 	function desktop(){
 		$('#fullpage').fullpage({
 		        //Navigation
-		        anchors:['first', 'second', 'third', 'fourth', 'fifth'],
+		        anchors:['main', 'profit', 'how-it-works', 'about-us', 'it-talent', 'technologies'],
 		        menu: '#slideMenu',
 		        navigation: true,
 		        navigationPosition: 'right',
@@ -2038,7 +2038,7 @@ $(function(){
 		});
 	}
 	function screenSize(){
-    	if($(window).height() <= 652){
+    	if($(window).height() <= 550){
 			mobile();
 		}
 		else{
@@ -2073,16 +2073,8 @@ function detectmob() {
 	secHeight()
 
 
-	/*Vertical alignment ov div.b-profit section 2 compartible with fullpage.js*/
-	function bProfit(){
-		$('.b-profit').height($('.sec2').outerHeight(true) - $('.dev-rate').outerHeight(true));
-	}
-	init()
-
-
 	function init(){
 		secHeight();
-		//bProfit();
 	}
 	$(window).resize(init).on( "orientationchange", function(){
 		init();
