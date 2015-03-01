@@ -145,6 +145,8 @@ function detectmob() {
 
 	function init(){
 		secHeight();
+		($(window).height() < 654) ? $('section').height(653) : '';
+
 	}
 	$(window).resize(init).on( "orientationchange", function(){
 		init();

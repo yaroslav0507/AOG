@@ -1,11 +1,11 @@
 @import 'variables';
 @import 'mixins';
 
-
+@SecMinHeight: 1137px;
 /*Very small devices - mobile*/
 @media (max-width: 768px){
 	section{
-		min-height: 1137px;
+		min-height: @SecMinHeight;
 	}
 	h1{
 		font-size: 29px;
@@ -67,6 +67,7 @@
 		}
 	}
 	.sec1{
+		height: @SecMinHeight;
 		.redMarks();
 		background-position: -800px 0;
 		.promo-body{
@@ -500,7 +501,7 @@
 	}
 	.sec1{
 		.offer-body{
-			margin-left: -35px;
+			margin-left: 0;
 		}		
 	}
 	.sec2{
@@ -621,7 +622,7 @@
 			width: @btnWidth
 		}
 		.offer-body{
-			margin-left: -155px;
+			margin-left: 65px;
 		}
 	}
 	.btn-large{
