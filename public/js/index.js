@@ -1942,7 +1942,7 @@ $(function(){
 		        menu: '#slideMenu',
 		        navigation: true,
 		        navigationPosition: 'right',
-		        navigationTooltips: ['firstSlide', 'secondSlide'],
+		        navigationTooltips: ['Home', 'Grow Your Business', 'How It Works', 'About Us', 'Ukrainian IT Tallent', 'Our Technologies'],
 		        slidesNavigation: true,
 		        slidesNavPosition: 'bottom',
 
@@ -1993,7 +1993,7 @@ $(function(){
 		        menu: '#slideMenu',
 		        navigation: true,
 		        navigationPosition: 'right',
-		        navigationTooltips: ['firstSlide', 'secondSlide'],
+		        navigationTooltips: ['Home', 'Grow Your Business', 'How It Works', 'About Us', 'Ukrainian IT Tallent', 'Our Technologies'],
 		        slidesNavigation: false,
 		        slidesNavPosition: 'bottom',
 
@@ -2068,6 +2068,8 @@ function detectmob() {
 	    })		
 	}
 
+	anchor('learn-more', 2);
+	anchor('learn-more', 2);
 	anchor('learn-more', 2);
 
 	function secHeight(){

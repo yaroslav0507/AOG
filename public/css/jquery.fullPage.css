@@ -157,8 +157,11 @@ html, body {
 }
 #fp-nav ul li .fp-tooltip {
     position: absolute;
-    top: -2px;
-    color: #fff;
+    top: -4px;
+    color: #767676;
+    background: rgba(255, 255, 255, 0.93);
+    padding: 3px 7px;
+    border-radius: 3px;
     font-size: 14px;
     font-family: arial, helvetica, sans-serif;
     white-space: nowrap;
