@@ -4,7 +4,7 @@ $(function(){
 		        //Navigation
 		        anchors:['main', 'profit', 'how-it-works', 'about-us', 'it-talent', 'technologies'],
 		        menu: '#slideMenu',
-		        navigation: false,
+		        navigation: true,
 		        navigationPosition: 'right',
 		        navigationTooltips: ['firstSlide', 'secondSlide'],
 		        slidesNavigation: true,
@@ -57,8 +57,8 @@ $(function(){
 		        menu: '#slideMenu',
 		        navigation: true,
 		        navigationPosition: 'right',
-		        navigationTooltips: [],
-		        slidesNavigation: true,
+		        navigationTooltips: ['firstSlide', 'secondSlide'],
+		        slidesNavigation: false,
 		        slidesNavPosition: 'bottom',
 
 		        //Scrolling
@@ -126,9 +126,13 @@ function detectmob() {
 		}
 	    detectmob();
 
-    $('.learn-more').on('click', function(){
-    	$.fn.fullpage.moveTo(2);
-    })
+	function anchor(className, section){
+	    $('.' + className).on('click', function(){
+	    	$.fn.fullpage.moveTo(section);
+	    })		
+	}
+
+	anchor('learn-more', 2);
 
 	function secHeight(){
 		var sec = $('.sec1');

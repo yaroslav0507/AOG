@@ -293,6 +293,7 @@
 
 	}
 	.sec5{
+		.redMarks();
 		height: 768px !important;
 		min-height: 768px;
 		max-height: 768px;
@@ -369,7 +370,7 @@
 	section{
 		min-height: auto;
 	}
-
+	
 	.header-menu{
 		width: 730px;
 		margin: 23px 0;
@@ -378,6 +379,9 @@
 		}
 	}
 	.sec1{
+		.offer-body{
+			margin-left: 0;
+		}
 		.promo{
 			font-size: 75px;
 			color: #FFF;
@@ -435,6 +439,9 @@
 			}
 		}
 	}
+	.sec5{
+		.redMarks();
+	}
 	.sec6 .technologies ul li {
 		font-size: 14px;
 	}
@@ -490,6 +497,11 @@
 	}
 	.btn-large,.dev-rate .btn-large{
 		width: 330px;
+	}
+	.sec1{
+		.offer-body{
+			margin-left: -35px;
+		}		
 	}
 	.sec2{
 		.dev-rate{
@@ -597,9 +609,9 @@
 }
 /*Large screens 19' + */
 @media (min-width: 1200px){
-	 .container {
+	.container {
 	    width: 980px !important;
-	 }
+	}
 	.header-menu{
 		width: 1182px;
 		margin-left: -142px;
@@ -607,6 +619,9 @@
 	.sec1{
 		.btn-large{
 			width: @btnWidth
+		}
+		.offer-body{
+			margin-left: -155px;
 		}
 	}
 	.btn-large{
@@ -660,6 +675,17 @@ footer{
 			}
 		}
 	}
+	.sec2{
+		.dev-rate{
+			height: 150px;
+			.offer{
+				padding: 27px 20px;
+			}
+			.proposal-text{
+				margin-top: 44px;
+			}
+		}
+	}
 	.heading{
 		margin: 0;
 	}
@@ -673,15 +699,6 @@ footer{
 	.sec2{
 		.heading{
 			margin-top: 15px;
-		}
-		.dev-rate{
-			height: 150px;
-			.offer{
-				padding: 27px 20px;
-			}
-			.proposal-text{
-				margin-top: 44px;
-			}
 		}
 	}
 }

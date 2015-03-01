@@ -376,6 +376,7 @@ section .container .vert {
   height: inherit;
   float: left;
   position: relative;
+  z-index: 3;
 }
 
 .header-menu .actions > ul > li:not(:last-child) {
@@ -400,7 +401,7 @@ section .container .vert {
   text-transform: uppercase;
   position: absolute;
   right: 0;
-  width: 100px;
+  width: 130px;
   transition: all 0.3s ease;
 }
 
@@ -413,7 +414,7 @@ section .container .vert {
   color: #FFF;
   line-height: 1.5em;
   height: inherit;
-  font-size: 13px;
+  font-size: 16px;
   font-family: 'Open Sans', Sans-serif, Helvetica;
 }
 
@@ -510,6 +511,51 @@ section .container .vert {
 
 .sec1 .btn.btn-shadow {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.sec1 .offer-body {
+  font-family: 'Open Sans', Sans-serif, Helvetica;
+  font-weight: 100;
+  display: table;
+  height: 50px;
+  width: 120px;
+  border-radius: 5px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  margin-left: -25px;
+  color: #FFF;
+  background: #ff8e8e;
+  padding: 12px 5px;
+}
+
+.sec1 .offer-body .head {
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 8px;
+  margin-top: 0;
+}
+
+.sec1 .offer-body ul li {
+  display: inline-block;
+  width: 28px;
+  font-size: 7px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #000;
+  float: left;
+  margin-left: 5px;
+}
+
+.sec1 .offer-body ul li .num {
+  font-size: 14px;
+  font-family: 'Exo', Helvetica, Sans-serif;
+  color: #FFF;
+  text-transform: uppercase;
+  padding-bottom: 4px;
 }
 
 .profit div:first-child .item {
@@ -672,7 +718,7 @@ section .container .vert {
   height: 100%;
 }
 
-.dev-rate .offer .head {
+.dev-rate .offer .offer-body .head {
   font-size: 16px;
   letter-spacing: 1px;
   font-family: 'HelveticaNeueUltra', Helvetica, Sans-serif;
@@ -680,16 +726,16 @@ section .container .vert {
   font-weight: 700;
 }
 
-.dev-rate .offer ul li {
+.dev-rate .offer .offer-body ul li {
   display: inline-block;
   width: 37px;
 }
 
-.dev-rate .offer ul li:not(:last-child) {
+.dev-rate .offer .offer-body ul li:not(:last-child) {
   margin-right: 35px;
 }
 
-.dev-rate .offer ul li .num {
+.dev-rate .offer .offer-body ul li .num {
   font-size: 34px;
   font-family: 'Exo', Helvetica, Sans-serif;
   padding-bottom: 5px;
@@ -1174,6 +1220,193 @@ footer .request .social-links ul li a.in {
   background-position: -124px 0;
 }
 
+.mobile-footter {
+  background: #9dcbd2 url(../img/mobile-footter-bg.jpg) no-repeat;
+  background-size: cover;
+}
+
+.mobile-footter .item {
+  position: relative;
+}
+
+.mobile-footter .contacts-group {
+  color: #FFF;
+  position: relative;
+}
+
+.mobile-footter .contacts-group a {
+  color: inherit;
+}
+
+.mobile-footter .contacts-group:after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 3px;
+  background: #FFF;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.mobile-footter .contacts-group .info {
+  padding-top: 172px;
+  padding-bottom: 68px;
+}
+
+.mobile-footter .contacts-group .info:before {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  content: "";
+  width: 97px;
+  height: 97px;
+  border: 4px solid #FFF;
+  border-radius: 50%;
+  background: url(../img/icon-i.png) no-repeat center;
+}
+
+.mobile-footter .contacts-group .info a {
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+  line-height: 1.34em;
+  font-size: 26px;
+}
+
+.mobile-footter .contacts-group .info a:hover:before {
+  content: "";
+  color: #FFF;
+  position: absolute;
+  left: -24px;
+  top: 50%;
+  margin-top: -8px;
+  width: 11px;
+  height: 14px;
+  background: url(../img/icon-menu-arrow.png) no-repeat -11px 0;
+}
+
+.mobile-footter .contacts-group .tel,
+.mobile-footter .contacts-group .skype {
+  font-size: 30px;
+}
+
+.mobile-footter .contacts-group .tel {
+  padding-top: 110px;
+  padding-bottom: 70px;
+}
+
+.mobile-footter .contacts-group .tel:before {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  content: "";
+  width: 65px;
+  height: 65px;
+  border: 2px solid #FFF;
+  border-radius: 50%;
+  background: url(../img/sprite-footter.png) no-repeat -248px;
+}
+
+.mobile-footter .contacts-group .skype {
+  padding-top: 55px;
+  padding-bottom: 20px;
+}
+
+.mobile-footter .contacts-group .skype:before {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  content: "";
+  width: 65px;
+  height: 65px;
+  border: 2px solid #FFF;
+  border-radius: 50%;
+  background: url(../img/sprite-footter.png) no-repeat -186px;
+}
+
+.mobile-footter .request {
+  width: 486px;
+  height: 94px;
+  margin: auto;
+  margin-top: 72px;
+}
+
+.mobile-footter .request h4 {
+  font-size: 40px;
+  margin-top: 6px;
+  font-family: 'Open sans', Helvetica, Sans-serif;
+  color: #FFF;
+  text-shadow: none;
+}
+
+.mobile-footter .request h4 span {
+  color: #ff8e8e;
+}
+
+.mobile-footter .request .btn {
+  box-shadow: 3px 5px 0px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin: 32px 0;
+}
+
+.mobile-footter .social-links {
+  display: block;
+  background: #FFF;
+  border-top: 10px solid #A4D9DB;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  height: 170px;
+  bottom: 0;
+}
+
+.mobile-footter .social-links ul {
+  text-align: center;
+  padding-top: 34px;
+}
+
+.mobile-footter .social-links ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.mobile-footter .social-links ul li a {
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: url(../img/sprite-social-mobile.png) no-repeat;
+}
+
+.mobile-footter .social-links ul li a:hover {
+  opacity: 0.9;
+}
+
+.mobile-footter .social-links ul li a.fb {
+  background-position: -101px 0;
+}
+
+.mobile-footter .social-links ul li a.go {
+  background-position: -202px 0;
+}
+
+.mobile-footter .social-links ul li a.yo {
+  background-position: -303px 0;
+}
+
+.mobile-footter .social-links ul li a.in {
+  background-position: -403px 0;
+}
+
 .heading {
   margin-bottom: 35px;
 }
@@ -1591,6 +1824,28 @@ footer .request .social-links ul li a.in {
     max-height: 768px;
   }
 
+  .sec5:after {
+    content: " ";
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+    width: 55px;
+    height: 3px;
+    background: #ff8e8e;
+    z-index: 1;
+  }
+
+  .sec5:before {
+    content: " ";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 55px;
+    height: 3px;
+    background: #ff8e8e;
+    z-index: 1;
+  }
+
   .sec5 h3 {
     width: 350px;
   }
@@ -1682,6 +1937,10 @@ footer .request .social-links ul li a.in {
     display: block;
   }
 
+  .sec1 .offer-body {
+    margin-left: 0;
+  }
+
   .sec1 .promo {
     font-size: 75px;
     color: #FFF;
@@ -1742,6 +2001,28 @@ footer .request .social-links ul li a.in {
     width: 210px;
   }
 
+  .sec5:after {
+    content: " ";
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+    width: 55px;
+    height: 3px;
+    background: #ff8e8e;
+    z-index: 1;
+  }
+
+  .sec5:before {
+    content: " ";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 55px;
+    height: 3px;
+    background: #ff8e8e;
+    z-index: 1;
+  }
+
   .sec6 .technologies ul li {
     font-size: 14px;
   }
@@ -1800,6 +2081,10 @@ footer .request .social-links ul li a.in {
   .btn-large,
   .dev-rate .btn-large {
     width: 330px;
+  }
+
+  .sec1 .offer-body {
+    margin-left: -35px;
   }
 
   .sec2 .dev-rate {
@@ -1916,6 +2201,10 @@ footer .request .social-links ul li a.in {
     width: 279px;
   }
 
+  .sec1 .offer-body {
+    margin-left: -155px;
+  }
+
   .btn-large {
     width: 290px;
   }
@@ -1964,6 +2253,18 @@ footer .request .social-links ul li a.in {
     font-size: 60px;
   }
 
+  .sec2 .dev-rate {
+    height: 150px;
+  }
+
+  .sec2 .dev-rate .offer {
+    padding: 27px 20px;
+  }
+
+  .sec2 .dev-rate .proposal-text {
+    margin-top: 44px;
+  }
+
   .heading {
     margin: 0;
   }
@@ -1977,18 +2278,6 @@ footer .request .social-links ul li a.in {
 @media (max-height: 768px) {
   .sec2 .heading {
     margin-top: 15px;
-  }
-
-  .sec2 .dev-rate {
-    height: 150px;
-  }
-
-  .sec2 .dev-rate .offer {
-    padding: 27px 20px;
-  }
-
-  .sec2 .dev-rate .proposal-text {
-    margin-top: 44px;
   }
 }
 
