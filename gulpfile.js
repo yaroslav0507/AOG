@@ -35,7 +35,7 @@ gulp.task('html', function() {
 });
 
 gulp.task('js', function() {
-    gulp.src(['./assets/js/**/*.js', '!./assets/js/vendor/**/*.js'])
+    gulp.src(['./assets/js/*.js'])
         .pipe(concat('index.js'))
         .pipe(gulp.dest('./public/js'))
         .pipe(livereload(server));

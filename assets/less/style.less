@@ -4,6 +4,12 @@
 @import 'btns';
 
 @font-face {
+  font-family: 'Capsula';
+  src: url('../fonts/Capsuula.ttf');
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
   font-family: 'Exo';
   src: url('../fonts/exo/Exo-ExtraLight.otf');
   font-style: normal;
@@ -171,7 +177,7 @@ section{
 					width: @icon-size;
 					height: @icon-size;
 				}
-				&:hover{
+				&:hover, &:focus, &:active{
 					ul{
 						display: block;
 					}
@@ -209,11 +215,11 @@ section{
 		.promo{
 			font-size: 80px;
 			font-weight: 100;
+			font-family: 'Capsula', 'Exo', Sans-serif, Helvetica;
 			color: #FFF;
 			line-height: 1em;
 			text-transform: uppercase;
 			span{
-				text-transform: none;
 				color: @tPink;
 			}
 		}	
@@ -272,47 +278,54 @@ section{
 			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 		}
 	}
-	.offer-body{
-		font-family: 'Open Sans', Sans-serif, Helvetica;
-		font-weight: 100;
-		display: table;
-		height: 50px;
-		width: 120px;
-		border-radius: 5px;
-		position: absolute;
-		left: 0;
-		margin: auto;
-		top: 50%;
-		margin-top: -50px;
-		color: #FFF;
-		background: @tPink;
-		padding: 12px 5px;
-		.head{
-			font-size: 12px;
-			text-align: center;
+}
+.red-offer-body{
+	font-family: 'Open Sans', Sans-serif, Helvetica;
+	font-weight: 100;
+	display: table;
+	height: 50px;
+	width: 120px;
+	border-radius: 5px;
+	position: fixed;
+	left: 0;
+	top: 50%;
+	margin-top: -50px;
+	color: #FFF;
+	background: @tPink;
+	padding: 12px 5px;
+	z-index: 3;
+	.head{
+		font-size: 12px;
+		text-align: center;
+		text-transform: uppercase;
+		margin: 8px;
+		margin-top:0;
+		}
+	ul{
+		li{
+			display: inline-block;
+			width: 28px;
+			font-size: 7px;
+			font-weight: 400;
 			text-transform: uppercase;
-			margin: 8px;
-			margin-top:0;
-			}
-		ul{
-			li{
-				display: inline-block;
-				width: 28px;
-				font-size: 7px;
-				font-weight: 400;
+			color: #000;
+			float: left;
+			margin-left: 5px;
+			.num{
+				font-size: 14px;
+				font-family: 'Exo', Helvetica, Sans-serif;
+				color: #FFF;
 				text-transform: uppercase;
-				color: #000;
-				float: left;
-				margin-left: 5px;
-				.num{
-					font-size: 14px;
-					font-family: 'Exo', Helvetica, Sans-serif;
-					color: #FFF;
-					text-transform: uppercase;
-					padding-bottom: 4px;
-				}
+				padding-bottom: 4px;
 			}
 		}
+	}
+}
+.counter{
+	.num{
+		>div{
+			display: inline;
+		}		
 	}
 }
 .profit{
@@ -457,11 +470,18 @@ section{
 						margin-right: 35px;
 					}
 					.num{
-						font-size: 34px;
+						font-size: 30px;
+						width: 40px;
+						text-align: center;
 						font-family: 'Exo', Helvetica, Sans-serif;
 						padding-bottom: 5px;
 						margin-bottom: 5px;
 						border-bottom: 2px solid #FFF;
+						font-size: 30px;
+						overflow: hidden;
+						> div{
+							display: inline;
+						}
 					}
 				}
 			}
@@ -572,7 +592,6 @@ section{
 					margin-bottom: 5px;
 					margin-top: 4px;
 					width: 430px;
-					letter-spacing: 0.1px;
 					color: @tSeaBlue;
 				}
 				p{
@@ -959,7 +978,7 @@ footer{
 				height: 65px;
 				border: 2px solid #FFF;
 				border-radius: 50%;
-				background: url(../img/sprite-footter.png) no-repeat -248px;
+				background: url(../img/sprite-footter.png) no-repeat -278px;
 			}
 		}
 		.skype{
@@ -976,7 +995,7 @@ footer{
 				height: 65px;
 				border: 2px solid #FFF;
 				border-radius: 50%;
-				background: url(../img/sprite-footter.png) no-repeat -186px;
+				background: url(../img/sprite-footter.png) no-repeat -200px;
 			}			
 		}
 	}
@@ -1041,6 +1060,9 @@ footer{
 			}
 		}
 	}
+}
+.profit-link{
+	display: block;
 }
 .heading{
 	margin-bottom: 35px;

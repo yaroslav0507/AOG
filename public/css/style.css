@@ -194,6 +194,13 @@ table {
 }
 
 @font-face {
+  font-family: 'Capsula';
+  src: url('../fonts/Capsuula.ttf');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
   font-family: 'Exo';
   src: url('../fonts/exo/Exo-ExtraLight.otf');
   font-style: normal;
@@ -389,7 +396,9 @@ section .container .vert {
   height: 36px;
 }
 
-.header-menu .actions > ul > li:hover ul {
+.header-menu .actions > ul > li:hover ul,
+.header-menu .actions > ul > li:focus ul,
+.header-menu .actions > ul > li:active ul {
   display: block;
 }
 
@@ -426,13 +435,13 @@ section .container .vert {
 .sec1 .promo-body .promo {
   font-size: 80px;
   font-weight: 100;
+  font-family: 'Capsula', 'Exo', Sans-serif, Helvetica;
   color: #FFF;
   line-height: 1em;
   text-transform: uppercase;
 }
 
 .sec1 .promo-body .promo span {
-  text-transform: none;
   color: #ff8e8e;
 }
 
@@ -513,24 +522,24 @@ section .container .vert {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 
-.sec1 .offer-body {
+.red-offer-body {
   font-family: 'Open Sans', Sans-serif, Helvetica;
   font-weight: 100;
   display: table;
   height: 50px;
   width: 120px;
   border-radius: 5px;
-  position: absolute;
+  position: fixed;
   left: 0;
-  margin: auto;
   top: 50%;
   margin-top: -50px;
   color: #FFF;
   background: #ff8e8e;
   padding: 12px 5px;
+  z-index: 3;
 }
 
-.sec1 .offer-body .head {
+.red-offer-body .head {
   font-size: 12px;
   text-align: center;
   text-transform: uppercase;
@@ -538,7 +547,7 @@ section .container .vert {
   margin-top: 0;
 }
 
-.sec1 .offer-body ul li {
+.red-offer-body ul li {
   display: inline-block;
   width: 28px;
   font-size: 7px;
@@ -549,12 +558,16 @@ section .container .vert {
   margin-left: 5px;
 }
 
-.sec1 .offer-body ul li .num {
+.red-offer-body ul li .num {
   font-size: 14px;
   font-family: 'Exo', Helvetica, Sans-serif;
   color: #FFF;
   text-transform: uppercase;
   padding-bottom: 4px;
+}
+
+.counter .num > div {
+  display: inline;
 }
 
 .profit div:first-child .item {
@@ -735,11 +748,18 @@ section .container .vert {
 }
 
 .dev-rate .offer .offer-body ul li .num {
-  font-size: 34px;
+  width: 40px;
+  text-align: center;
   font-family: 'Exo', Helvetica, Sans-serif;
   padding-bottom: 5px;
   margin-bottom: 5px;
   border-bottom: 2px solid #FFF;
+  font-size: 30px;
+  overflow: hidden;
+}
+
+.dev-rate .offer .offer-body ul li .num > div {
+  display: inline;
 }
 
 .dev-rate .btn {
@@ -859,7 +879,6 @@ section .container .vert {
   margin-bottom: 5px;
   margin-top: 4px;
   width: 430px;
-  letter-spacing: 0.1px;
   color: #82b4bb;
 }
 
@@ -1310,7 +1329,7 @@ footer .request .social-links ul li a.in {
   height: 65px;
   border: 2px solid #FFF;
   border-radius: 50%;
-  background: url(../img/sprite-footter.png) no-repeat -248px;
+  background: url(../img/sprite-footter.png) no-repeat -278px;
 }
 
 .mobile-footter .contacts-group .skype {
@@ -1329,7 +1348,7 @@ footer .request .social-links ul li a.in {
   height: 65px;
   border: 2px solid #FFF;
   border-radius: 50%;
-  background: url(../img/sprite-footter.png) no-repeat -186px;
+  background: url(../img/sprite-footter.png) no-repeat -200px;
 }
 
 .mobile-footter .request {
@@ -1406,6 +1425,10 @@ footer .request .social-links ul li a.in {
   background-position: -403px 0;
 }
 
+.profit-link {
+  display: block;
+}
+
 .heading {
   margin-bottom: 35px;
 }
@@ -1446,7 +1469,7 @@ footer .request .social-links ul li a.in {
 
   .header-menu {
     width: auto;
-    right: -21px;
+    right: 0;
     top: 4px;
   }
 
@@ -1472,6 +1495,8 @@ footer .request .social-links ul li a.in {
     text-decoration: none;
     display: inline-block;
     position: relative;
+    font-size: 24px;
+    z-index: 9;
   }
 
   .header-menu .actions ul li ul li a:hover:before {
@@ -1937,10 +1962,6 @@ footer .request .social-links ul li a.in {
     display: block;
   }
 
-  .sec1 .offer-body {
-    margin-left: 0;
-  }
-
   .sec1 .promo {
     font-size: 75px;
     color: #FFF;
@@ -2083,10 +2104,6 @@ footer .request .social-links ul li a.in {
     width: 330px;
   }
 
-  .sec1 .offer-body {
-    margin-left: 0;
-  }
-
   .sec2 .dev-rate {
     width: inherit;
   }
@@ -2199,10 +2216,6 @@ footer .request .social-links ul li a.in {
 
   .sec1 .btn-large {
     width: 279px;
-  }
-
-  .sec1 .offer-body {
-    margin-left: 65px;
   }
 
   .btn-large {

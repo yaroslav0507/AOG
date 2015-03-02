@@ -21,7 +21,7 @@
 	}
 	.header-menu{
 		width: auto;
-		right: -21px;
+		right: 0;
 		top: 4px;
 		.skills-md, .profile, .search{
 			display: none;
@@ -41,6 +41,8 @@
 									text-decoration: none;
 									display: inline-block;
 									position: relative;
+									font-size: 24px;
+									z-index: 9;
 									&:hover{
 										&:before{
 											content: "";
@@ -380,9 +382,6 @@
 		}
 	}
 	.sec1{
-		.offer-body{
-			margin-left: 0;
-		}
 		.promo{
 			font-size: 75px;
 			color: #FFF;
@@ -498,11 +497,6 @@
 	}
 	.btn-large,.dev-rate .btn-large{
 		width: 330px;
-	}
-	.sec1{
-		.offer-body{
-			margin-left: 0;
-		}		
 	}
 	.sec2{
 		.dev-rate{
@@ -620,9 +614,6 @@
 	.sec1{
 		.btn-large{
 			width: @btnWidth
-		}
-		.offer-body{
-			margin-left: 65px;
 		}
 	}
 	.btn-large{
