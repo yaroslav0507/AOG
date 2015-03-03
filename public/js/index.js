@@ -2017,7 +2017,7 @@ $(function(){
 		        css3: true,
 		        scrollingSpeed: 1500,
 		        autoScrolling: true,
-		        scrollBar: false,
+		        scrollBar: true,
 		        easing: 'easeInQuart',
 		        easingcss3: 'ease',
 		        loopBottom: false,
@@ -2103,4 +2103,15 @@ function detectmob() {
 	$(window).resize(init).on( "orientationchange", function(){
 		init();
 	});
+	function numHover(icon, num){
+		$('.step .' + num).hover(function(){
+			$('.' + icon).css('background-position','0 -127px').addClass('rotating');
+		},
+		function () {
+			$('.' + icon).removeAttr('style').removeClass('rotating');
+		})
+	}
+	numHover('request', 'first');
+	numHover('receive', 'second');
+	numHover('work', 'third');
 })

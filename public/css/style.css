@@ -364,10 +364,17 @@ section .container .vert {
 
 .header-menu .actions .menu {
   background: url(../img/icon-menu.png) no-repeat -36px 0;
+  transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
 }
 
 .header-menu .actions .menu:hover {
   background-position: 0 0;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
 }
 
 .header-menu .actions .profile {
@@ -443,6 +450,7 @@ section .container .vert {
 
 .sec1 .promo-body .promo span {
   color: #ff8e8e;
+  display: inline-block;
 }
 
 .sec1 .descript {
@@ -748,7 +756,7 @@ section .container .vert {
 }
 
 .dev-rate .offer .offer-body ul li .num {
-  width: 40px;
+  width: 100%;
   text-align: center;
   font-family: 'Exo', Helvetica, Sans-serif;
   padding-bottom: 5px;
@@ -759,7 +767,9 @@ section .container .vert {
 }
 
 .dev-rate .offer .offer-body ul li .num > div {
-  display: inline;
+  display: table-cell;
+  text-align: center;
+  width: 50%;
 }
 
 .dev-rate .btn {
@@ -811,20 +821,31 @@ section .container .vert {
   position: relative;
 }
 
-.how-it-works .item .icon.request {
-  background: url(../img/icon-gear-request.png) no-repeat center;
+.how-it-works .item .icon > div {
+  width: inherit;
+  height: inherit;
 }
 
-.how-it-works .item .icon.receive {
-  background: url(../img/icon-gear-clock.png) no-repeat center;
+.how-it-works .item .icon > div:hover {
+  -webkit-animation: rotating 2s linear infinite;
+  animation: rotating 2s linear infinite;
+  background-position: 0 -127px;
 }
 
-.how-it-works .item .icon.work {
-  background: url(../img/icon-gear-laptop.png) no-repeat center;
+.how-it-works .item .icon .request {
+  background: url(../img/icon-gear-request.png) no-repeat;
 }
 
-.how-it-works .item .icon.enjoy {
-  background: url(../img/icon-gear-thumb.png) no-repeat center;
+.how-it-works .item .icon .receive {
+  background: url(../img/icon-gear-clock.png) no-repeat;
+}
+
+.how-it-works .item .icon .work {
+  background: url(../img/icon-gear-laptop.png) no-repeat;
+}
+
+.how-it-works .item .icon .enjoy {
+  background: url(../img/icon-gear-thumb.png) no-repeat;
 }
 
 .how-it-works .item .step {
@@ -1445,6 +1466,82 @@ footer .request .social-links ul li a.in {
   color: #86819e;
 }
 
+/*Infinite rotation animation*/
+
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.rotating {
+  -webkit-animation: rotating 2s linear infinite;
+}
+
+.about-us-anim {
+  position: relative;
+  width: 154px;
+  height: 106px;
+  margin: auto;
+  margin-bottom: 22px;
+}
+
+.about-us-anim .man {
+  position: absolute;
+  width: 38px;
+  height: 45px;
+  background: url(../img/about_us/man.png) no-repeat;
+}
+
+.about-us-anim .top-man {
+  left: 59px;
+}
+
+.about-us-anim .left-man {
+  bottom: 7px;
+}
+
+.about-us-anim .left-man-line {
+  position: absolute;
+  top: 43px;
+  left: 32px;
+  width: 24px;
+  height: 25px;
+  background: url(../img/about_us/left-line.png) no-repeat;
+}
+
+.about-us-anim .bottom-man {
+  left: 59px;
+  bottom: -3px;
+}
+
+.about-us-anim .bottom-man-line {
+  position: absolute;
+  width: 10px;
+  height: 17px;
+  top: 45px;
+  left: 70px;
+  background: url(../img/about_us/bottom-line.png) no-repeat;
+}
+
+.about-us-anim .right-man {
+  right: -3px;
+  bottom: 7px;
+}
+
+.about-us-anim .right-man-line {
+  position: absolute;
+  top: 44px;
+  left: 96px;
+  width: 24px;
+  height: 23px;
+  background: url(../img/about_us/right-line.png) no-repeat;
+}
+
 /*Very small devices - mobile*/
 
 @media (max-width: 768px) {
@@ -1513,8 +1610,9 @@ footer .request .social-links ul li a.in {
   .header-menu .actions .menu {
     position: absolute;
     background: url(../img/icon-menu-mobile.png) no-repeat;
-    width: 90px;
-    height: 90px;
+    width: 82px;
+    height: 81px;
+    z-index: 1;
   }
 
   .sec1 {
@@ -1756,10 +1854,10 @@ footer .request .social-links ul li a.in {
   }
 
   .sec3 .how-it-works .item .icon {
-    width: 180px;
-    height: 184px;
+    width: 124px;
+    height: 127px;
     background-size: 100%;
-    margin: 10px auto;
+    margin: 30px auto;
   }
 
   .sec3 .how-it-works > div {
