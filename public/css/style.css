@@ -397,16 +397,14 @@ section .container .vert {
   margin-right: 16px;
 }
 
+.header-menu .actions > ul > li:not(:last-child):hover ul {
+  display: block;
+}
+
 .header-menu .actions > ul > li > a {
   display: block;
   width: 36px;
   height: 36px;
-}
-
-.header-menu .actions > ul > li:hover ul,
-.header-menu .actions > ul > li:focus ul,
-.header-menu .actions > ul > li:active ul {
-  display: block;
 }
 
 .header-menu .actions > ul > li ul {
@@ -418,6 +416,7 @@ section .container .vert {
   position: absolute;
   right: 0;
   width: 130px;
+  transition: opacity 0.5s;
   transition: all 0.3s ease;
 }
 
@@ -1076,6 +1075,9 @@ section .container .vert {
   line-height: 1.4em;
   color: #999999;
   position: relative;
+  display: inline-block;
+  float: left;
+  clear: both;
 }
 
 .sec6 .heading {
@@ -1482,6 +1484,15 @@ footer .request .social-links ul li a.in {
   -webkit-animation: rotating 2s linear infinite;
 }
 
+.rotate90 {
+  background-position: 0 0;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
+}
+
 .about-us-anim {
   position: relative;
   width: 154px;
@@ -1584,15 +1595,15 @@ footer .request .social-links ul li a.in {
   .header-menu .actions ul li ul {
     top: -20px;
     padding-right: 75px;
-    width: 320px;
-    font-size: 26px;
+    width: 400px;
+    font-size: 40px;
   }
 
   .header-menu .actions ul li ul li a {
     text-decoration: none;
     display: inline-block;
     position: relative;
-    font-size: 24px;
+    font-size: 40px;
     z-index: 9;
   }
 
@@ -1615,12 +1626,13 @@ footer .request .social-links ul li a.in {
     z-index: 1;
   }
 
-  .sec1 {
-    height: 1137px;
+  section.sec1 {
+    transition: height 0.5s ease;
+    height: auto;
     background-position: -800px 0;
   }
 
-  .sec1:after {
+  section.sec1:after {
     content: " ";
     position: absolute;
     bottom: -1px;
@@ -1631,7 +1643,7 @@ footer .request .social-links ul li a.in {
     z-index: 1;
   }
 
-  .sec1:before {
+  section.sec1:before {
     content: " ";
     position: absolute;
     bottom: -1px;
@@ -1642,24 +1654,24 @@ footer .request .social-links ul li a.in {
     z-index: 1;
   }
 
-  .sec1 .promo-body {
+  section.sec1 .promo-body {
     margin-top: 10px;
   }
 
-  .sec1 .promo-body .btn {
+  section.sec1 .promo-body .btn {
     margin-top: 30px;
     margin-bottom: 50px;
   }
 
-  .sec1 .promo-body .promo {
+  section.sec1 .promo-body .promo {
     font-size: 44px;
   }
 
-  .sec1 .promo-body .promo .descript {
+  section.sec1 .promo-body .promo .descript {
     font-size: 14px;
   }
 
-  .sec1 .skills-mobile {
+  section.sec1 .skills-mobile {
     width: 100%;
     height: 470px;
     position: absolute;
@@ -1669,7 +1681,7 @@ footer .request .social-links ul li a.in {
     border-top: 15px solid #9dcbd2;
   }
 
-  .sec1 .skills-mobile:before {
+  section.sec1 .skills-mobile:before {
     content: "";
     width: 200%;
     height: inherit;
@@ -1679,7 +1691,7 @@ footer .request .social-links ul li a.in {
     background: inherit;
   }
 
-  .sec1 .skills-mobile:after {
+  section.sec1 .skills-mobile:after {
     content: "";
     width: 200%;
     height: inherit;
@@ -1689,14 +1701,14 @@ footer .request .social-links ul li a.in {
     background: inherit;
   }
 
-  .sec1 .skills-mobile:before,
-  .sec1 .skills-mobile:after {
+  section.sec1 .skills-mobile:before,
+  section.sec1 .skills-mobile:after {
     box-sizing: border-box;
     border-top: 15px solid #9dcbd2;
     top: -15px;
   }
 
-  .sec1 .logo-mobile {
+  section.sec1 .logo-mobile {
     width: 485px;
     height: 112px;
     background: url(../img/logo-retina.png) center no-repeat;
@@ -1704,7 +1716,7 @@ footer .request .social-links ul li a.in {
     margin-bottom: 30px;
   }
 
-  .sec1 .vert .row {
+  section.sec1 .vert .row {
     height: 800px;
   }
 
@@ -2392,7 +2404,13 @@ footer .request .social-links ul li a.in {
   }
 }
 
+/*All devices except mobile*/
+
 @media (min-width: 768px) {
+  body {
+    overflow: hidden !important;
+  }
+
   .hidden-sm {
     display: none !important;
   }

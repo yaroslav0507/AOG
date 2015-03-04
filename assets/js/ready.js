@@ -1,4 +1,51 @@
+/*var mobileMenu = {
+	height: 0,
+	secHeight: 0,
+	secExpanded: 0,
+	section: '',
+	sectionResize: function(){
+		if($(window).width() < 768){
+			$('.menu').hover(function(){
+				mobileMenu.section = $('.menu').closest('section');
+				mobileMenu.secHeight = 	section.height();
+				mobileMenu.secExpanded = 	secHeight + $('.menu').outerHeight();
+				
+				mobileMenu.section.height(secExpanded);
+				console.log(section);
+			});
+		}
+	},
+	init: function(){
+		mobileMenu.sectionResize();
+		$(window).resize(function(){
+			console.log()
+		})
+	}
+}*/
+function resizeSection(){
+	var closestSection = $('.header-menu').closest('.section');
+	var secHeight = closestSection.height();
+	var secExpanded = secHeight + $('#mobileMenu').outerHeight()
+	if($(window).width() < 768){
+		$('.header-menu').on("mouseenter mouseleave", function(e){
+			if(e.type == "mouseenter"){
+				closestSection.css('max-height',secExpanded).height(secExpanded);
+				$('#mobileMenu').show(300);
+			}else if(e.type == "mouseleave"){
+				closestSection.css('max-height','auto').height(1137);
+				$('#mobileMenu').hide(0);
+			}
+		})
+	}
+	else{
+		$('.header-menu').off("mouseenter mouseleave");
+	}
+}
+$(window).resize(function(){
+	resizeSection();
+});
 $(function(){
+	resizeSection();
 	function mobile(){
 		$('#fullpage').fullpage({
 		        //Navigation
@@ -49,6 +96,7 @@ $(function(){
 		        afterSlideLoad: function(anchorLink, index, slideAnchor){},
 		        onSlideLeave: function(anchorLink, index, slideIndex, direction){}
 		    });
+		resizeSection();
 	}
 	function desktop(){
 		$('#fullpage').fullpage({
@@ -152,7 +200,7 @@ function detectmob() {
 		init();
 	});
 	function numHover(icon, num){
-		$('.step .' + num).hover(function(){
+		$('.step.' + num).hover(function(){
 			$('.' + icon).css('background-position','0 -127px').addClass('rotating');
 		},
 		function () {
@@ -162,4 +210,7 @@ function detectmob() {
 	numHover('request', 'first');
 	numHover('receive', 'second');
 	numHover('work', 'third');
+
+	/*Mobile menu pulling logo plugin*/
+	//mobileMenu.init();
 })

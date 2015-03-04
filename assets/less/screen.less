@@ -34,14 +34,14 @@
 					ul {
 						top: -20px;
 						padding-right: 75px;
-						width: 320px;
-						font-size: 26px;
+						width: 400px;
+						font-size: 40px;
 							li{
 								a{
 									text-decoration: none;
 									display: inline-block;
 									position: relative;
-									font-size: 24px;
+									font-size: 40px;
 									z-index: 9;
 									&:hover{
 										&:before{
@@ -69,8 +69,9 @@
 			}
 		}
 	}
-	.sec1{
-		height: @SecMinHeight;
+	section.sec1{
+		transition: height 0.5s ease;
+		height: auto;
 		.redMarks();
 		background-position: -800px 0;
 		.promo-body{
@@ -695,7 +696,11 @@ footer{
 		}
 	}
 }
+/*All devices except mobile*/
 @media (min-width: 768px){
+	body{
+		overflow: hidden !important;
+	}
 	.hidden-sm{
 		display: none !important;
 	}
