@@ -66,11 +66,15 @@
 				width: 82px;
 				height: 81px;
 				z-index: 1;
+				&:hover{
+					transform: none;
+				}
 			}
 		}
 	}
 	section.sec1{
 		transition: height 0.5s ease;
+		min-height: 1024px;
 		height: auto;
 		.redMarks();
 		background-position: -800px 0;
@@ -90,7 +94,7 @@
 		.skills-mobile{
 			.fullwidth();
 			width: 100%;
-			height: 470px;
+			height: 200%;
 			position: absolute;
 			top: 325px;
 			background: url(../img/skills-mobile.png) center 173px no-repeat #fff;
@@ -107,12 +111,25 @@
 			width: 485px;
 			height: 112px;
 			background: url(../img/logo-retina.png) center no-repeat;
-			margin: 40px auto; 
+			margin: 0 auto; 
 			margin-bottom: 30px;
 		}
 		.vert{ 
 			.row{
 				height: 800px;
+			}
+		}
+		.actions{
+			> ul{
+				> li{
+					&:not(:last-child){
+						&:hover{
+							ul{
+								display: none;
+							}
+						}
+					}
+				}
 			}
 		}
 	}
@@ -618,6 +635,7 @@
 			width: @btnWidth
 		}
 	}
+
 	.btn-large{
 		width: 290px;
 	}
@@ -699,9 +717,10 @@ footer{
 /*All devices except mobile*/
 @media (min-width: 768px){
 	body{
-		overflow: hidden !important;
+		overflow: hidden;
 	}
 	.hidden-sm{
 		display: none !important;
 	}
 }
+@media (min-width: 1024) and (min-height: 768px)

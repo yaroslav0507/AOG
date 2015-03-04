@@ -1626,8 +1626,15 @@ footer .request .social-links ul li a.in {
     z-index: 1;
   }
 
+  .header-menu .actions .menu:hover {
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+
   section.sec1 {
     transition: height 0.5s ease;
+    min-height: 1024px;
     height: auto;
     background-position: -800px 0;
   }
@@ -1673,7 +1680,7 @@ footer .request .social-links ul li a.in {
 
   section.sec1 .skills-mobile {
     width: 100%;
-    height: 470px;
+    height: 200%;
     position: absolute;
     top: 325px;
     background: url(../img/skills-mobile.png) center 173px no-repeat #ffffff;
@@ -1712,12 +1719,16 @@ footer .request .social-links ul li a.in {
     width: 485px;
     height: 112px;
     background: url(../img/logo-retina.png) center no-repeat;
-    margin: 40px auto;
+    margin: 0 auto;
     margin-bottom: 30px;
   }
 
   section.sec1 .vert .row {
     height: 800px;
+  }
+
+  section.sec1 .actions > ul > li:not(:last-child):hover ul {
+    display: none;
   }
 
   .sec2:after {
@@ -2408,7 +2419,7 @@ footer .request .social-links ul li a.in {
 
 @media (min-width: 768px) {
   body {
-    overflow: hidden !important;
+    overflow: hidden;
   }
 
   .hidden-sm {
