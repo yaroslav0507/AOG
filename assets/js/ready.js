@@ -152,7 +152,7 @@ function detectmob() {
 		init();
 	});
 	function numHover(icon, num){
-		$('.step .' + num).hover(function(){
+		$('.step.' + num).hover(function(){
 			$('.' + icon).css('background-position','0 -127px').addClass('rotating');
 		},
 		function () {

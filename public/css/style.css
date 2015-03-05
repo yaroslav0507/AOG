@@ -237,6 +237,7 @@ html {
 
 body {
   font-family: 'Exo', Helvetica, Sans-serif;
+  overflow: hidden !important;
 }
 
 h1 {
@@ -1076,6 +1077,9 @@ section .container .vert {
   line-height: 1.4em;
   color: #999999;
   position: relative;
+  display: inline-block;
+  float: left;
+  clear: both;
 }
 
 .sec6 .heading {
