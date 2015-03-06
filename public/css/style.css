@@ -404,10 +404,14 @@ section .container .vert {
   font-size: 13px;
   font-family: 'Open Sans', sans-serif;
   line-height: 1.4em;
+  padding: 0 5px;
 }
 
 .header-menu .search .dropdown ul li a:hover {
-  color: #b3b3b3;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 5px;
+  background: #ecfafc;
 }
 
 .header-menu .actions {
