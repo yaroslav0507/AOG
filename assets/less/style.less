@@ -43,6 +43,7 @@ html {
 }
 body{
 	font-family: 'Exo', Helvetica, Sans-serif;
+	background: #FFF;
 }
 
 h1{
@@ -301,8 +302,11 @@ section{
 	margin-top: -50px;
 	color: #FFF;
 	background: @tPink;
-	padding: 12px 5px;
 	z-index: 3;
+	.padding{
+			padding: 12px 5px;
+			height: 65px;
+	}
 	.head{
 		font-size: 12px;
 		text-align: center;
@@ -430,6 +434,7 @@ section{
 	height: @devRate;
 	background: @tSeaBlue;
 	color: #FFF;
+	border-top: 1px solid #fff;
 	.proposal{
 		display: inline-block;
 		margin-right: -5px;
@@ -541,17 +546,26 @@ section{
 		text-align: center;
 		margin-bottom: 45px;
 		.icon{
-			width: 124px;
-			height: 128px;
+			width: 125px;
+			height: 127px;
 			margin: auto;
 			margin-bottom: 20px;
 			position: relative;
-			>div{
-				width: inherit;
-				height: inherit;
-				&:hover{
-					animation: rotating 2s linear infinite;
-					background-position: 0 -127px;
+			div:first-child{
+					width: 125px;
+					height: 127px;
+				}
+			&:hover{
+				div:first-child{
+					width: 125px;
+					height: 127px;
+						-webkit-animation: rotation 2s linear infinite;
+					    -moz-animation: rotation 2s linear infinite;
+					    -ms-animation: rotation 2s linear infinite;
+						background-position: 0 -127px;
+				}
+				.mask{
+					background-position-y: -147px;
 				}
 			}
 			.request{
@@ -772,6 +786,9 @@ section{
 			display: inline-block;
 			float: left;
 			clear: both;
+			&:hover{
+				cursor: pointer;
+			}
 		}
 	}
 }
@@ -1099,17 +1116,23 @@ footer{
 }
 
 /*Infinite rotation animation*/
-@-webkit-keyframes rotating {
-    from{
-        -webkit-transform: rotate(0deg);
-    }
-    to{
-        -webkit-transform: rotate(360deg);
-    }
+@-webkit-keyframes rotation {
+    0%   { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+@-moz-keyframes rotation {
+    0%   { -moz-transform: rotate(0deg); }
+    100% { -moz-transform: rotate(360deg); }
+}
+@-ms-keyframes rotation {
+    0%   { -ms-transform: rotate(0deg); }
+    100% { -ms-transform: rotate(360deg); }
 }
 
 .rotating {
-    -webkit-animation: rotating 2s linear infinite;
+    -webkit-animation: rotation 2s linear infinite;
+    -moz-animation: rotation 2s linear infinite;
+    -ms-animation: rotation 2s linear infinite;
 }
 .rotate90{
 	background-position: 0 0;
@@ -1166,5 +1189,28 @@ footer{
 		height: 23px;
 		background: url(../img/about_us/right-line.png) no-repeat;
 	}
+}
+.mask{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	width: 88px;
+	height: 88px;
+	border-radius: 50%;
+}
+.icon-request .mask{
+	background: #FFF url(../img/icon-gear-request.png) no-repeat -18px -20px;
+}
+.icon-receive .mask{
+	background: #FFF url(../img/icon-gear-clock.png) no-repeat -18px -20px;
+}
+.icon-work .mask{
+	background: #FFF url(../img/icon-gear-laptop.png) no-repeat -18px -20px;
+}
+.icon-enjoy .mask{
+	background: #FFF url(../img/icon-gear-thumb.png) no-repeat -18px -20px;
 }
 @import 'screen';

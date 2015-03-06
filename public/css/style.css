@@ -237,6 +237,7 @@ html {
 
 body {
   font-family: 'Exo', Helvetica, Sans-serif;
+  background: #FFF;
 }
 
 h1 {
@@ -487,7 +488,7 @@ section .container .vert {
   width: 200%;
   height: inherit;
   position: absolute;
-  left: 99%;
+  left: 97%;
   top: 0;
   background: inherit;
 }
@@ -542,8 +543,12 @@ section .container .vert {
   margin-top: -50px;
   color: #FFF;
   background: #ff8e8e;
-  padding: 12px 5px;
   z-index: 3;
+}
+
+.red-offer-body .padding {
+  padding: 12px 5px;
+  height: 65px;
 }
 
 .red-offer-body .head {
@@ -671,6 +676,7 @@ section .container .vert {
   height: 180px;
   background: #82b4bb;
   color: #FFF;
+  border-top: 1px solid #fff;
 }
 
 .dev-rate .row {
@@ -692,7 +698,7 @@ section .container .vert {
   width: 200%;
   height: inherit;
   position: absolute;
-  left: 99%;
+  left: 97%;
   top: 0;
   background: inherit;
 }
@@ -813,22 +819,29 @@ section .container .vert {
 }
 
 .how-it-works .item .icon {
-  width: 124px;
-  height: 128px;
+  width: 125px;
+  height: 127px;
   margin: auto;
   margin-bottom: 20px;
   position: relative;
 }
 
-.how-it-works .item .icon > div {
-  width: inherit;
-  height: inherit;
+.how-it-works .item .icon div:first-child {
+  width: 125px;
+  height: 127px;
 }
 
-.how-it-works .item .icon > div:hover {
-  -webkit-animation: rotating 2s linear infinite;
-  animation: rotating 2s linear infinite;
+.how-it-works .item .icon:hover div:first-child {
+  width: 125px;
+  height: 127px;
+  -webkit-animation: rotation 2s linear infinite;
+  -moz-animation: rotation 2s linear infinite;
+  -ms-animation: rotation 2s linear infinite;
   background-position: 0 -127px;
+}
+
+.how-it-works .item .icon:hover .mask {
+  background-position-y: -147px;
 }
 
 .how-it-works .item .icon .request {
@@ -1080,6 +1093,10 @@ section .container .vert {
   clear: both;
 }
 
+.technologies ul li:hover {
+  cursor: pointer;
+}
+
 .sec6 .heading {
   margin-bottom: 45px;
 }
@@ -1123,7 +1140,7 @@ footer:after {
   width: 200%;
   height: inherit;
   position: absolute;
-  left: 99%;
+  left: 97%;
   top: 0;
   background: inherit;
 }
@@ -1470,18 +1487,30 @@ footer .request .social-links ul li a.in {
 
 /*Infinite rotation animation*/
 
-@-webkit-keyframes rotating {
-  from {
+@-webkit-keyframes rotation {
+  0% {
     -webkit-transform: rotate(0deg);
   }
 
-  to {
+  100% {
     -webkit-transform: rotate(360deg);
   }
 }
 
+@-ms-keyframes rotation {
+  0% {
+    -ms-transform: rotate(0deg);
+  }
+
+  100% {
+    -ms-transform: rotate(360deg);
+  }
+}
+
 .rotating {
-  -webkit-animation: rotating 2s linear infinite;
+  -webkit-animation: rotation 2s linear infinite;
+  -moz-animation: rotation 2s linear infinite;
+  -ms-animation: rotation 2s linear infinite;
 }
 
 .rotate90 {
@@ -1553,9 +1582,37 @@ footer .request .social-links ul li a.in {
   background: url(../img/about_us/right-line.png) no-repeat;
 }
 
+.mask {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+}
+
+.icon-request .mask {
+  background: #ffffff url(../img/icon-gear-request.png) no-repeat -18px -20px;
+}
+
+.icon-receive .mask {
+  background: #ffffff url(../img/icon-gear-clock.png) no-repeat -18px -20px;
+}
+
+.icon-work .mask {
+  background: #ffffff url(../img/icon-gear-laptop.png) no-repeat -18px -20px;
+}
+
+.icon-enjoy .mask {
+  background: #ffffff url(../img/icon-gear-thumb.png) no-repeat -18px -20px;
+}
+
 /*Very small devices - mobile*/
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   section {
     min-height: 1137px;
   }
@@ -1703,7 +1760,7 @@ footer .request .social-links ul li a.in {
     width: 200%;
     height: inherit;
     position: absolute;
-    left: 99%;
+    left: 97%;
     top: 0;
     background: inherit;
   }
@@ -2171,7 +2228,7 @@ footer .request .social-links ul li a.in {
 
   footer .contacts {
     height: 115px;
-    margin: auto 160px auto 100px;
+    margin: auto 160px auto 15px;
   }
 
   footer .contacts .contacts-group {

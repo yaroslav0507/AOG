@@ -2159,11 +2159,11 @@ $(function(){
 	});
 	function numHover(icon, num){
 		$('.step.' + num).hover(function(){
-			$('.' + icon).css('background-position','0 -127px').addClass('rotating');
+			$('.' + icon).css('background-position','0 -127px').addClass('rotating').closest('.icon').find('.mask').css('background-position-y','-147px');
 		},
 		function () {
-			$('.' + icon).removeAttr('style').removeClass('rotating');
-		})
+			$('.' + icon).removeAttr('style').removeClass('rotating').closest('.icon').find('.mask').removeAttr('style');
+		});
 	}
 	numHover('request', 'first');
 	numHover('receive', 'second');
