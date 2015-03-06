@@ -467,7 +467,7 @@ section .container .vert {
   padding: 0;
   position: absolute;
   width: 100%;
-  bottom: -1px;
+  bottom: -3px;
   height: 82px;
   text-transform: uppercase;
   color: #3e3e3e;
