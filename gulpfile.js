@@ -57,7 +57,7 @@ gulp.task('watch', function() {
     gulp.run('images');
     gulp.run('js');
 
-    server.listen(35729, function(err) {
+    server.listen(35728, function(err) {
         if (err) return console.log(err);
 
         gulp.watch('assets/less/**/*.less', function() {
