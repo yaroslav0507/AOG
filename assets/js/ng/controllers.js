@@ -1,12 +1,6 @@
 var landingApp = angular.module('landingApp', []);
 
-function chunk(arr, size) {
-  var newArr = [];
-  for (var i=0; i<arr.length; i+=size) {
-    newArr.push(arr.slice(i, i+size));
-  }
-  return newArr;
-}
+
 
 landingApp.controller('SearchCtrl', function($scope){
 	$scope.skills = [
