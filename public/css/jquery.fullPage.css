@@ -169,13 +169,14 @@ html, body {
     overflow: hidden;
     display: block;
     opacity: 0;
-    width: 0;
+    transition: all 0.5s ease;
 }
 #fp-nav ul li:hover .fp-tooltip {
     -webkit-transition: opacity 0.2s ease-in;
-    transition: opacity 0.2s ease-in;
+    transition: all 0.2s ease-in;
     width: auto;
     opacity: 1;
+    transform: translateX(-10px);
 }
 #fp-nav ul li .fp-tooltip.right {
     right: 20px;

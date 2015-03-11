@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="landingApp">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=9;IE=10;IE=Edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Artele Outsourcing Group</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/jquery.fullPage.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script src="js/timer/js/jquery.cookie.js"></script>
+	<script src="js/timer/js/timer-script.js"></script>
+	<script src="js/angular/angular.min.js"></script>
+	<script src="js/app.js"></script>
+	<!--[if lt IE 9]>
+	    <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+	<![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<!-- Modal -->
+<div class="modal fade" id="RequestModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ng-controller="SearchCtrl">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Request Form</h4>
+      </div>
+      <div class="modal-body">
+      	<form name="modalForm" ng-controller="modalController">
+	      <div class="col-sm-6">
+	          <div class="form-group">
+			    <label for="fullName" class="icon"><i class="name"></i></label>
+			    <input type="text" class="form-control" id="fullName" placeholder="Full Name*">
+			  </div>
+			  <div class="form-group">
+			    <label for="Email" class="icon"><i class="email"></i></label>
+			    <input type="email" name="email" ng-model="email.text" class="form-control" id="Email" placeholder="Email*" ng-model-options="{updateOn: 'blur'}">
+			  </div>
+	      </div>
+	      <div class="col-sm-6">
+			  <div class="form-group">
+			    <label for="Phone" class="icon"><i class="phone"></i></label>
+			    <input type="text" class="form-control" id="Phone" placeholder="Phone*">
+			  </div>
+			  <div class="form-group">
+			    <label for="Skype" class="icon"><i class="skype"></i></label>
+			    <input type="text" class="form-control" id="Skype" placeholder="Skype">
+			  </div>
+	      </div>
+	      <div class="col-sm-12">
+	      	<div class="form-group">
+	      		<label for="Description" class="icon"><i class="description"></i></label>
+			    <textarea type="text" class="form-control" id="Description" placeholder="General Description"></textarea>
+	      	</div>
+	      </div>
+	      <div class="col-sm-6">
+			  <div class="form-group">
+			    <label for="Duration" class="icon"><i class="duration"></i></label>
+			    <input type="text" class="form-control" id="Duration" placeholder="Expected Duration">
+			  </div>
+	      </div>
+	      <div class="col-sm-6">
+	      	  <div class="form-group">
+			    <label for="Skills" class="icon"><i class="skills"></i></label>
+			    <select type="text" class="form-control" id="Skills" placeholder="Required Skills" ng-model="selectSkills" ng-options="opt for opt in skills"></select>
+			  </div>
+	      </div>
+	     </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-violet">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+<a href="#profit" data-menu-anchor="profit" class="profit-link">
+	<div class="red-offer-body text-center hidden-xs">
+		<div class="vert padding">
+			<div class="head">special offer </div>
+			<div class="proposal-text-mobile hidden-sm">
+				Only until <b>20 March</b><br> PHP developers rate will be <b>150 $</b>
+			</div>
+			<ul class="counter">
+				<li>
+					<div class="num">
+						<div class="countbox-days2"><span></span>0</div>
+					</div>
+					day
+				</li>
+				<li>
+					<div class="num">
+						<div class="countbox-hours1"><span></span>0</div>
+						<div class="countbox-hours2"><span></span>0</div>
+					</div>
+					hour
+				</li>
+				<li>
+					<div class="num">
+						<div class="countbox-mins1"><span></span>0</div>
+						<div class="countbox-mins2"><span></span>0</div>
+					</div>
+					min
+				</li>
+			</ul>
+		</div>
+	</div>
+</a>
+<div id="fullpage">
+<section class="section sec1" data-anchor="main">
+	<div class="container">
+		<div class="vert">
+			<div class="row">
+				<div class="col-md-12 header-menu">
+					<div class="logo hidden-xs pull-left"></div>
+
+					<div class="search hidden-xs">
+						<form name="searchForm" ng-model="searchActive" ng-controller="SearchCtrl">
+							<input type="text" ng-value="skillName" ng-model="input" ng-focus="searchActive=true" ng-blur="searchActive=false" placeholder="Search developers or skills" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search developers or skills'">
+							<a href="#" class="btn-search"></a>
+							<div class="dropdown" ng-show="searchActive">
+								<ul>
+									<li ng-repeat="skill in skills | filter:input"><a href="/{{skill}}" ng-model="skillName" ng-click="skillName='someval'">{{skill}}</a></li>
+								</ul>
+							</div>
+						</form>
+					</div>
+					<div class="actions pull-right">
+						<ul>
+							<li>
+								<a href="#" class="menu"></a>
+								<ul id="mobileMenu">
+									<li><a class="slide-anchor" href="#">browse</a></li>
+									<li data-menuanchor="how-it-works"><a class="slide-anchor" href="#how-it-works-anchor">How it works</a></li>
+									<li><a class="slide-anchor" href="#about-us-achor">About us</a></li>
+									<li class="hidden-sm"><a class="slide-anchor" href="#">Log in</a></li>
+									<li class="hidden-sm"><a class="slide-anchor" href="#">Sign up</a></li>
+								</ul>
+							</li>
+							<li class="hidden-xs"><a href="#" class="profile"></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="logo-mobile hidden-sm"></div>
+				<div class="col-md-12 text-center promo-body">
+					<div class="promo">
+						Rent highly<br>
+						qualified IT specialists <br>
+						<span class="wow lightSpeedIn">in 24h</span> to do <br>
+						your projects
+					</div>
+					<div class="descript hidden-xs">
+						AOG IS YOUR GATEWAY TO 500+ UKRAINIAN IT DEVELOPERS
+					</div>
+					<a href="tel:+380988357709" class="phone hidden-sm lightBlue">+380988357709</a>
+					<div class="btn btn-blue btn-shadow btn-large" data-toggle="modal" data-target="#RequestModal">request a specialist</div>
+					<div class="skills-mobile text-center">
+					</div>
+				</div>
+				<div class="learn-more hidden-xs text-center">
+					<div class="skills-md"><img src="img/skills.png" alt="Skills"></div>
+					<a href="#section2"><img src="img/icon-learn-more.png" alt="Learn more"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</section>
+<section class="section sec2" data-anchor="profit">
+	<div class="container">
+		<div class="b-profit">
+			<div class="vert">
+				<div class="col-md-12 text-center">
+					<div class="heading">
+						<h1 class="lightBlue">
+							SPEND MORE TIME DOING WHAT <br>
+							BRINGS YOU PROFIT
+						</h1>
+						<h3>Grow your business with A-OG</h3>
+					</div>
+				</div>
+				<div class="row profit">
+					<div class="col-xs-12 col-sm-4 wow zoomIn">
+						<div class="item">
+							<div class="icon request"></div>
+							<div class="name violet">2 Developers in <span class="pink">24h</span></div>
+							<div class="desc">
+								Get 2 qualified candidates in
+								only 24 hours - absolutely free
+								of charge.
+							</div>
+							<div class="btn btn-violet">Request developers</div>
+						</div>
+					</div>
+					<div class="col-xs-4 hidden-xs wow zoomIn" data-wow-delay="0.5s">
+						<div class="item">
+							<div class="icon ukraine"></div>
+							<div class="name">Ukrainian IT Guide</div>
+							<div class="desc">
+								All Ukrainian IT companies in one place. 
+								Find nearly any of the numerous IT 
+								service providers Ukraine has to offer.
+							</div>
+							<div class="btn btn-blue">BROWSE</div>
+						</div>
+					</div>
+					<div class="col-xs-4 hidden-xs wow zoomIn" data-wow-delay="1s">
+						<div class="item">
+							<div class="icon database"></div>
+							<div class="name">Developers database</div>
+							<div class="desc">
+								Browse our 500+ programming <br>
+								talent database and instantly find <br>
+								the IT people your project needs.
+							</div>
+							<div class="btn btn-pink">SEARCH</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="dev-rate">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-4 col-md-3 pull-right offer">
+						<div class="offer-body">
+							<div class="vert">
+								<div class="head">special offer </div>
+								<div class="proposal-text-mobile hidden-sm">
+									Only until <b>20 March</b><br> PHP developers rate will be <b>150 $</b>
+								</div>
+								<ul class="counter">
+									<li>
+										<div class="num">
+											<div class="countbox-days2"><span></span>0</div>
+										</div>
+										day
+									</li>
+									<li>
+										<div class="num">
+											<div class="countbox-hours1"><span></span>0</div>
+											<div class="countbox-hours2"><span></span>0</div>
+										</div>
+										hour
+									</li>
+									<li>
+										<div class="num">
+											<div class="countbox-mins1"><span></span>4</div>
+											<div class="countbox-mins2"><span></span>2</div>
+										</div>
+										min
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>					
+					<div class="col-xs-12 col-sm-8 col-md-9 pull-left proposal">
+						<div class="proposal-text hidden-xs">
+							Only until <b>20 November</b> PHP developers rate will be <b>150 $</b>
+						</div>
+					</div>
+					<div class="btn btn-blue btn-large">ORDER now</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="section sec3" data-anchor="how-it-works">
+<a href="#" id="how-it-works-anchor"></a>
+	<div class="container">
+		<div class="vert">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<div class="heading">
+						<h1 class="pink">
+							How it works 
+						</h1>
+					</div>
+				</div>
+			</div>
+			<div class="row how-it-works">
+				<div class="col-xs-3 col-md-3">
+					<div class="item">
+						<div class="icon icon-request">
+							<div class="request"></div>
+							<div class="mask"></div>
+						</div>
+						<div class="step">Request developers</div>
+					</div>
+				</div>
+				<div class="col-xs-3 col-md-3">
+					<div class="item">
+						<div class="icon icon-receive">
+							<div class="receive"></div>
+							<div class="mask"></div>
+						</div>
+						<div class="step">Receieve developers<br> in 24h</div>
+					</div>
+				</div>
+				<div class="col-xs-3 col-md-3">
+					<div class="item">
+						<div class="icon icon-work">
+							<div class="work"></div>
+							<div class="mask"></div>
+						</div>
+						<div class="step">Work directly with developers</div>
+					</div>
+				</div>
+				<div class="col-xs-3 col-md-3">
+					<div class="item">
+						<div class="icon icon-enjoy">
+							<div class="enjoy"></div>
+							<div class="mask"></div>
+						</div>
+						<div class="step">Enjoy your results and get more</div>
+					</div>
+				</div>
+			</div>
+			<div class="row steps">
+				<article>
+					<div class="col-xs-6">
+						<div class="step first">
+							<div class="num">1</div>
+							<div class="descript">
+								<h4>Place Your Request</h4>
+								<p>Just fill out a simple form online, including the skills and experience you are looking for.</p>
+							</div>
+						</div>
+						<div class="step first">
+							<div class="num">2</div>
+							<div class="descript">
+								<h4>DETAIL YOUR REQUIREMENTS</h4>
+								<p>You will be assigned your own IT resource manager, who will immediately get back to you to clarify your requirements.</p>
+							</div>
+						</div>
+						<div class="step first">
+							<div class="num">3</div>
+							<div class="descript">
+								<h4>FOCUS ON YOUR CORE TASKS</h4>
+								<p>Meanwhile, we will select several suitable candidates and conduct initial interviews to verify their technical and English level.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="step second">
+							<div class="num">4</div>
+							<div class="descript">
+								<h4>GET SEVERAL CANDIDATES</h4>
+								<p>After the initial screening, we will present you several potential candidates, who meet your requirements best.</p>
+							</div>
+						</div>
+						<div class="step second">
+							<div class="num">5</div>
+							<div class="descript">
+								<h4>INTERVIEW THEM PERSONALLY</h4>
+								<p>We will arrange Skype interviews with the candidates you select and make sure they sign an NDA to protect your confidential info.</p>
+							</div>
+						</div>
+						<div class="step third">
+							<div class="num">6</div>
+							<div class="descript">
+								<h4>START WORKING WITH DEVELOPERS DIRECTLY</h4>
+								<p>Once you’ve made your choice, you work with your developers directly, no third party involved in managing your project.</p>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+			<div class="row text-center">
+				<div class="btn btn-pink btn-large">Request  NOW</div>			
+			</div>
+		</div>
+	</div>
+</section>
+<section class="section sec4" data-anchor="about-us">
+<a href="#" id="about-us-achor"></a>
+	<div class="bg-wrap">
+		<div class="container">
+			<div class="vert">
+				<div class="row about-us">
+					<div class="col-xs-12 text-center">
+						<div class="heading">
+							<h1 class="lightBlue">about us</h1>
+							<h3>...based on a decade's experience in IT</h3>
+						</div>
+						<div class="btn btn-large btn-blue hidden-sm">Read more</div>
+					</div>
+					<div class="col-sm-12 hidden-xs">
+						<p>Artel Outsourcing Group is an IT outsourcing service, connecting Ukrainian IT talent (both freelancers and dedicated teams) with European businesses in need of professional cost-effective development.</p>
+						<p>Whether you need to supplement your team with a certain specialist for a specific period of time, or are looking to outsource a turn-key project to a team of programmers, we will find the solution that suits your needs. Contact us now and we’ll select the right specialists for your project.</p>
+						<div class="read-more">
+							<div class="col-xs-12 text-center">
+								<div class="about-us-anim">
+									<div class="man top-man wow fadeIn" data-wow-delay="0"></div>
+									<div class="left-man-line wow fadeIn" data-wow-delay="1.5s"></div>
+									<div class="man left-man wow fadeIn" data-wow-delay="2s"></div>
+									<div class="bottom-man-line wow fadeIn" data-wow-delay="0.5s"></div>
+									<div class="man bottom-man wow fadeIn" data-wow-delay="1s"></div>
+									<div class="right-man-line wow fadeIn" data-wow-delay="2.5s"></div>
+									<div class="man right-man wow fadeIn" data-wow-delay="3s"></div>
+								</div>
+								<div class="btn btn-large btn-violet">Read more</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="section sec5" data-anchor="it-talent">
+	<div class="container">
+		<div class="vert">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<div class="heading">
+						<h1 class="pink">Ukrainian it talent </h1>
+						<h3>...or why you should choose Ukrainians</h3>
+					</div>
+				</div>
+				<div class="col-xs-12">
+					<div class="map hidden-xs">
+						<div class="specialist wow flipInY" data-wow-delay="1.5s">
+							<div class="face"><img src="img/face.png" alt=""></div>
+							<div class="info">
+								<div class="name">Ivanenko Ivan</div>
+								<div class="profession">designer</div>
+								<div class="since">AOG since 2009</div>
+							</div>
+						</div>
+						<div class="specialist wow flipInY" data-wow-delay="1s">
+							<div class="face"><img src="img/face.png" alt=""></div>
+							<div class="info">
+								<div class="name">Ivanenko Ivan</div>
+								<div class="profession">designer</div>
+								<div class="since">AOG since 2009</div>
+							</div>
+						</div>
+						<div class="specialist wow flipInY" data-wow-delay="2s">
+							<div class="face"><img src="img/face.png" alt=""></div>
+							<div class="info">
+								<div class="name">Ivanenko Ivan</div>
+								<div class="profession">designer</div>
+								<div class="since">AOG since 2009</div>
+							</div>
+						</div>
+						<div class="specialist wow flipInY" data-wow-delay="0.5s">
+							<div class="face"><img src="img/face.png" alt=""></div>
+							<div class="info">
+								<div class="name">Ivanenko Ivan</div>
+								<div class="profession">designer</div>
+								<div class="since">AOG since 2009</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 hidden-sm text-center">
+					<blockquote>
+						Ukraine is the 
+						5th largest IT Outsourcing <br>
+						Services Market in the World with<br>
+						revenues exceeding one billion Euros.
+					</blockquote>
+					<span class="author">- Forbes.com </span>
+				</div>
+				<div class="col-sm-4 hidden-xs text-center">
+					<blockquote>
+						Ukraine is the <br>
+						5th largest IT Out- <br>
+						sourcing Services<br>
+						Market in the World with<br>
+						revenues exceeding one <br>
+						billion Euros.
+					</blockquote>
+					<span class="author">- Forbes.com </span>
+				</div>
+				<div class="col-sm-4 hidden-xs text-center">
+					<blockquote>
+						Ukraine is one<br>
+						of the leading coun- <br>
+						tries in the Central and<br>
+						Eastern European region<br>
+						by the volume of IT out- <br>
+						sourcing services.
+					</blockquote>
+					<span class="author">- Qarea.com</span>
+				</div>
+				<div class="col-sm-4 hidden-xs text-center">
+					<blockquote>
+						There are more<br>
+						than 1,000 out- <br>
+						sourcing companies<br>
+						operating throughout<br>
+						Ukraine.
+					</blockquote>
+					<span class="author">- Symphony-solutions.eu</span>
+				</div>
+			</div>
+			<div class="row hidden-sm">
+				<div class="col-xs-12 text-center">
+					<div class="heading">
+						<h1 class="lightBlue">
+							our technologies 
+						</h1>
+					</div>
+				</div>
+			</div>
+			<div class="row technologies hidden-sm">
+				<div class="col-xs-4">
+					<ul>
+					  <li>Android</li>
+					  <li>AngularJS</li>
+					  <li>API</li>
+					  <li>ASP.NET</li>
+					  <li>ASP.NET MVC</li>
+					</ul>
+				</div>
+				<div class="col-xs-4">
+					<ul>
+					  <li>Backbone.js</li>
+					  <li>C</li>
+					  <li>C#</li>
+					  <li>C++</li>
+					  <li>CakePHP</li>
+					</ul>
+				</div>
+				<div class="col-xs-4">
+					<ul>
+					  <li>Clojure</li>
+					  <li>CMS</li>
+					  <li>Cocoa</li>
+					  <li>CoffeeScript</li>
+					  <li>Delphi</li>
+					 </ul>
+				</div>
+			</div>
+			<div class="col-xs-12 text-center hidden-sm">
+				<div class="btn btn-large btn-blue">More technologies</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="section sec6 hidden-xs" data-anchor="technologies">
+	<div class="container">
+		<div class="j-tech">
+			<div class="vert">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<div class="heading">
+							<h1 class="violet">
+								our technologies 
+							</h1>
+						</div>
+					</div>	
+				</div>
+				<div class="row technologies">
+					<div class="col-sm-2">
+						<ul>
+						  <li><a href="#">Android</a></li>
+						  <li><a href="#">AngularJS</a></li>
+						  <li><a href="#">API</a></li>
+						  <li><a href="#">ASP.NET</a></li>
+						  <li><a href="#">ASP.NET MVC</a></li>
+						  <li><a href="#">Backbone.js</a></li>
+						  <li><a href="#">C</a></li>
+						  <li><a href="#">C#</a></li>
+						  <li><a href="#">C++</a></li>
+						  <li><a href="#">CakePHP</a></li>
+						  <li><a href="#">Clojure</a></li>
+						  <li><a href="#">CMS</a></li>
+						  <li><a href="#">Cocoa</a></li>
+						  <li><a href="#">CoffeeScript</a></li>
+						  <li><a href="#">Delphi</a></li>
+						</ul>
+					</div>
+					<div class="col-sm-2">
+						<ul>
+						  <li><a href="#">DevOps</a></li>
+						  <li><a href="#">Django</a></li>
+						  <li><a href="#">Dojo</a></li>
+						  <li><a href="#">Drupal</a></li>
+						  <li><a href="#">Erlang</a></li>
+						  <li><a href="#">ERP</a></li>
+						  <li><a href="#">Express.js</a></li>
+						  <li><a href="#">Ext JS</a></li>
+						  <li><a href="#">F#</a></li>
+						  <li><a href="#">Flash</a></li>
+						  <li><a href="#">Front-end</a></li>
+						  <li><a href="#">Game Development</a></li>
+						  <li><a href="#">GIS</a></li>
+						  <li><a href="#">Grails</a></li>
+						  <li><a href="#">Groovy</a></li>
+						</ul>
+					</div>
+					<div class="col-sm-2">
+						<ul>
+						  <li><a href="#">Hadoop</a></li>
+						  <li><a href="#">Haskell</a></li>
+						  <li><a href="#">Hibernate</a></li>
+						  <li><a href="#">HTML5</a></li>
+						  <li><a href="#">iOS</a></li>
+						  <li><a href="#">Java</a></li>
+						  <li><a href="#">Java EE</a></li>
+						  <li><a href="#">JavaScript</a></li>
+						  <li><a href="#">jQuery</a></li>
+						  <li><a href="#">LAMP</a></li>
+						  <li><a href="#">LMS</a></li>
+						  <li><a href="#">Machine Learning</a></li>
+						  <li><a href="#">Magento</a></li>
+						  <li><a href="#">MATLAB</a></li>
+						  <li><a href="#">Microsoft</a></li>
+						 </ul>
+					</div>
+					<div class="col-sm-2">
+						<ul>
+						  <li><a href="#">Mobile</a></li>
+						  <li><a href="#">MSSQL</a></li>
+						  <li><a href="#">MySQL</a></li>
+						  <li><a href="#">.NET</a></li>
+						  <li><a href="#">Node.js</a></li>
+						  <li><a href="#">Objective-C</a></li>
+						  <li><a href="#">OCaml</a></li>
+						  <li><a href="#">OpenGL</a></li>
+						  <li><a href="#">Perl</a></li>
+						  <li><a href="#">PHP</a></li>
+						  <li><a href="#">POS</a></li>
+						  <li><a href="#">PostgreSQL</a></li>
+						  <li><a href="#">PyObjc</a></li>
+						  <li><a href="#">PyQT</a></li>
+						  <li><a href="#">Python</a></li>
+						</ul>
+					</div>
+					<div class="col-sm-2">
+						<ul>
+						  <li><a href="#">Ruby</a></li>
+						  <li><a href="#">Ruby on Rails</a></li>
+						  <li><a href="#">SalesForce</a></li>
+						  <li><a href="#">Scala</a></li>
+						  <li><a href="#">Sharepoint</a></li>
+						  <li><a href="#">Silverlight</a></li>
+						  <li><a href="#">Socket.IO</a></li>
+						  <li><a href="#">Spring</a></li>
+						  <li><a href="#">SQL</a></li>
+						  <li><a href="#">Struts</a></li>
+						  <li><a href="#">Symfony</a></li>
+						  <li><a href="#">Sys Admin</a></li>
+						  <li><a href="#">System Security</a></li>
+						  <li><a href="#">Twitter Bootstrap</a></li>
+						  <li><a href="#">UI</a></li>
+						</ul>
+					</div>
+					<div class="col-sm-2">
+						<ul>
+						  <li><a href="#">Unity</a></li>
+						  <li><a href="#">Unity3D</a></li>
+						  <li><a href="#">VB.NET</a></li>
+						  <li><a href="#">Visual Studio</a></li>
+						  <li><a href="#">Web</a></li>
+						  <li><a href="#">Windows</a></li>
+						  <li><a href="#">WordPress</a></li>
+						  <li><a href="#">WPF</a></li>
+						  <li><a href="#">Xamarin</a></li>
+						  <li><a href="#">Xcode</a></li>
+						  <li><a href="#">Yii</a></li>
+						  <li><a href="#">Zend</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="contacts">
+				<div class="contacts-group">
+					<div class="item info">
+						<ul>
+							<li data-menuanchor="how-it-works"><a href="#how-it-works">How it works</a></li>
+							<li data-menuanchor="it-talent"><a href="#it-talent">Ukrainian it talent</a></li>
+							<li><a href="#">Our clients</a></li>
+							<li data-menuanchor="it-talent"><a href="#it-talent">Our technologies</a></li>
+						</ul>
+					</div>
+					<div class="item social">
+						<ul>
+							<li><a href="#">In the News</a></li>
+							<li><a href="#">Blog</a></li>
+							<li><a href="#">Our Team</a></li>
+							<li><a href="#">Testimonials</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="contacts-group">
+					<div class="item tel">
+						<a href="tel:+380632360961">+38 063 236 09 61</a>
+					</div>
+					<div class="item mail">
+						<a href="mail:contact@a-og.eu">contact@a-og.eu</a>
+					</div>
+				</div>
+			</div>
+			<div class="request text-center">
+				<h4>2 Developers in 24h</h4>
+				<div class="btn btn-blue btn-large wow bounceIn">ORDER now</div>
+				<div class="social-links">
+					<ul>
+						<li><a href="#" class="tw"></a></li>
+						<li><a href="#" class="fb"></a></li>
+						<li><a href="#" class="go"></a></li>
+						<li><a href="#" class="yo"></a></li>
+						<li><a href="#" class="in"></a></li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+	</div>
+</section>
+<section class="mobile-footter hidden-sm">
+	<div class="container">
+		<div class="row text-center">
+			<div id="" class="contacts-group">
+				<div class="item info">
+					<ul>
+						<li data-menuanchor="how-it-works"><a href="#how-it-works">How it works</a></li>
+						<li data-menuanchor="about-us"><a href="#about-us">About us</a></li>
+						<li data-menuanchor="it-talent"><a href="#it-talent">Ukrainian it talent</a></li>
+						<li data-menuanchor="it-talent"><a href="#it-talent">Our technologies</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="contacts-group">
+				<div class="item tel">
+					<a href="tel:+380632360961">+38 063 236 09 61</a>
+				</div>
+				<div class="item skype">
+					<a href="skype:vdybenko?call">vdybenko</a>
+				</div>
+			</div>
+			<div class="request text-center">
+				<h4>2 Developers <span>in 24h</span></h4>
+				<div class="btn btn-pink btn-large">Request now</div>
+			</div>
+			<div class="social-links">
+				<ul>
+					<li><a href="#" class="tw"></a></li>
+					<li><a href="#" class="fb"></a></li>
+					<li><a href="#" class="go"></a></li>
+					<li><a href="#" class="yo"></a></li>
+					<li><a href="#" class="in"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+</div>
+<script>
+	new WOW().init();
+</script>
+<script>
+	$(function(){
+		if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|AppleWebKit/i.test(navigator.userAgent) ) {
+	        var scale = window.innerWidth/640;
+	        viewport = document.querySelector("meta[name=viewport]");
+	        viewport.setAttribute('content', 'width=device-width, initial-scale='+scale+', user-scalable=1');
+	 	}	
+	 	$('.modal').modal();
+	 })
+</script>
+</body>
+</html>

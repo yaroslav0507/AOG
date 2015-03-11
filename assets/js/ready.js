@@ -55,13 +55,13 @@ $(function(){
 	function mobile(){
 		$('#fullpage').fullpage({
 		        //Navigation
-		        anchors:['main', 'profit', 'how-it-works', 'about-us', 'it-talent', 'technologies'],
-		        menu: '#slideMenu',
-		        navigation: true,
-		        navigationPosition: 'right',
-		        navigationTooltips: ['Home', 'Grow Your Business', 'How It Works', 'About Us', 'Ukrainian IT Tallent', 'Our Technologies'],
-		        slidesNavigation: true,
-		        slidesNavPosition: 'bottom',
+		        //anchors:['main', 'profit', 'how-it-works', 'about-us', 'it-talent', 'technologies'],
+		       // menu: '#slideMenu',
+		        //navigation: true,
+		        //navigationPosition: 'right',
+		       // navigationTooltips: ['Home', 'Grow Your Business', 'How It Works', 'About Us', 'Ukrainian IT Tallent', 'Our Technologies'],
+		       // slidesNavigation: true,
+		        //slidesNavPosition: 'bottom',
 
 		        //Scrolling
 		        css3: true,
@@ -207,16 +207,23 @@ $(function(){
 	});
 	function numHover(icon, num){
 		$('.step.' + num).hover(function(){
-			$('.' + icon).css('background-position','0 -127px').addClass('rotating');
+			$('.' + icon).css('background-position','0 -127px').addClass('rotating').closest('.icon').find('.mask').css('background-position-y','-147px');
 		},
 		function () {
-			$('.' + icon).removeAttr('style').removeClass('rotating');
-		})
+			$('.' + icon).removeAttr('style').removeClass('rotating').closest('.icon').find('.mask').removeAttr('style');
+		});
 	}
 	numHover('request', 'first');
 	numHover('receive', 'second');
 	numHover('work', 'third');
 
-	/*Mobile menu pulling logo plugin*/
-	//mobileMenu.init();
+
+	/*Smooth scrolling to the menu anchor links*/
+	$('.slide-anchor').click(function(){
+	    $('html, body').animate({
+	        scrollTop: $( $.attr(this, 'href') ).offset().top
+	    }, 1000);
+	    return false;
+	});
+
 })

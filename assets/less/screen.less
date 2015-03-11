@@ -3,7 +3,7 @@
 
 @SecMinHeight: 1137px;
 /*Very small devices - mobile*/
-@media (max-width: 768px){
+@media (max-width: 767px){
 	section{
 		min-height: @SecMinHeight;
 	}
@@ -142,7 +142,7 @@
 				display: none;
 			}
 			.offer{
-				background: transparent;
+				background: inherit;
 				padding: 25px 0;
 				width: 575px;
 				float: none !important;
@@ -170,7 +170,7 @@
 					width: 0;
 					height: 0;
 					left: 47px;
-					top: 0;
+					top: -2px;
 					border-style: solid;
 					border-width: 34px 43.5px 0 43.5px;
 					border-color: #ffffff transparent transparent transparent;
@@ -463,14 +463,11 @@
 	}
 	.sec6 .technologies ul li {
 		font-size: 14px;
-		&:hover{
-			cursor: pointer;
-		}
 	}
 	footer{
 		.contacts{
 			height: 115px;
-			margin: auto 160px auto 100px;
+			margin: auto 160px auto 15px;
 			.contacts-group{
 				display: inline-block;
 				vertical-align: middle;
@@ -666,15 +663,15 @@
 			}
 		}
 	}
-footer{
-	width: 1185px;
-	.contacts{
-		margin: auto;
-		.info,.social{
-			margin-right: 56px;
+	footer{
+		width: 1185px;
+		.contacts{
+			margin: auto;
+			.info,.social{
+				margin-right: 56px;
+			}
 		}
 	}
-}
 }
 /*Laptops with 15' screen and lower*/
 @media (max-height: 768px) and (min-width: 768px){
