@@ -27,7 +27,7 @@
 	<![endif]-->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
 </head>
-<body ng-controller="SearchCtrl">
+<body ng-controller="SearchCtrl" class="split">
 <!-- Modal -->
 <div class="modal contact-form fade" id="RequestModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -133,24 +133,12 @@
 
 <!-- Fullpage -->
 <div id="fullpage">
-	<section class="section sec1" data-anchor="main">
+	<section class="section sec1 split" data-anchor="main">
 		<div class="container">
 			<div class="vert">
 				<div class="row">
-					<div class="col-md-12 header-menu">
+					<div class="col-md-12 header-menu header-menu--transparent">
 						<div class="logo hidden-xs pull-left"></div>
-
-						<div class="search hidden-xs">
-							<form name="searchForm" ng-model="searchActive">
-								<input type="text" ng-value="skillName" ng-model="input" ng-focus="searchActive=true" ng-blur="searchActive=false" placeholder="Search developers or skills" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search developers or skills'">
-								<a href="#" class="btn-search"></a>
-								<div class="dropdown" ng-show="searchActive">
-									<ul>
-										<li ng-repeat="skill in skills | filter:input"><a href="/{{skill}}" ng-model="skillName" ng-click="skillName='someval'">{{skill}}</a></li>
-									</ul>
-								</div>
-							</form>
-						</div>
 						<div class="actions pull-right">
 							<ul>
 								<li>
@@ -186,106 +174,6 @@
 					<div class="learn-more hidden-xs text-center">
 						<div class="skills-md"><img src="img/skills.png" alt="Skills"></div>
 						<a href="#section2"><img src="img/icon-learn-more.png" alt="Learn more"></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="section sec2" data-anchor="profit">
-		<div class="container">
-			<div class="b-profit">
-				<div class="vert">
-					<div class="col-md-12 text-center">
-						<div class="heading">
-							<h1 class="lightBlue">
-								SPEND MORE TIME DOING WHAT <br>
-								BRINGS YOU PROFIT
-							</h1>
-							<h3>Grow your business with A-OG</h3>
-						</div>
-					</div>
-					<div class="row profit">
-						<div class="col-xs-12 col-sm-4 wow zoomIn">
-							<div class="item">
-								<div class="icon request"></div>
-								<div class="name violet">2 Developers in <span class="pink">24h</span></div>
-								<div class="desc">
-									Get 2 qualified candidates in
-									only 24 hours - absolutely free
-									of charge.
-								</div>
-								<div class="btn btn-violet" data-toggle="modal" data-target="#RequestModal">Request developers</div>
-							</div>
-						</div>
-						<div class="col-xs-4 hidden-xs wow zoomIn" data-wow-delay="0.5s">
-							<div class="item">
-								<div class="icon ukraine"></div>
-								<div class="name">Ukrainian IT Guide</div>
-								<div class="desc">
-									All Ukrainian IT companies in one place. 
-									Find nearly any of the numerous IT 
-									service providers Ukraine has to offer.
-								</div>
-								<div class="btn btn-blue">BROWSE</div>
-							</div>
-						</div>
-						<div class="col-xs-4 hidden-xs wow zoomIn" data-wow-delay="1s">
-							<div class="item">
-								<div class="icon database"></div>
-								<div class="name">Developers database</div>
-								<div class="desc">
-									Browse our 500+ programming <br>
-									talent database and instantly find <br>
-									the IT people your project needs.
-								</div>
-								<div class="btn btn-pink">SEARCH</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="dev-rate">
-				<div class="container">
-					<div class="row">
-						<div class="col-xs-12 col-sm-4 col-md-3 pull-right offer">
-							<div class="offer-body">
-								<div class="vert">
-									<div class="head">special offer </div>
-									<div class="proposal-text-mobile hidden-sm">
-										Only until <b>20 March</b><br> PHP developers rate will be <b>150 $</b>
-									</div>
-									<ul class="counter">
-										<li>
-											<div class="num">
-												<div class="countbox-days2"><span></span>0</div>
-											</div>
-											day
-										</li>
-										<li>
-											<div class="num">
-												<div class="countbox-hours1"><span></span>0</div>
-												<div class="countbox-hours2"><span></span>0</div>
-											</div>
-											hour
-										</li>
-										<li>
-											<div class="num">
-												<div class="countbox-mins1"><span></span>4</div>
-												<div class="countbox-mins2"><span></span>2</div>
-											</div>
-											min
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>					
-						<div class="col-xs-12 col-sm-8 col-md-9 pull-left proposal">
-							<div class="proposal-text hidden-xs">
-								Only until <b>20 November</b> PHP developers rate will be <b>150 $</b>
-							</div>
-						</div>
-						<div class="btn btn-blue btn-large" data-toggle="modal" data-target="#RequestModal">ORDER now</div>
 					</div>
 				</div>
 			</div>
@@ -411,7 +299,16 @@
 								<h1 class="lightBlue">about us</h1>
 								<h3>...based on a decade's experience in IT</h3>
 							</div>
-							<div class="btn btn-large btn-blue hidden-sm">Read more</div>
+							<div class="about-us-anim hidden-sm">
+								<div class="man top-man wow fadeIn" data-wow-delay="0"></div>
+								<div class="left-man-line wow fadeIn" data-wow-delay="1.5s"></div>
+								<div class="man left-man wow fadeIn" data-wow-delay="2s"></div>
+								<div class="bottom-man-line wow fadeIn" data-wow-delay="0.5s"></div>
+								<div class="man bottom-man wow fadeIn" data-wow-delay="1s"></div>
+								<div class="right-man-line wow fadeIn" data-wow-delay="2.5s"></div>
+								<div class="man right-man wow fadeIn" data-wow-delay="3s"></div>
+							</div>
+							<div class="btn btn-large btn-violet hidden-sm">Read more</div>
 						</div>
 						<div class="col-sm-12 hidden-xs">
 							<p>Artel Outsourcing Group is an IT outsourcing service, connecting Ukrainian IT talent (both freelancers and dedicated teams) with European businesses in need of professional cost-effective development.</p>
@@ -439,7 +336,7 @@
 
 	<section class="section sec5" data-anchor="it-talent">
 		<div class="container">
-			<div class="vert">
+			<div class="vert clearfix">
 				<div class="row">
 					<div class="col-xs-12 text-center">
 						<div class="heading">
@@ -527,51 +424,12 @@
 						<span class="author">- Symphony-solutions.eu</span>
 					</div>
 				</div>
-				<div class="row hidden-sm">
-					<div class="col-xs-12 text-center">
-						<div class="heading">
-							<h1 class="lightBlue">
-								our technologies 
-							</h1>
-						</div>
-					</div>
-				</div>
-				<div class="row technologies hidden-sm">
-					<div class="col-xs-4">
-						<ul>
-						  <li>Android</li>
-						  <li>AngularJS</li>
-						  <li>API</li>
-						  <li>ASP.NET</li>
-						  <li>ASP.NET MVC</li>
-						</ul>
-					</div>
-					<div class="col-xs-4">
-						<ul>
-						  <li>Backbone.js</li>
-						  <li>C</li>
-						  <li>C#</li>
-						  <li>C++</li>
-						  <li>CakePHP</li>
-						</ul>
-					</div>
-					<div class="col-xs-4">
-						<ul>
-						  <li>Clojure</li>
-						  <li>CMS</li>
-						  <li>Cocoa</li>
-						  <li>CoffeeScript</li>
-						  <li>Delphi</li>
-						 </ul>
-					</div>
-				</div>
 				<div class="col-xs-12 text-center hidden-sm">
 					<div class="btn btn-large btn-blue">More technologies</div>
 				</div>
 			</div>
 		</div>
 	</section>
-
 	<section class="section sec6 hidden-xs" data-anchor="technologies">
 		<div class="container">
 			<div class="j-tech">
@@ -579,124 +437,37 @@
 					<div class="row">
 						<div class="col-md-12 text-center">
 							<div class="heading">
-								<h1 class="violet">
-									our technologies 
+								<h1 class="lightBlue">
+									Request Form
 								</h1>
 							</div>
+							<div class="contact-form contact-form--blue">
+						      	<form name="modalForm">
+							      <div class="col-sm-6">
+							          <div class="form-group">
+									    <input type="text" class="form-control" id="fullName" placeholder="Full Name*">
+									  </div>
+									  <div class="form-group">
+									    <input type="email" name="email" ng-model="email.text" class="form-control" id="Email" placeholder="EMAIL*" ng-model-options="{updateOn: 'blur'}" valid-method="blur">
+									  </div>
+							      </div>
+							      <div class="col-sm-6">
+									  <div class="form-group">
+									    <input type="text" class="form-control" id="Phone" placeholder="Phone*">
+									  </div>
+									  <div class="form-group">
+									    <input type="text" class="form-control" id="Company" placeholder="Company ">
+									  </div>
+							      </div>
+							      <div class="col-sm-12">
+							      	<div class="form-group">
+									    <textarea type="text" class="form-control" id="Description" placeholder="General Description"></textarea>
+							      	</div>
+							      </div>
+							      <button type="button" class="btn btn-pink">Submit</button>
+							    </form>
+						     </div>
 						</div>	
-					</div>
-					<div class="row technologies">
-						<div class="col-sm-2">
-							<ul>
-							  <li><a href="#">Android</a></li>
-							  <li><a href="#">AngularJS</a></li>
-							  <li><a href="#">API</a></li>
-							  <li><a href="#">ASP.NET</a></li>
-							  <li><a href="#">ASP.NET MVC</a></li>
-							  <li><a href="#">Backbone.js</a></li>
-							  <li><a href="#">C</a></li>
-							  <li><a href="#">C#</a></li>
-							  <li><a href="#">C++</a></li>
-							  <li><a href="#">CakePHP</a></li>
-							  <li><a href="#">Clojure</a></li>
-							  <li><a href="#">CMS</a></li>
-							  <li><a href="#">Cocoa</a></li>
-							  <li><a href="#">CoffeeScript</a></li>
-							  <li><a href="#">Delphi</a></li>
-							</ul>
-						</div>
-						<div class="col-sm-2">
-							<ul>
-							  <li><a href="#">DevOps</a></li>
-							  <li><a href="#">Django</a></li>
-							  <li><a href="#">Dojo</a></li>
-							  <li><a href="#">Drupal</a></li>
-							  <li><a href="#">Erlang</a></li>
-							  <li><a href="#">ERP</a></li>
-							  <li><a href="#">Express.js</a></li>
-							  <li><a href="#">Ext JS</a></li>
-							  <li><a href="#">F#</a></li>
-							  <li><a href="#">Flash</a></li>
-							  <li><a href="#">Front-end</a></li>
-							  <li><a href="#">Game Development</a></li>
-							  <li><a href="#">GIS</a></li>
-							  <li><a href="#">Grails</a></li>
-							  <li><a href="#">Groovy</a></li>
-							</ul>
-						</div>
-						<div class="col-sm-2">
-							<ul>
-							  <li><a href="#">Hadoop</a></li>
-							  <li><a href="#">Haskell</a></li>
-							  <li><a href="#">Hibernate</a></li>
-							  <li><a href="#">HTML5</a></li>
-							  <li><a href="#">iOS</a></li>
-							  <li><a href="#">Java</a></li>
-							  <li><a href="#">Java EE</a></li>
-							  <li><a href="#">JavaScript</a></li>
-							  <li><a href="#">jQuery</a></li>
-							  <li><a href="#">LAMP</a></li>
-							  <li><a href="#">LMS</a></li>
-							  <li><a href="#">Machine Learning</a></li>
-							  <li><a href="#">Magento</a></li>
-							  <li><a href="#">MATLAB</a></li>
-							  <li><a href="#">Microsoft</a></li>
-							 </ul>
-						</div>
-						<div class="col-sm-2">
-							<ul>
-							  <li><a href="#">Mobile</a></li>
-							  <li><a href="#">MSSQL</a></li>
-							  <li><a href="#">MySQL</a></li>
-							  <li><a href="#">.NET</a></li>
-							  <li><a href="#">Node.js</a></li>
-							  <li><a href="#">Objective-C</a></li>
-							  <li><a href="#">OCaml</a></li>
-							  <li><a href="#">OpenGL</a></li>
-							  <li><a href="#">Perl</a></li>
-							  <li><a href="#">PHP</a></li>
-							  <li><a href="#">POS</a></li>
-							  <li><a href="#">PostgreSQL</a></li>
-							  <li><a href="#">PyObjc</a></li>
-							  <li><a href="#">PyQT</a></li>
-							  <li><a href="#">Python</a></li>
-							</ul>
-						</div>
-						<div class="col-sm-2">
-							<ul>
-							  <li><a href="#">Ruby</a></li>
-							  <li><a href="#">Ruby on Rails</a></li>
-							  <li><a href="#">SalesForce</a></li>
-							  <li><a href="#">Scala</a></li>
-							  <li><a href="#">Sharepoint</a></li>
-							  <li><a href="#">Silverlight</a></li>
-							  <li><a href="#">Socket.IO</a></li>
-							  <li><a href="#">Spring</a></li>
-							  <li><a href="#">SQL</a></li>
-							  <li><a href="#">Struts</a></li>
-							  <li><a href="#">Symfony</a></li>
-							  <li><a href="#">Sys Admin</a></li>
-							  <li><a href="#">System Security</a></li>
-							  <li><a href="#">Twitter Bootstrap</a></li>
-							  <li><a href="#">UI</a></li>
-							</ul>
-						</div>
-						<div class="col-sm-2">
-							<ul>
-							  <li><a href="#">Unity</a></li>
-							  <li><a href="#">Unity3D</a></li>
-							  <li><a href="#">VB.NET</a></li>
-							  <li><a href="#">Visual Studio</a></li>
-							  <li><a href="#">Web</a></li>
-							  <li><a href="#">Windows</a></li>
-							  <li><a href="#">WordPress</a></li>
-							  <li><a href="#">WPF</a></li>
-							  <li><a href="#">Xamarin</a></li>
-							  <li><a href="#">Xcode</a></li>
-							  <li><a href="#">Yii</a></li>
-							  <li><a href="#">Zend</a></li>
-							</ul>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -731,7 +502,7 @@
 				</div>
 				<div class="request text-center">
 					<h4>2 Developers in 24h</h4>
-					<div class="btn btn-blue btn-large wow bounceIn" data-toggle="modal" data-target="#RequestModal">ORDER now</div>
+					<div class="btn btn-blue btn-large wow bounceIn">ORDER now</div>
 					<div class="social-links">
 						<ul>
 							<li><a href="#" class="tw"></a></li>
@@ -747,6 +518,41 @@
 	</section>
 
 	<section class="mobile-footter hidden-sm">
+		<div class="container container--form">
+			<div class="row contact-form contact-form--blue contact-form-mobile">
+				<div class="col-xs-12 text-center">
+					<div class="heading">
+						<h1 class="lightBlue">
+							Request Form 
+						</h1>
+					</div>
+				</div>
+				<form name="modalForm">
+			      <div class="col-sm-6">
+			          <div class="form-group">
+					    <input type="text" class="form-control" id="fullName" placeholder="Full Name*">
+					  </div>
+					  <div class="form-group">
+					    <input type="email" name="email" ng-model="email.text" class="form-control" id="Email" placeholder="EMAIL*" ng-model-options="{updateOn: 'blur'}" valid-method="blur">
+					  </div>
+			      </div>
+			      <div class="col-sm-6">
+					  <div class="form-group">
+					    <input type="text" class="form-control" id="Phone" placeholder="Phone*">
+					  </div>
+					  <div class="form-group">
+					    <input type="text" class="form-control" id="Company" placeholder="Company ">
+					  </div>
+			      </div>
+			      <div class="col-sm-12">
+			      	<div class="form-group">
+					    <textarea type="text" class="form-control" id="Description" placeholder="Notes"></textarea>
+			      	</div>
+			      </div>
+			      <button type="button" class="btn btn-large btn-pink">Submit</button>
+			    </form>
+			</div>
+		</div>
 		<div class="container">
 			<div class="row text-center">
 				<div id="" class="contacts-group">
@@ -769,7 +575,7 @@
 				</div>
 				<div class="request text-center">
 					<h4>2 Developers <span>in 24h</span></h4>
-					<div class="btn btn-pink btn-large" data-toggle="modal" data-target="#RequestModal">Request now</div>
+					<div class="btn btn-pink btn-large">Request now</div>
 				</div>
 				<div class="social-links">
 					<ul>
@@ -794,7 +600,19 @@
 	        viewport = document.querySelector("meta[name=viewport]");
 	        viewport.setAttribute('content', 'width=device-width, initial-scale='+scale+', user-scalable=1');
 	 	}	
-	 })
+	 });
+	$('#fullpage').fullpage({
+        
+		
+		//Navigation
+		        /*anchors:['main', 'how-it-works', 'about-us', 'it-talent'],
+		        menu: '#slideMenu',
+		        navigation: true,
+		        navigationPosition: 'right',
+		        navigationTooltips: ['Home', 'How It Works', 'About Us', 'Ukrainian IT Tallent'],
+		        slidesNavigation: false,
+		        slidesNavPosition: 'bottom',*/
+    });
 </script>
 </body>
 </html>

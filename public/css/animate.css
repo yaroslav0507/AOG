@@ -1989,8 +1989,13 @@ Copyright (c) 2014 Daniel Eden
 @-webkit-keyframes rotateIn {
   0% {
     -webkit-transform-origin: center;
+        -ms-transform-origin: center;
+        -ms-transform-origin: center;
             transform-origin: center;
+
     -webkit-transform: rotate3d(0, 0, 1, -200deg);
+       -moz-transform: rotate3d(0, 0, 1, -200deg);
+        -ms-transform: rotate3d(0, 0, 1, -200deg);
             transform: rotate3d(0, 0, 1, -200deg);
     opacity: 0;
   }
@@ -1999,6 +2004,8 @@ Copyright (c) 2014 Daniel Eden
     -webkit-transform-origin: center;
             transform-origin: center;
     -webkit-transform: none;
+       -moz-transform: none;
+        -ms-transform: none;
             transform: none;
     opacity: 1;
   }
@@ -2007,8 +2014,13 @@ Copyright (c) 2014 Daniel Eden
 @keyframes rotateIn {
   0% {
     -webkit-transform-origin: center;
+        -ms-transform-origin: center;
+        -ms-transform-origin: center;
             transform-origin: center;
-    -webkit-transform: rotate3d(0, 0, 1, -200deg);
+    -webkit-transform: rotate3d(0, 0, 1, 200deg);
+       -moz-transform: rotate3d(0, 0, 1, -200deg);
+        -ms-transform: rotate3d(0, 0, 1, 200deg);
+        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3)
             transform: rotate3d(0, 0, 1, -200deg);
     opacity: 0;
   }
@@ -2017,6 +2029,7 @@ Copyright (c) 2014 Daniel Eden
     -webkit-transform-origin: center;
             transform-origin: center;
     -webkit-transform: none;
+       -moz-transform: none;
             transform: none;
     opacity: 1;
   }

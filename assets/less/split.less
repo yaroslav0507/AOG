@@ -1,0 +1,182 @@
+.split{
+	.header-menu{
+		&:before{
+			content: "";
+			background: rgba(255, 255, 255, 0.3);
+			width: 300%;
+			height: 75px;
+			position: absolute;
+			left: -100%;
+			top: -23px;
+		}
+	}
+	.sec1 {
+			background: url(../img/header-bg-2.jpg) no-repeat center;
+			background-size: cover;
+		}
+	.sec5 .map .specialist:nth-child(4) {
+		top: 83px;
+		left: -118px;
+		background-position: 0 -68px;
+	}
+	.contact-form--blue{
+		background: #e8f3f4;
+		border-radius: 10px;
+		display: inline-block;
+		width: 830px;
+		padding: 40px 80px;
+		margin: auto;
+		input, textarea{
+			width: 100%;
+			margin-left: 0;
+		}
+		.btn{
+			margin-top: 24px;
+		}
+	}
+	.contact-form-mobile{
+		width: 100%;
+		text-align: center;
+		input, textarea{
+			border-radius: 10px;
+			margin: 13px 0;
+			font-size: 20px;
+			padding: 20px;
+		}
+		input{
+			height: 66px;
+		}
+		textarea{
+			height: 160px;
+		}
+		h1{
+			font-size: 29px;
+			font-weight: 600;
+		}
+	}
+	.request-sec{
+		background: #e8f3f4;
+		text-align: center;
+	}
+	.mobile-footter{
+		height: 2272px;
+		max-height: 2272px;
+		.container{
+			height: 50%;
+		}
+	}
+	.container--form{
+		width: 100%;
+		background: #e8f3f4;
+	}
+}
+	@media (max-width: 767px){
+		.split{
+			.sec1{
+				.logo-mobile{
+					position: absolute;
+					left: -144px;
+					background-size: 219px;
+					top: 0px;
+				}
+				.header-menu {
+					width: auto;
+					right: 0;
+					top: 4px;
+				}
+				
+			}
+		}
+	}
+
+@media (max-width: 767px) {
+	.header-menu{
+		&:before{
+			display:none;
+		}
+	}
+	.sec4, .sec5{
+		height: 740px !important;
+		min-height: 740px;
+		max-height: 740px;
+		.fp-tableCell{height: inherit !important;}
+	}
+}
+
+.promo-scene{
+	width: 940px;
+	height: 483px;
+	position: relative;
+	img{
+		position: absolute;
+	}
+	.client{
+		left: -43px;
+		top: 96px;
+	}
+	.requirements{
+		top: 115px;
+		left: 84px;
+	}
+	.clock-block{
+		position: absolute;
+		width: 325px;
+		height: 352px;
+		top: 15px;
+		left: 220px;
+		.clock_arrow{
+			left: -2px;
+			top: 60px;
+		}
+		.clock{
+			left: 21px;
+			top: 52px;
+			transition: -webkit-transform 2s ease;
+			transition: transform 2s ease;
+		}
+		.gear1{
+			top: 14px;
+			left: 131px;
+		}
+		.gear2{
+			top: 48px;
+			left: 189px;
+		}
+		.gear3{
+			top: 131px;
+			left: 221px;
+		}
+		.gear4{
+			top: 233px;
+			left: 137px;
+		}
+	}
+	.interviews{
+		left: 593px;
+		top: 133px;
+	}
+	.dev1{
+		left: 701px;
+		top: 96px;
+	}
+	.dev2{
+		left: 832px;
+		top: 96px;
+	}
+	.dev_arrow{
+		left: 682px;
+		top: 281px;
+	}
+	.btn{
+		position: absolute;
+		left: 243px;
+		top: 440px;
+		width: auto;
+		padding: 20px 40px;
+	}
+}
+.mobile_scene{
+	width: 542px;
+	height: 673px;
+	margin-top: 60px;
+}
