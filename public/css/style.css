@@ -2617,17 +2617,17 @@ footer .request .social-links ul li a.in {
   right: 0;
 }
 
-.contact-form .form-group {
+.modal .form-group {
   float: left;
   width: 100%;
   margin-bottom: 17px;
 }
 
-.contact-form .form-group .ng-invalid {
+.modal .form-group .ng-invalid {
   border: 1px solid #ff8e8e;
 }
 
-.contact-form label.icon {
+.modal label.icon {
   width: 35px;
   height: 35px;
   border-radius: 50%;
@@ -2635,45 +2635,45 @@ footer .request .social-links ul li a.in {
   float: left;
 }
 
-.contact-form label.icon i {
+.modal label.icon i {
   background: url(../img/popup_sprite.png) no-repeat;
   width: inherit;
   height: inherit;
   display: block;
 }
 
-.contact-form label.icon i.name {
+.modal label.icon i.name {
   background-position: -3px 5px;
 }
 
-.contact-form label.icon i.phone {
+.modal label.icon i.phone {
   background-position: -35px 4px;
 }
 
-.contact-form label.icon i.email {
+.modal label.icon i.email {
   background-position: -70px 5px;
 }
 
-.contact-form label.icon i.skype {
+.modal label.icon i.skype {
   background-position: -113px 4px;
 }
 
-.contact-form label.icon i.description {
+.modal label.icon i.description {
   background-position: -155px 5px;
 }
 
-.contact-form label.icon i.duration {
+.modal label.icon i.duration {
   background-position: -195px 5px;
 }
 
-.contact-form label.icon i.skills {
+.modal label.icon i.skills {
   background-position: -239px 5px;
 }
 
-.contact-form input,
-.contact-form textarea,
-.contact-form select,
-.contact-form .chosen-container {
+.modal input,
+.modal textarea,
+.modal select,
+.modal .chosen-container {
   font-size: 12px;
   font-weight: 700;
   float: left;
@@ -2685,38 +2685,38 @@ footer .request .social-links ul li a.in {
   font-family: "Open Sans", Sans-serif, Helvetica;
 }
 
-.contact-form textarea {
+.modal textarea {
   width: 599px;
   height: 65px;
   resize: none;
 }
 
-.contact-form .btn {
+.modal .btn {
   margin-top: 0;
 }
 
-.contact-form .chosen-container-multi .chosen-choices li.search-choice {
+.modal .chosen-container-multi .chosen-choices li.search-choice {
   margin: 7px 0 3px 7px;
 }
 
-.contact-form .chosen-choices li.search-field {
+.modal .chosen-choices li.search-field {
   height: 35px;
 }
 
-.contact-form .chosen-container-multi .chosen-choices {
+.modal .chosen-container-multi .chosen-choices {
   height: 35px;
   border: none;
   box-shadow: none;
   border-radius: 5px;
 }
 
-.contact-form .chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+.modal .chosen-container-multi .chosen-choices li.search-field input[type="text"] {
   height: inherit;
   padding-left: 12px;
   color: #999;
 }
 
-.contact-form label.has-error {
+.modal label.has-error {
   background: #ff8e8e;
 }
 
@@ -2947,4 +2947,8 @@ input[type="email"] {
 
 .chosen-container {
   width: 260px !important;
+}
+
+form.ng-invalid-email .label-email {
+  background: #ff8e8e;
 }
