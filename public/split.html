@@ -29,7 +29,7 @@
 </head>
 <body ng-controller="SearchCtrl" class="split">
 <!-- Modal -->
-<div class="modal contact-form fade" id="RequestModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal contact-form fade" id="RequestModal" tabindex="-1" role="dialog" aria-labelledby="RequestModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -95,7 +95,34 @@
   </div>
 </div>
 <!-- .Modal -->
-
+<!-- Login modal -->
+<div class="modal contact-form login-modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="LoginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+      	<form name="modalForm">
+	      <div class="col-xs-12">
+	          <div class="form-group">
+			    <label for="Username" class="small_icon"><i class="user"></i>Username</label>
+			    <input type="text" class="form-control" id="Username" ng-model-options="{updateOn: 'blur'}" valid-method="blur">
+			  </div>
+			  <div class="form-group">
+			    <label for="Password" class="small_icon"><i class="pass"></i>Password</label>
+			    <input type="password" name="email" ng-model="email.text" class="form-control" id="Password" ng-model-options="{updateOn: 'blur'}" valid-method="blur">
+			  </div>
+	      </div>
+	     </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-blue">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- .Login modal -->
 <!-- Fullpage -->
 <div id="fullpage">
 	<section class="section sec1" data-anchor="main">
@@ -112,11 +139,11 @@
 										<li><a class="slide-anchor" href="#">browse</a></li>
 										<li data-menuanchor="how-it-works"><a class="slide-anchor" href="#how-it-works-anchor">How it works</a></li>
 										<li><a class="slide-anchor" href="#about-us-achor">About us</a></li>
-										<li class="hidden-sm"><a class="slide-anchor" href="#">Log in</a></li>
+										<li class="hidden-sm"><a class="slide-anchor" href="#" data-toggle="modal" data-target="#LoginModal">Log in</a></li>
 										<li class="hidden-sm"><a class="slide-anchor" href="#">Sign up</a></li>
 									</ul>
 								</li>
-								<li class="hidden-xs"><a href="#" class="profile"></a></li>
+								<li class="hidden-xs"><a href="#" class="profile" data-toggle="modal" data-target="#LoginModal"></a></li>
 							</ul>
 						</div>
 					</div>
@@ -142,7 +169,7 @@
 							<img src="img/header_scene/dev1.png" class="dev1 wow fadeInDown" data-wow-delay="3.5s">
 							<img src="img/header_scene/dev2.png" class="dev2 wow fadeInDown" data-wow-delay="4s">
 							<img src="img/header_scene/dev-arrow.png" class="dev_arrow wow fadeIn" data-wow-delay="4.5s">
-							<div class="btn btn-blue btn-shadow btn-large wow zoomIn" data-wow-delay="5s" data-toggle="modal" data-target="#RequestModal">LET'S create your team together</div>
+							<a href="#request-form-anchor" class="slide-anchor btn btn-blue btn-shadow btn-large wow zoomIn" data-wow-delay="5s">LET'S create your team together</a>
 						</div>
 					</div>
 					<div class="learn-more hidden-xs text-center">
@@ -255,7 +282,7 @@
 					</article>
 				</div>
 				<div class="row text-center">
-					<div class="btn btn-pink btn-large" data-toggle="modal" data-target="#RequestModal">Request  NOW</div>			
+					<a href="#request-form-anchor" class="slide-anchor btn btn-pink btn-large">Request  NOW</a>			
 				</div>
 			</div>
 		</div>
@@ -400,7 +427,7 @@
 			</div>
 		</div>
 	</section>
-
+		
 		<section class="section sec6 hidden-xs" data-anchor="technologies">
 		<div class="container">
 			<div class="j-tech">
@@ -473,7 +500,7 @@
 				</div>
 				<div class="request text-center">
 					<h4>2 Developers in 24h</h4>
-					<div class="btn btn-blue btn-large wow bounceIn" data-toggle="modal" data-target="#RequestModal">ORDER now</div>
+					<a href="#request-form-anchor" class="slide-anchor btn btn-blue btn-large wow bounceIn">ORDER now</a>
 					<div class="social-links">
 						<ul>
 							<li><a href="#" class="tw"></a></li>
@@ -487,7 +514,7 @@
 			</footer>
 		</div>
 	</section>
-
+		<a href="#" id="request-form-anchor"></a>
 		<section class="mobile-footter hidden-sm">
 		<div class="container container--form">
 			<div class="row contact-form contact-form--blue contact-form-mobile">
@@ -546,7 +573,7 @@
 				</div>
 				<div class="request text-center">
 					<h4>2 Developers <span>in 24h</span></h4>
-					<div class="btn btn-pink btn-large" data-toggle="modal" data-target="#RequestModal">Request now</div>
+					<a href="#request-form-anchor" class="slide-anchorbtn btn-pink btn-large">Request now</a>
 				</div>
 				<div class="social-links">
 					<ul>

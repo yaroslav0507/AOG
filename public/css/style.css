@@ -2623,10 +2623,6 @@ footer .request .social-links ul li a.in {
   margin-bottom: 17px;
 }
 
-.modal .form-group .ng-invalid {
-  border: 1px solid #ff8e8e;
-}
-
 .modal label.icon {
   width: 35px;
   height: 35px;
@@ -2678,7 +2674,6 @@ footer .request .social-links ul li a.in {
   font-weight: 700;
   float: left;
   text-transform: uppercase;
-  border: none;
   border-radius: 5px;
   width: 260px;
   margin-left: 10px;
@@ -2718,6 +2713,10 @@ footer .request .social-links ul li a.in {
 
 .modal label.has-error {
   background: #ff8e8e;
+}
+
+.form-control {
+  border: 1px solid #eee;
 }
 
 input[type="email"] {
@@ -2762,6 +2761,12 @@ input[type="email"] {
 
 .split .contact-form--blue .btn {
   margin-top: 24px;
+}
+
+.split .contact-form input,
+.split .contact-form textarea {
+  font-family: "Open sans", Sans-serif, Helvetica;
+  resize: none;
 }
 
 .split .contact-form-mobile {
@@ -2951,4 +2956,58 @@ input[type="email"] {
 
 form.ng-invalid-email .label-email {
   background: #ff8e8e;
+}
+
+input.ng-invalid {
+  border: 1px solid #ff8e8e;
+}
+
+.login-modal .modal-dialog,
+.login-modal .modal-content {
+  width: 565px;
+  height: 415px;
+  background: rgba(130, 180, 187, 0.6);
+}
+
+.login-modal label {
+  text-transform: uppercase;
+  color: #FFF;
+  font-size: 20px;
+  line-height: 40px;
+  margin-left: 32px;
+  font-family: "Open sans", Sans-serif, Helvetica;
+}
+
+.login-modal .modal-body {
+  padding: 15px 27px;
+}
+
+.login-modal input {
+  width: 460px;
+  height: 64px;
+  font-size: 30px;
+  padding-left: 25px;
+  text-transform: none;
+}
+
+.login-modal .btn {
+  font-size: 35px;
+  width: 390px;
+}
+
+.small_icon i {
+  width: 20px;
+  height: 38px;
+  margin-right: 12px;
+  display: inline-block;
+  vertical-align: middle;
+  background: url(../img/login-modal-sprite.png) no-repeat;
+}
+
+.small_icon i.user {
+  background-position: 0 0;
+}
+
+.small_icon i.pass {
+  background-position: 0 -39px;
 }

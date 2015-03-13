@@ -1347,9 +1347,6 @@ footer{
 		float: left;
 		width: 100%;
 		margin-bottom: 17px;
-		.ng-invalid{
-			border: 1px solid @tPink;
-		}
 	}
 	label.icon{
 		width: 35px;
@@ -1391,7 +1388,6 @@ footer{
 		font-weight: 700;
 		float: left;
 		text-transform: uppercase;
-		border: none;
 		border-radius: 5px;
 		width: 260px;
 		margin-left: 10px;
@@ -1427,6 +1423,9 @@ footer{
 		background: @tPink;
 	}
 }
+.form-control{
+	border: 1px solid #eee;
+}
 input[type="email"]{
 	text-transform: none;
 }
@@ -1438,4 +1437,52 @@ input[type="email"]{
 
 form.ng-invalid-email .label-email{
 	background: @tPink;
+}
+input.ng-invalid{
+	border: 1px solid @tPink;
+}
+.login-modal{
+	.modal-dialog, .modal-content{
+		width: 565px;
+		height: 415px;
+		background: rgba(130, 180, 187, 0.6);
+	}
+	label{
+		text-transform: uppercase;
+		color: #FFF;
+		font-size: 20px;
+		line-height: 40px;
+		margin-left: 32px;
+		font-family: "Open sans", Sans-serif, Helvetica;
+	}
+	.modal-body {
+		padding: 15px 27px;
+	}
+	input{
+		width: 460px;
+		height: 64px;
+		font-size: 30px;
+		padding-left: 25px;
+		text-transform: none;
+	}
+	.btn{
+		font-size: 35px;
+		width: 390px;
+	}
+}
+.small_icon{
+	i{
+		width: 20px;
+		height: 38px;
+		margin-right: 12px;
+		display: inline-block;
+		vertical-align: middle;
+		background: url(../img/login-modal-sprite.png) no-repeat;
+		&.user{
+			background-position: 0 0;
+		}
+		&.pass{
+			background-position: 0 -39px;
+		}
+	}
 }
