@@ -2146,12 +2146,12 @@ $(function(){
 		var sec = $('.sec1');
 		sec.removeAttr('style').css("height",sec.height());
 	};
-	secHeight()
+	//secHeight()
 
 
 	function init(){
-		secHeight();
-		($(window).height() < 654) ? $('section').height(653) : '';
+		//secHeight();
+		($(window).height() <= 654) ? $('section').height(653) : '';
 
 	}
 	$(window).resize(init).on( "orientationchange", function(){
