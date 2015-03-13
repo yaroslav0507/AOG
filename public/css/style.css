@@ -2772,6 +2772,7 @@ input[type="email"] {
 .split .contact-form-mobile {
   width: 100%;
   text-align: center;
+  margin-top: 70px;
 }
 
 .split .contact-form-mobile input,
@@ -2806,7 +2807,7 @@ input[type="email"] {
 }
 
 .split .mobile-footter .container {
-  height: 50%;
+  height: 40%;
 }
 
 .split .container--form {
@@ -2950,6 +2951,10 @@ input[type="email"] {
   margin-top: 60px;
 }
 
+.container.mobile-last {
+  margin-top: 100px;
+}
+
 .chosen-container {
   width: 260px !important;
 }
@@ -2960,6 +2965,10 @@ form.ng-invalid-email .label-email {
 
 input.ng-invalid {
   border: 1px solid #ff8e8e;
+}
+
+input.ng-pristine {
+  border: none;
 }
 
 .login-modal .modal-dialog,

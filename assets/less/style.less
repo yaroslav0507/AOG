@@ -1438,9 +1438,15 @@ input[type="email"]{
 form.ng-invalid-email .label-email{
 	background: @tPink;
 }
-input.ng-invalid{
-	border: 1px solid @tPink;
+input{
+	&.ng-invalid{
+		border: 1px solid @tPink;
+	}
+	&.ng-pristine{
+		border: none;
+	}
 }
+
 .login-modal{
 	.modal-dialog, .modal-content{
 		width: 565px;
